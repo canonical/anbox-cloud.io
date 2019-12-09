@@ -1,31 +1,17 @@
-# Canonical Webteam Website-Boilerplate
+# Anbox Cloud Demo site
 
 [![CircleCI build status](https://circleci.com/gh/canonical-web-and-design/anbox-cloud.io.svg?style=shield)](https://circleci.com/gh/canonical-web-and-design/anbox-cloud.io) [![Code coverage](https://codecov.io/gh/canonical-web-and-design/anbox-cloud.io/branch/master/graph/badge.svg)](https://codecov.io/gh/canonical-web-and-design/anbox-cloud.io)
 
-This is a flask website boilerplate
+Anbox Cloud is the mobile cloud computing platform for running Android at high scale in any cloud. It is portable across x86 and ARM architectures, with GPU and GPGPU support. Canonical will help you deploy your applications to accelerate your time-to-market. Anbox Cloud comes bundled with a long-term commercial support offering.
 
-## Usage
+## Architecture overview
 
-1. Click `Use this template` button on [GitHub](https://help.github.com/en/articles/creating-a-repository-from-a-template) to create a new repo from this one.
+This website is written with the help of the [flask](http://flask.pocoo.org/) framework. In order to use functionalities that multiple of our websites here at Canonical share, we import the [base-flask-extension](https://github.com/canonical-web-and-design/canonicalwebteam.flask-base) module.
 
-2. Clone the new repository locally.
 
-```bash
-git clone {link-to-the-new-repo}
-```
+## Development
 
-3. Navigate to your {new-project-directory}:
+Run `./run` inside the root of the repository and all dependencies will automatically be installed. Afterwards the website will be available at <http://localhost:8043>.
 
-```bash
-cd {new-project-directory}
-```
+When you start changing files, the server should reload and make the changes available immediately.
 
-4. Open `requirements.txt` file and make sure you are using the latest version of [canonicalwebteam.flask-base](https://pypi.org/project/canonicalwebteam.flask-base/).
-
-5. Change `PORT` number in the `.env` file considering [current projects port list](https://canonical-web-and-design.github.io/practices/project-structure/ports.html).
-
-6. Run your project:
-
-```bash
-./run
-```
