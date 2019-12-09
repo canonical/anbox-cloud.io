@@ -1,6 +1,6 @@
 # Canonical Webteam Website-Boilerplate
 
-[![CircleCI build status](https://circleci.com/gh/canonical-web-and-design/canonicalwebteam.website-boilerplate.svg?style=shield)](https://circleci.com/gh/canonical-web-and-design/canonicalwebteam.website-boilerplate) [![Code coverage](https://codecov.io/gh/canonical-web-and-design/canonicalwebteam.website-boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/canonical-web-and-design/canonicalwebteam.website-boilerplate)
+[![CircleCI build status](https://circleci.com/gh/canonical-web-and-design/anbox-cloud.io.svg?style=shield)](https://circleci.com/gh/canonical-web-and-design/anbox-cloud.io) [![Code coverage](https://codecov.io/gh/canonical-web-and-design/anbox-cloud.io/branch/master/graph/badge.svg)](https://codecov.io/gh/canonical-web-and-design/anbox-cloud.io)
 
 This is a flask website boilerplate
 
