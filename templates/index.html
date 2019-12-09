@@ -1,56 +1,76 @@
-<!doctype html>
+{% extends '_layout.html' %} {% block title %} This is the index page {% endblock %}
+{% block content %}
+<div class="box">
+  <div class="left-content">
+    <p>
+      Anbox Cloud is the mobile cloud computing platform for running Android at high scale in any cloud. It is portable
+      across x86 and ARM architectures, with GPU and GPGPU support. Canonical will help you deploy your applications to
+      accelerate your time-to-market. Anbox Cloud comes bundled with a long-term commercial support offering.
+    </p>
+  </div>
+  <div class="right-content">
+    <pre>
+          [Illustration: Multitude of android logos of various side in a cloud, below multiple devices of different form factors: smartphones, laptops, desktops, VR headset, watches]
+      </pre>
 
-<html class="js" lang="en" dir="ltr">
-  <head>
-    <!-- Add meta charset below -->
-    <meta charset="UTF-8" />
+  </div>
+  <div class="bottom-content">
+    <ul>
+      <li>High container density</li>
+      <li>Commercial support</li>
+      <li>On public and private clouds</li>
+    </ul>
+    <ul>
+      <li>Works on x86-based architectures</li>
+      <li>Works on ARM-based architectures</li>
+      <li>GPU and GPGPU support</li>
+    </ul>
 
-    <!-- Add meta name below -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
-    <!-- Add page title below -->
-    <title>My new project</title>
-    
-    <!-- Add preconnect/dns-prefetch below -->
-    <link rel="preconnect" href="https://assets.ubuntu.com">
-    <!-- <link rel="dns-prefetch" href="http://www.spreadfirefox.com/"> -->
-    
-    <!-- Add inline JS below -->
-    <script>// Inline JS</script>
-    
-    <!-- Add stylesheet below -->
-    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/styles.css" />
-    
-    <!-- Add inline CSS below -->
-    <style>/* Inline CSS */</style>
-    
-    <!-- Add preload below -->
-    <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/e8c07df6-Ubuntu-L_W.woff2" crossorigin>
-    <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/7f100985-Ubuntu-Th_W.woff2" crossorigin>
-    <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/f8097dea-Ubuntu-LI_W.woff2" crossorigin>
-    <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/fff37993-Ubuntu-R_W.woff2" crossorigin>
+  </div>
+</div>
 
-    <!-- Add script below -->
-    <!-- <script src=""></script> -->
+<div class="box">
+  <h1>A platform for investors</h1>
+  <div class="matrix">
+    <h2>Game streaming</h2>
+    <ul>
+      <li>Better unit economics, thanks to high container density</li>
+      <li>Low latency and high frame rates</li>
+      <li>Support for ARM and x86</li>
+      <li>Adaptive to multiple form factors</li>
+    </ul>
+  </div>
 
-    <!-- Add prefetch/prerender below -->
-    <!-- <link rel="prefetch" href="/style.css" as="style" />
-    <link rel="prerender" href="https://example.com/about.html" /> -->
-  </head>
+  <div class="matrix">
+    <h2>Game streaming</h2>
+    <ul>
+      <li>Better unit economics, thanks to high container density</li>
+      <li>Low latency and high frame rates</li>
+      <li>Support for ARM and x86</li>
+      <li>Adaptive to multiple form factors</li>
+    </ul>
+  </div>
 
-  <body>
-    <!-- Add navigation below -->
+  <div class="matrix">
+    <h2>Game streaming</h2>
+    <ul>
+      <li>Better unit economics, thanks to high container density</li>
+      <li>Low latency and high frame rates</li>
+      <li>Support for ARM and x86</li>
+      <li>Adaptive to multiple form factors</li>
+    </ul>
+  </div>
 
-    <main>
-      <!-- Add main content below -->
-      <div class="p-strip--dark">
-        <div class="u-fixed-width">
-          <h1>This is my new project</h1>
-        </div>
-      </div>
-    </main>
+  <div class="matrix">
+    <h2>Game streaming</h2>
+    <ul>
+      <li>Better unit economics, thanks to high container density</li>
+      <li>Low latency and high frame rates</li>
+      <li>Support for ARM and x86</li>
+      <li>Adaptive to multiple form factors</li>
+    </ul>
+  </div>
 
-    <!-- Add footer below -->
+</div>
 
-  </body>
-</html>
+{% endblock %}
