@@ -14,11 +14,11 @@
 
 // test sass
 @mixin reset-margins {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 .box {
-  @include reset-margins();
+  @include reset-margins;
 }
