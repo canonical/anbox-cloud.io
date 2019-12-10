@@ -18,4 +18,4 @@ RUN python3 -m pip install --no-cache-dir -r requirements.txt
 
 # Setup commands to run server
 ENTRYPOINT ["./entrypoint"]
-CMD ["0.0.0.0:8080"]
+CMD ["0.0.0.0:80"]
