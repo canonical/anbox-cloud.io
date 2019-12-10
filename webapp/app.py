@@ -17,18 +17,3 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/demo")
-def demo():
-    return render_template("index.html")
-
-
-@app.route("/demo/login")
-def login():
-    greeting = "Please login to view the demo"
-    return render_template("login/index.html", greeting=greeting)
-
-
-@app.route("/demo/registration")
-def registration():
-    greeting = "If you have an access code provided by Anbox"
-    return render_template("login/registration.html", greeting=greeting)
