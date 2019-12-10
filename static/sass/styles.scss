@@ -11,3 +11,15 @@
 @import 'vanilla-framework/scss/build';
 
 // import site specific patterns and overrides
+
+// test sass
+@mixin reset-margins {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: pink;
+}
+
+body {
+  @include reset-margins();
+}
