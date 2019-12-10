@@ -15,3 +15,4 @@ Run `./run` inside the root of the repository and all dependencies will automati
 
 When you start changing files, the server should reload and make the changes available immediately.
 
+If you encounter issues with sass not building, Jekyll not compiling execute `./run clean-cache`
