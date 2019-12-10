@@ -21,6 +21,7 @@ def index():
 def demo():
     return render_template("index.html")
 
+
 @app.route("/demo/login")
 def login():
     greeting = "Please login to view the demo"
@@ -29,5 +30,5 @@ def login():
 
 @app.route("/demo/registration")
 def registration():
-    greeting = "If you have an access code provided by Anbox, please use it to register"
+    greeting = "If you have an access code provided by Anbox"
     return render_template("login/registration.html", greeting=greeting)
