@@ -6,7 +6,7 @@ Anbox Cloud is the mobile cloud computing platform for running Android at high s
 
 ## Architecture overview
 
-This website is written with the help of the [flask](http://flask.pocoo.org/) framework. In order to use functionalities that multiple of our websites here at Canonical share, we import the [base-flask-extension](https://github.com/canonical-web-and-design/canonicalwebteam.flask-base) module.
+This website is written with the help of the [flask](http://flask.pocoo.org/) framework. In order to use functionality that multiply our websites here at Canonical, we import the [base-flask-extension](https://github.com/canonical-web-and-design/canonicalwebteam.flask-base) module.
 
 
 ## Development
