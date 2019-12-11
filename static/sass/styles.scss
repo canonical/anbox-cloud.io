@@ -11,13 +11,3 @@
 @import 'vanilla-framework/scss/build';
 
 // import site specific patterns and overrides
-
-@mixin reset-margins {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-.box {
-  @include reset-margins;
-}
