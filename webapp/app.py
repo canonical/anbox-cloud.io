@@ -12,12 +12,6 @@ app = FlaskBase(
 )
 
 
-@app.route("/demo")
+@app.route("/")
 def index():
     return render_template("index.html")
-
-
-@app.route("/demo/login")
-def login():
-    greeting = "Hello, this is the login page 2"
-    return render_template("login/index.html", greeting=greeting)

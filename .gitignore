@@ -12,6 +12,7 @@ Thumbs.db
 .LSOverride
 .spelling
 .vscode
+.devcontainer
 
 # [cache] Cache and backup
 *.bak
