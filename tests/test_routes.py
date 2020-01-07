@@ -26,6 +26,25 @@ class TestRoutes(unittest.TestCase):
 
         self.assertEqual(self.client.get("/not-found-url").status_code, 404)
 
+    def test_demo_no_session(self):
+        """
+        Demo page should redirect to login if no session.
+        """
+        response = self.client.get("/demo")
+        self.assertEqual(self.client.get("/demo").status_code, 302)
+        self.assertEqual(
+            response.location, "http://localhost/login?next=/demo"
+        )
+
+    def test_demo_login(self):
+        """
+        Demo page should be accessible if openid in session not empty.
+        """
+        with self.client.session_transaction() as s:
+            s["openid"] = "openid"
+        response = self.client.get("/demo")
+        self.assertEqual(response.status_code, 200)
+
 
 if __name__ == "__main__":
     unittest.main()
