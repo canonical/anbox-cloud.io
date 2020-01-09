@@ -1,75 +1,199 @@
-{% extends '_layout.html' %} {% block title %} This is the index page {% endblock %}
+{% extends '_layout.html' %}
+
+{% block title %} Anbox Cloud {% endblock %}
+
+{% block description %}Anbox Cloud is the mobile cloud computing platform delivered by Canonical. Run Android in the cloud, at high scale and on any type of hardware. Canonical partners with cloud providers and computing hardware manufacturer to accelerate your time to market and provide long term commercial support.{% endblock %}
+
+
 {% block content %}
-<div class="box">
-  <div class="left-content">
-    <p>
-      Anbox Cloud is the mobile cloud computing platform for running Android at high scale in any cloud. It is portable
-      across x86 and ARM architectures, with GPU and GPGPU support. Canonical will help you deploy your applications to
-      accelerate your time-to-market. Anbox Cloud comes bundled with a long-term commercial support offering.
-    </p>
+<section class="p-strip--suru-topped">
+  <div class="row">
+    <div class="col-6">
+      <h1>Anbox Cloud: Scalable Android in the cloud</h1>
+      <p>Mobile cloud computing is an emerging mode of computing that offloads mobile workloads to hyperscale clouds or edge clouds. Anbox Cloud is a mobile cloud computing platform that leverages Android as an engine for virtualising mobile workloads. Anbox Cloud is highly scalable, it works on any cloud.  Canonical will help you build your custom platform and deploy your applications to accelerate your time-to-market. Anbox Cloud comes with a long-term commercial support offering.</p>
+      <a href="" class="p-button--positive">Join our exclusive preview</a>
+    </div>
+    <div class="col-6">
+      <img src="https://assets.ubuntu.com/v1/6a688b44-Anbox-Cloud+computing_outline.svg" alt="" class="u-hide--small">
+    </div>
   </div>
-  <div class="right-content">
-    <pre>
-          [Illustration: Multitude of android logos of various side in a cloud, below multiple devices of different form factors: smartphones, laptops, desktops, VR headset, watches]
-      </pre>
+</section>
 
-  </div>
-  <div class="bottom-content">
-    <ul>
-      <li>High container density</li>
-      <li>Commercial support</li>
-      <li>On public and private clouds</li>
-    </ul>
-    <ul>
-      <li>Works on x86-based architectures</li>
-      <li>Works on ARM-based architectures</li>
-      <li>GPU and GPGPU support</li>
-    </ul>
-
-  </div>
-</div>
-
-<div class="box">
-  <h1>A platform for investors</h1>
-  <div class="matrix">
-    <h2>Game streaming</h2>
-    <ul>
-      <li>Better unit economics, thanks to high container density</li>
-      <li>Low latency and high frame rates</li>
-      <li>Support for ARM and x86</li>
-      <li>Adaptive to multiple form factors</li>
+<section class="p-strip--light">
+  <div class="row">
+    <ul class="p-list--divided is-split">
+      <li class="p-list__item is-ticked">High container density</li>
+      <li class="p-list__item is-ticked">Commercial support</li>
+      <li class="p-list__item is-ticked">On public and private clouds</li>
+      <li class="p-list__item is-ticked">Works on x86-based architectures</li>
+      <li class="p-list__item is-ticked">Works on ARM-based architectures</li>
+      <li class="p-list__item is-ticked">GPU and GPGPU support</li>
     </ul>
   </div>
+</section>
 
-  <div class="matrix">
-    <h2>Game streaming</h2>
-    <ul>
-      <li>Better unit economics, thanks to high container density</li>
-      <li>Low latency and high frame rates</li>
-      <li>Support for ARM and x86</li>
-      <li>Adaptive to multiple form factors</li>
+<section class="p-strip">
+  <div class="row">
+    <h2>What you can do with Anbox Cloud</h2>
+  </div>
+  <div class="row">
+    <ul class="p-matrix p-matrix--two-col">
+      <li class="p-matrix__item">
+        <div class="p-matrix__content">
+          <h3 class="p-matrix__title">Game streaming</h3>
+          <div class="p-matrix__desc">
+            <ul class="p-list">
+              <li class="p-list__item is-ticked">Better unit economics, thanks to high container density</li>
+              <li class="p-list__item is-ticked">Low latency and high frame rates</li>
+              <li class="p-list__item is-ticked">Support for x86 and ARM</li>
+              <li class="p-list__item is-ticked">Adaptive to multiple form factors</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="p-matrix__item">
+        <div class="p-matrix__content">
+          <h3 class="p-matrix__title">Virtual devices</h3>
+          <div class="p-matrix__desc">
+            <ul class="p-list">
+              <li class="p-list__item is-ticked">Virtual live smartphone instances in the cloud</li>
+              <li class="p-list__item is-ticked">Full telephony functions</li>
+              <li class="p-list__item is-ticked">Camera and sensor integration</li>
+              <li class="p-list__item is-ticked">Client interface available as mobile application</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="p-matrix__item">
+        <div class="p-matrix__content">
+          <h3 class="p-matrix__title">Enterprise mobile applications</h3>
+          <div class="p-matrix__desc">
+            <ul class="p-list">
+              <li class="p-list__item is-ticked">Delivery of on-premise mobile applications</li>
+              <li class="p-list__item is-ticked">Application security</li>
+              <li class="p-list__item is-ticked">Data privacy</li>
+              <li class="p-list__item is-ticked">Advanced applications for AR/VR and wearable use cases</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="p-matrix__item">
+        <div class="p-matrix__content">
+          <h3 class="p-matrix__title">Application testing</h3>
+          <div class="p-matrix__desc">
+            <ul class="p-list">
+              <li class="p-list__item is-ticked">Emulate thousands of different Android devices</li>
+              <li class="p-list__item is-ticked">Simulate a variety of test scenarios thanks to customisable virtual hardware support</li>
+              <li class="p-list__item is-ticked">Flexible integration into your CI/CD infrastructure</li>
+              <li class="p-list__item is-ticked">Low cost due to high container density</li>
+            </ul>
+          </div>
+        </div>
+      </li>
     </ul>
   </div>
+</section>
 
-  <div class="matrix">
-    <h2>Game streaming</h2>
-    <ul>
-      <li>Better unit economics, thanks to high container density</li>
-      <li>Low latency and high frame rates</li>
-      <li>Support for ARM and x86</li>
-      <li>Adaptive to multiple form factors</li>
-    </ul>
+<section class="p-strip--light">
+  <div class="row">
+    <div class="col-8">
+      <blockquote class="p-pull-quote">
+        <p class="p-pull-quote__quote">Yesterday is history, tomorrow a mystery and today is a gift. That's why we call it the present. Canonical and Anbox Cloud are the greatest partners ever.</p>
+        <cite class="p-pull-quote__citation">James McMac, CEO, Big Viking Games</cite>
+      </blockquote>
+    </div>
   </div>
+</section>
 
-  <div class="matrix">
-    <h2>Game streaming</h2>
-    <ul>
-      <li>Better unit economics, thanks to high container density</li>
-      <li>Low latency and high frame rates</li>
-      <li>Support for ARM and x86</li>
-      <li>Adaptive to multiple form factors</li>
-    </ul>
+{% include '_anbox-embed.html' %}
+
+<section class="p-strip--light">
+  <div class="row">
+    <h2 class="p-muted-heading u-align-text--center">Partnering with cloud providers</h2>
+    <div class="col-12 u-align--center">
+      <img src="https://assets.ubuntu.com/v1/1f3b6478-Anbox-logo-packet.png" alt="Packet logo" width="157" height="157">
+    </div>
+    <h2 class="p-muted-heading u-align-text--center">hardware manufacturers</h2>
+    <div class="row">
+      <div class="col-small-1 col-medium-1 col-2 col-start-large-5 col-start-medium-3 col-start-small-2">
+        <img src="https://assets.ubuntu.com/v1/1c7c1998-Anbox-logo-intel.png" alt="Intel logo" width="157" height="157">
+      </div>
+      <div class="col-small-1 col-medium-1 col-2">
+        <img src="https://assets.ubuntu.com/v1/a49afcdb-Anbox-logo-ampere.png" alt="Ampere logo" width="157" height="157">
+      </div>
+    </div>
+    <h2 class="p-muted-heading u-align-text--center">On public clouds and on-premises</h2>
+    <div class="row">
+      <div class="col-small-1 col-medium-1 col-2 col-start-medium-2 col-start-large-3">
+        <img src="https://assets.ubuntu.com/v1/1f3b6478-Anbox-logo-packet.png" alt="Packet logo" width="157" height="157">
+      </div>
+      <div class="col-small-1 col-medium-1 col-2">
+        <img src="https://assets.ubuntu.com/v1/83acf500-Anbox-logo-google.png" alt="Google Cloud Platform" width="157" height="157">
+      </div>
+      <div class="col-small-1 col-medium-1 col-2">
+        <img src="https://assets.ubuntu.com/v1/fc61db3b-Anbox-logo-azure.png" alt="Azure logo" width="157" height="157">
+      </div>
+      <div class="col-small-1 col-medium-1 col-2">
+        <img src="https://assets.ubuntu.com/v1/43d45da9-Anbox-logo-aws.png" alt="Amazon Web Services logo" width="157" height="157">
+      </div>
+      <div class="col-small-1 col-medium-1 col-2 col-start-small-2 col-start-medium-3 col-start-large-5">
+        <img src="https://assets.ubuntu.com/v1/8094dce2-Anbox-logo-openstack.png" alt="Openstack logo" width="157" height="157">
+      </div>
+      <div class="col-small-1 col-medium-1 col-2">
+        <img src="https://assets.ubuntu.com/v1/53d93b1d-Anbox-logo-maas.png" alt="MAAS logo" width="157" height="157">
+      </div>
+    </div>
   </div>
+</section>
 
-</div>
+<section class="p-strip">
+  <div class="row">
+    <div class="col-6">
+      <h2>Ultra scalable</h2>
+      <p>Anbox Cloud builds upon Canonical’s Juju, MAAS and LXD technology to provide a mobile cloud computing platform capable of deploying Android in containers at hyperscale. Deployments can be fully automated, boot instantly, and orchestrated for elasticity, to perfectly match compute capacity with workloads. And with LXD, container density is at least double that of virtual machines and Docker. These benefits combine to deliver compelling cost savings for applications deployed at scale.</p>
+    </div>
+    <div class="col-6">
+      <img src="https://assets.ubuntu.com/v1/22804069-Anbox-Cloud+containers_outline.svg">
+    </div>
+  </div>
+</section>
+
+<section class="p-strip">
+  <div class="row">
+    <div class="col-6">
+      <h2>Hardware-agnostic</h2>
+      <p>Anbox Cloud is capable of running on any computer architecture. Whether on x86 or ARM — as most Android devices — it delivers top performance. Deployment is just as easy with or without GPU support. This flexibility lets you focus on operating your platforms without worrying about portability and integration.</p>
+    </div>
+    <div class="col-6 u-align--center u-vertically-center">
+      <img src="https://assets.ubuntu.com/v1/2833a9b9-Anbox-Cloud+logos_outline.svg" width="350">
+    </div>
+  </div>
+</section>
+
+<section class="p-strip">
+  <div class="row">
+    <div class="col-6">
+      <h2>First class support</h2>
+      <p>Canonical has deep experience in enablement and long term commercial support for large scale cloud deployments. Anbox Cloud comes bundled with the Ubuntu Advantage for Infrastructure support plan. Your platform and applications will be secured, updated and supported 24/7 for perfect availability. And our partnerships with leading chip manufacturers and cloud providers can deliver service packages optimised for your use case.</p>
+      <p><a href="" class="p-link--external">Learn about Ubuntu Advantage</a></p>
+    </div>
+    <div class="col-6 u-align--center u-vertically-center">
+      <img src="https://assets.ubuntu.com/v1/60d9b81e-picto-canonical.svg" width="175">
+    </div>
+  </div>
+</section>
+
+<section class="p-strip is-bordered">
+  <div class="row">
+    <div class="col-6">
+      <h2>See for yourself</h2>
+      <p class="p-heading--four">Register for an exclusive preview before the official&nbsp;launch.</p>
+      <a class="p-button--positive">Register to try Anbox Cloud</a>
+    </div>
+    <div class="col-6 u-align--center u-vertically-center">
+      <img src="https://assets.ubuntu.com/v1/c4b290c8-Contact+us.svg" width="350">
+    </div>
+  </div>
+</section>
+
 {% endblock %}

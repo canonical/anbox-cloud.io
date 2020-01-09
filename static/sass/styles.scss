@@ -11,3 +11,9 @@
 @import 'vanilla-framework/scss/build';
 
 // import site specific patterns and overrides
+
+@import "pattern_matrix";
+@import "pattern_strip";
+
+@include anbox-p-matrix;
+@include anbox-p-strip;
