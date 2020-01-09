@@ -1,1 +1,2 @@
 canonicalwebteam.flask-base==0.3.3
+Flask-OpenID-Stateless==1.2.6

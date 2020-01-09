@@ -53,8 +53,12 @@
       </div>
     </div>
   </header>
-  <!-- Add navigation below -->
-  <nav>This is the navigation</nav>
+  {% if not session['openid'] %}
+    <a type="button" href="/login">Login to view demo</a>
+  {% else %}
+    <a type="button" href="/logout">You are logged in, please log out</a>
+  {% endif %}
+
   <main>
     <!-- Add main content below -->
     {% block content %} {% endblock %}
