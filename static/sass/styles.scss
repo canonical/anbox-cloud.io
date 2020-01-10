@@ -1,6 +1,7 @@
 @charset 'UTF-8';
 
 // import settings
+@import "settings";
 
 // import custom mixins
 
@@ -13,7 +14,9 @@
 // import site specific patterns and overrides
 
 @import "pattern_matrix";
+@import "pattern_navigation";
 @import "pattern_strip";
 
 @include anbox-p-matrix;
+@include anbox-p-navigation;
 @include anbox-p-strip;
