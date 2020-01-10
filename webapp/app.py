@@ -16,10 +16,13 @@ LOGIN_URL = "https://login.ubuntu.com"
 # Change when deployed to production
 ANBOXCLOUD_API_BASE = "https://staging.demo-api.anbox-cloud.io/"
 ANBOXCLOUD_API_TOKEN = "1.0/token"
+ANBOXCLOUD_API_LOGIN = "1.0/login"
 HEADERS = {
     "Accept": "application/json, application/hal+json",
     "Content-Type": "application/json",
     "Cache-Control": "no-cache",
+    # "authorization_code": "",
+    # "invitation_code": "noop"
 }
 
 app = FlaskBase(
