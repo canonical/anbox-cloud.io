@@ -3,32 +3,30 @@
     background-color: $ubuntu-orange;
   }
 
-  .p-navigation {
-    .p-navigation__row {
-      padding: 0;
+  .p-navigation .p-navigation__row {
+    padding: 0;
 
-      .p-navigation__banner {
-        padding: 0 $sph-inner--large;
+    .p-navigation__banner {
+      padding: 0 $sph-inner--large;
 
-        .p-navigation__logo {
+      .p-navigation__logo {
+        font-weight: 400;
+        margin-right: 0;
+
+      }
+
+      .p-navigation__toggle {
+        &--open,
+        &--close {
           font-weight: 400;
-          margin-right: 0;
-
-        }
-
-        .p-navigation__toggle {
-          &--open,
-          &--close {
-            font-weight: 400;
-          }
         }
       }
+    }
 
-      .p-navigation__link a {
-        height: 100%;
-        padding-left: $sph-inner--large ;
-        padding-right: $sph-inner--large ;
-      }
+    .p-navigation__link a {
+      height: 100%;
+      padding-left: $sph-inner--large;
+      padding-right: $sph-inner--large;
     }
   }
 }
