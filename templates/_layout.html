@@ -1,71 +1,45 @@
 <!doctype html>
 
 <html class="js" lang="en" dir="ltr">
-
-<head>
-  <!-- Add meta charset below -->
-  <meta charset="UTF-8" />
-
-  <!-- Add meta name below -->
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Add page title below -->
-  <title>{% block title %}{% endblock %} | Anbox cloud</title>
-
-  <!-- Add preconnect/dns-prefetch below -->
-  <link rel="preconnect" href="https://assets.ubuntu.com">
-  <!-- <link rel="dns-prefetch" href="http://www.spreadfirefox.com/"> -->
-
-  <!-- Add inline JS below -->
-  <script>// Inline JS</script>
-
-  <!-- Add stylesheet below -->
-  <link rel="stylesheet" type="text/css" media="screen" href="/static/css/styles.css" />
-
-  <!-- Add inline CSS below -->
-  <style>
-    /* Inline CSS */
-  </style>
-
-  <!-- Add preload below -->
-  <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/e8c07df6-Ubuntu-L_W.woff2"
-    crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/7f100985-Ubuntu-Th_W.woff2"
-    crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/f8097dea-Ubuntu-LI_W.woff2"
-    crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/fff37993-Ubuntu-R_W.woff2"
-    crossorigin>
-
-  <!-- Add script below -->
-  <!-- <script src=""></script> -->
-
-  <!-- Add prefetch/prerender below -->
-  <!-- <link rel="prefetch" href="/style.css" as="style" />
-    <link rel="prerender" href="https://example.com/about.html" /> -->
-</head>
-
-<body>
-  <header>
-    <div class="p-strip--dark">
-      <div class="u-fixed-width">
-        <h1>Anbox Cloud: Scalable Android in the Cloud</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="description" content="{% block description %}{% endblock %}">
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/styles.css" />
+    <link rel="shortcut icon" href="https://assets.ubuntu.com/v1/ee29de9e-Anbox_favicon_64px.png" type="image/x-icon">
+  </head>
+  <body>
+    <header id="navigation" class="p-navigation is-dark">
+      <div class="p-navigation__row">
+        <div class="p-navigation__banner">
+          <div class="p-navigation__logo u-vertically-center">
+            <a class="p-navigation__link" href="/" style="color:white">
+              Anbox Cloud
+            </a>
+          </div>
+          <a href="#navigation" class="p-navigation__toggle--open" title="menu">Menu</a>
+          <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">Close menu</a>
+        </div>
+        <nav class="p-navigation__nav">
+          <span class="u-off-screen">
+            <a href="#main-content">Jump to main content</a>
+          </span>
+          <ul class="p-navigation__links" role="menu">
+            <li class="p-navigation__link" role="menuitem">
+              {% if not session['openid'] %}
+                <a type="button" href="/login">Login</a>
+              {% else %}
+                <a type="button" href="/logout">Log out</a>
+              {% endif %}
+            </li>
+          </ul>
+        </nav>
       </div>
-    </div>
-  </header>
-  {% if not session['openid'] %}
-    <a type="button" href="/login">Login to view demo</a>
-  {% else %}
-    <a type="button" href="/logout">You are logged in, please log out</a>
-  {% endif %}
-
-  <main>
-    <!-- Add main content below -->
-    {% block content %} {% endblock %}
-  </main>
-
-  <!-- Add footer below -->
-  {% include 'footer.html' %}
-</body>
-
+    </header>
+    <main>
+      {% block content %} {% endblock %}
+    </main>
+    {% include 'footer.html' %}
+  </body>
 </html>
