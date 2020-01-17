@@ -10,6 +10,7 @@ from canonicalwebteam.flask_base.app import FlaskBase
 from flask_openid import OpenID
 from pymacaroons import Macaroon
 from webapp.macaroons import MacaroonRequest, MacaroonResponse
+from webapp.exceptions import handle_exceptions
 
 LOGIN_URL = "https://login.ubuntu.com"
 # Only works with VPN
@@ -61,22 +62,9 @@ def login_required(func):
 
 def request_macaroon(params):
     url = "".join([ANBOXCLOUD_API_BASE, ANBOXCLOUD_API_TOKEN])
-    # api_session = requests.Session(timeout=(1, 6))
-    # permissions
-    permissions = {}
     response = requests.get(url=url, headers=HEADERS, params=params)
-    if not response.ok:
-        print("Unknown error from api %s", response.status_code)
-        # raise ApiResponseError("Unknown error from api", response.status_code)
-
-    try:
-        body = response.json()
-    except ValueError as decode_error:
-        print("JSON decoding failed:  %s", decode_error)
-        # api_error_exception = ApiResponseDecodeError(
-        #     "JSON decoding failed: {}".format(decode_error)
-        # )
-        # raise api_error_exception
+    handle_exceptions(response)
+    body = response.json()
     return body
 
 
@@ -118,14 +106,8 @@ def after_login(resp):
         }
     )
     response = requests.post(url=url, headers=headers, data=data)
-    result = response.json()
-    flask.session["openid"] = {
-        "token": result.metadata.token
-    }
-    # Handle expired macaroon
-    # if authentication.is_macaroon_expired(response.headers):
-    #     raise MacaroonRefreshRequired
-
+    handle_exceptions(response)
+    
     return flask.redirect("/demo")
 
 
@@ -174,6 +156,7 @@ def login_handler():
     params = [("provider", "usso")]
     root = request_macaroon(params)
     token = root["metadata"]["token"]
+
     location = urlparse(LOGIN_URL).hostname
     (caveat,) = [
         c for c in Macaroon.deserialize(token).third_party_caveats() if c.location == location
