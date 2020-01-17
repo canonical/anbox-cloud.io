@@ -11,17 +11,6 @@ from flask_openid import OpenID
 from pymacaroons import Macaroon
 from webapp.macaroons import MacaroonRequest, MacaroonResponse
 
-from webapp.api.exceptions import (
-    AgreementNotSigned,
-    ApiError,
-    ApiResponseError,
-    ApiResponseErrorList,
-    ApiTimeoutError,
-    ApiCircuitBreaker,
-    MacaroonRefreshRequired,
-    MissingUsername,
-)
-
 LOGIN_URL = "https://login.ubuntu.com"
 # Only works with VPN
 # Change when deployed to production
@@ -96,51 +85,13 @@ def get_authorization_header(root, discharge):
     Bind root and discharge macaroons and return the authorization header.
     """
 
-    bound = Macaroon.deserialize(root).prepare_for_request(Macaroon.deserialize(discharge))
+    bound = Macaroon.deserialize(root).prepare_for_request(
+        Macaroon.deserialize(discharge)
+    )
     value = "Macaroon root={}, discharge={}".format(root, bound.serialize())
     authorization = {"Authorization": value}
     return authorization
 
-
-def get_refreshed_discharge(discharge):
-    """
-    Get a refresh macaroon if the macaroon is not valid anymore.
-    Returns the new discharge macaroon.
-    """
-    response = sso.get_refreshed_discharge({"discharge_macaroon": discharge})
-
-    return response["discharge_macaroon"]
-
-
-def response_handler(response):
-    try:
-        body = response.json()
-    except ValueError as decode_error:
-        api_error_exception = ApiResponseDecodeError(
-            "JSON decoding failed: {}".format(decode_error)
-        )
-        raise api_error_exception
-
-    if not response.ok:
-        if "error_list" in body:
-            for error in body["error_list"]:
-                if error["code"] == "user-not-ready":
-                    if "has not signed agreement" in error["message"]:
-                        raise AgreementNotSigned
-                    elif "missing store username" in error["message"]:
-                        raise MissingUsername
-
-            raise ApiResponseErrorList(
-                "The api returned a list of errors",
-                response.status_code,
-                body["error_list"],
-            )
-        elif not body:
-            raise ApiResponseError(
-                "Unknown error from api", response.status_code
-            )
-
-    return body
 
 @app.route("/")
 def index():
