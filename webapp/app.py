@@ -42,6 +42,11 @@ def login_required(func):
 def index():
     return flask.render_template("index.html")
 
+@app.route("/thank-you")
+def thank_you():
+    return flask.render_template("thank-you.html")
+
+
 
 @open_id.after_login
 def after_login(resp):
