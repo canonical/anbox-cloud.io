@@ -1,15 +1,26 @@
 import functools
+import json
 import os
+from urllib.parse import urlparse
 
 import flask
 import requests
-import socket
 
-from urllib.parse import urlparse
-from pymacaroons import Macaroon
 from canonicalwebteam.flask_base.app import FlaskBase
 from flask_openid import OpenID
+from pymacaroons import Macaroon
 from webapp.macaroons import MacaroonRequest, MacaroonResponse
+
+from webapp.api.exceptions import (
+    AgreementNotSigned,
+    ApiError,
+    ApiResponseError,
+    ApiResponseErrorList,
+    ApiTimeoutError,
+    ApiCircuitBreaker,
+    MacaroonRefreshRequired,
+    MissingUsername,
+)
 
 LOGIN_URL = "https://login.ubuntu.com"
 # Only works with VPN
@@ -17,6 +28,8 @@ LOGIN_URL = "https://login.ubuntu.com"
 ANBOXCLOUD_API_BASE = "https://staging.demo-api.anbox-cloud.io/"
 ANBOXCLOUD_API_TOKEN = "1.0/token"
 ANBOXCLOUD_API_LOGIN = "1.0/login"
+# Testing purposes
+ANBOXCLOUD_INVITATION_CODE = "3GU7UA"
 HEADERS = {
     "Accept": "application/json, application/hal+json",
     "Content-Type": "application/json",
@@ -38,8 +51,7 @@ app.secret_key = os.environ["SECRET_KEY"]
 open_id = OpenID(
     stateless=True,
     safe_roots=[],
-    extension_responses=[MacaroonResponse]
-)
+    extension_responses=[MacaroonResponse])
 
 
 def login_required(func):
@@ -79,6 +91,57 @@ def request_macaroon(params):
     return body
 
 
+def get_authorization_header(root, discharge):
+    """
+    Bind root and discharge macaroons and return the authorization header.
+    """
+
+    bound = Macaroon.deserialize(root).prepare_for_request(Macaroon.deserialize(discharge))
+    value = "Macaroon root={}, discharge={}".format(root, bound.serialize())
+    authorization = {"Authorization": value}
+    return authorization
+
+
+def get_refreshed_discharge(discharge):
+    """
+    Get a refresh macaroon if the macaroon is not valid anymore.
+    Returns the new discharge macaroon.
+    """
+    response = sso.get_refreshed_discharge({"discharge_macaroon": discharge})
+
+    return response["discharge_macaroon"]
+
+
+def response_handler(response):
+    try:
+        body = response.json()
+    except ValueError as decode_error:
+        api_error_exception = ApiResponseDecodeError(
+            "JSON decoding failed: {}".format(decode_error)
+        )
+        raise api_error_exception
+
+    if not response.ok:
+        if "error_list" in body:
+            for error in body["error_list"]:
+                if error["code"] == "user-not-ready":
+                    if "has not signed agreement" in error["message"]:
+                        raise AgreementNotSigned
+                    elif "missing store username" in error["message"]:
+                        raise MissingUsername
+
+            raise ApiResponseErrorList(
+                "The api returned a list of errors",
+                response.status_code,
+                body["error_list"],
+            )
+        elif not body:
+            raise ApiResponseError(
+                "Unknown error from api", response.status_code
+            )
+
+    return body
+
 @app.route("/")
 def index():
     return flask.render_template("index.html")
@@ -86,12 +149,33 @@ def index():
 
 @open_id.after_login
 def after_login(resp):
+    url = "".join([ANBOXCLOUD_API_BASE, ANBOXCLOUD_API_LOGIN])
     flask.session["macaroon_discharge"] = resp.extensions["macaroon"].discharge
     flask.session["openid"] = {
         "identity_url": resp.identity_url,
         "email": resp.email,
     }
-    return flask.redirect('/demo')
+    root = flask.session["macaroon_root"]
+    discharge = flask.session["macaroon_discharge"]
+    headers = get_authorization_header(root, discharge)
+    authorization_code = "root={} discharge={}".format(root, discharge)
+    data = json.dumps(
+        {
+            "provider": "usso",
+            "authorization_code": authorization_code,
+            "invitation_code": ANBOXCLOUD_INVITATION_CODE,
+        }
+    )
+    response = requests.post(url=url, headers=headers, data=data)
+    result = response.json()
+    flask.session["openid"] = {
+        "token": result.metadata.token
+    }
+    # Handle expired macaroon
+    # if authentication.is_macaroon_expired(response.headers):
+    #     raise MacaroonRefreshRequired
+
+    return flask.redirect("/demo")
 
 
 @app.after_request
@@ -112,12 +196,7 @@ def add_headers(response):
             # Only add caching headers to successful responses
             if not response.headers.get("Cache-Control"):
                 response.headers["Cache-Control"] = ", ".join(
-                    {
-                        "public",
-                        "max-age=61",
-                        "stale-while-revalidate=300",
-                        "stale-if-error=86400",
-                    }
+                    {"public", "max-age=61", "stale-while-revalidate=300", "stale-if-error=86400",}
                 )
 
     return response
@@ -129,6 +208,8 @@ def logout():
     Empty the session, used to logout.
     """
     flask.session.pop("openid", None)
+    flask.session.pop("macaroon_root", None)
+    flask.session.pop("macaroon_discharge", None)
 
     return flask.redirect(open_id.get_next_url())
 
@@ -139,27 +220,17 @@ def login_handler():
     if "openid" in flask.session and "macaroon_root" in flask.session:
         return flask.redirect(open_id.get_next_url())
 
-    params = [
-        ("provider", "usso")
-    ]
+    params = [("provider", "usso")]
     root = request_macaroon(params)
-    token = root['metadata']['token']
+    token = root["metadata"]["token"]
     location = urlparse(LOGIN_URL).hostname
-    caveat, = [
-        c
-        for c in Macaroon.deserialize(token).third_party_caveats()
-        if c.location == location
+    (caveat,) = [
+        c for c in Macaroon.deserialize(token).third_party_caveats() if c.location == location
     ]
-    openid_macaroon = MacaroonRequest(
-        caveat_id=caveat.caveat_id
-    )
+    openid_macaroon = MacaroonRequest(caveat_id=caveat.caveat_id)
 
     flask.session["macaroon_root"] = token
-    return open_id.try_login(
-        LOGIN_URL,
-        ask_for=["email"],
-        extensions=[openid_macaroon]
-    )
+    return open_id.try_login(LOGIN_URL, ask_for=["email"], extensions=[openid_macaroon])
 
 
 @app.route("/demo")
