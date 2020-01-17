@@ -12,7 +12,7 @@ class MacaroonRequest(OpenIDExtension):
         """
         Return the arguments to add to the OpenID request query
         """
-    
+
         return {"caveat_id": self.caveat_id}
 
 
