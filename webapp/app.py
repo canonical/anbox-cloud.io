@@ -36,9 +36,8 @@ app = FlaskBase(
 
 app.secret_key = os.environ["SECRET_KEY"]
 open_id = OpenID(
-    stateless=True,
-    safe_roots=[],
-    extension_responses=[MacaroonResponse])
+    stateless=True, safe_roots=[], extension_responses=[MacaroonResponse]
+)
 
 
 def login_required(func):
@@ -131,7 +130,7 @@ def add_headers(response):
                         "public",
                         "max-age=61",
                         "stale-while-revalidate=300",
-                        "stale-if-error=86400"
+                        "stale-if-error=86400",
                     }
                 )
 
@@ -153,7 +152,11 @@ def logout():
 @app.route("/login", methods=["GET", "POST"])
 @open_id.loginhandler
 def login_handler():
-    if "openid" in flask.session and "macaroon_root" in flask.session:
+    if (
+        "openid" in flask.session
+        and "macaroon_root" in flask.session
+        and "macaroon_discharge" in flask.session
+    ):
         return flask.redirect(open_id.get_next_url())
 
     params = [("provider", "usso")]
@@ -165,16 +168,15 @@ def login_handler():
     flask.session["invitation_code"] = invitation_code
     location = urlparse(LOGIN_URL).hostname
     (caveat,) = [
-        c for c in Macaroon.deserialize(token).third_party_caveats()
+        c
+        for c in Macaroon.deserialize(token).third_party_caveats()
         if c.location == location
     ]
     openid_macaroon = MacaroonRequest(caveat_id=caveat.caveat_id)
 
     flask.session["macaroon_root"] = token
     return open_id.try_login(
-        LOGIN_URL,
-        ask_for=["email"],
-        extensions=[openid_macaroon]
+        LOGIN_URL, ask_for=["email"], extensions=[openid_macaroon]
     )
 
 
