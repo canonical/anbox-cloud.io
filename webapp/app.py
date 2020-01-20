@@ -11,6 +11,7 @@ from flask_openid import OpenID
 from pymacaroons import Macaroon
 from webapp.macaroons import MacaroonRequest, MacaroonResponse
 from webapp.exceptions import handle_exceptions
+from flask import request
 
 LOGIN_URL = "https://login.ubuntu.com"
 # Only works with VPN
@@ -18,14 +19,10 @@ LOGIN_URL = "https://login.ubuntu.com"
 ANBOXCLOUD_API_BASE = "https://staging.demo-api.anbox-cloud.io/"
 ANBOXCLOUD_API_TOKEN = "1.0/token"
 ANBOXCLOUD_API_LOGIN = "1.0/login"
-# Testing purposes
-ANBOXCLOUD_INVITATION_CODE = "3GU7UA"
 HEADERS = {
     "Accept": "application/json, application/hal+json",
     "Content-Type": "application/json",
     "Cache-Control": "no-cache",
-    # "authorization_code": "",
-    # "invitation_code": "noop"
 }
 
 app = FlaskBase(
@@ -98,16 +95,17 @@ def after_login(resp):
     discharge = flask.session["macaroon_discharge"]
     headers = get_authorization_header(root, discharge)
     authorization_code = "root={} discharge={}".format(root, discharge)
+    invitation_code = flask.session["invitation_code"]
     data = json.dumps(
         {
             "provider": "usso",
             "authorization_code": authorization_code,
-            "invitation_code": ANBOXCLOUD_INVITATION_CODE,
+            "invitation_code": invitation_code,
         }
     )
     response = requests.post(url=url, headers=headers, data=data)
     handle_exceptions(response)
-    
+
     return flask.redirect("/demo")
 
 
@@ -129,7 +127,12 @@ def add_headers(response):
             # Only add caching headers to successful responses
             if not response.headers.get("Cache-Control"):
                 response.headers["Cache-Control"] = ", ".join(
-                    {"public", "max-age=61", "stale-while-revalidate=300", "stale-if-error=86400",}
+                    {
+                        "public",
+                        "max-age=61",
+                        "stale-while-revalidate=300",
+                        "stale-if-error=86400"
+                    }
                 )
 
     return response
@@ -156,15 +159,23 @@ def login_handler():
     params = [("provider", "usso")]
     root = request_macaroon(params)
     token = root["metadata"]["token"]
-
+    # API to check if user already exists goes here
+    # Ideal: If user exists return code else do not include in POST body
+    invitation_code = request.args.get("invitation_code")
+    flask.session["invitation_code"] = invitation_code
     location = urlparse(LOGIN_URL).hostname
     (caveat,) = [
-        c for c in Macaroon.deserialize(token).third_party_caveats() if c.location == location
+        c for c in Macaroon.deserialize(token).third_party_caveats()
+        if c.location == location
     ]
     openid_macaroon = MacaroonRequest(caveat_id=caveat.caveat_id)
 
     flask.session["macaroon_root"] = token
-    return open_id.try_login(LOGIN_URL, ask_for=["email"], extensions=[openid_macaroon])
+    return open_id.try_login(
+        LOGIN_URL,
+        ask_for=["email"],
+        extensions=[openid_macaroon]
+    )
 
 
 @app.route("/demo")
