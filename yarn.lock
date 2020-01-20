@@ -2,6 +2,13 @@
 # yarn lockfile v1
 
 
+"@canonical/global-nav@2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@canonical/global-nav/-/global-nav-2.3.0.tgz#8a72aa4c82fb61a067454e1102350112ae8d5ba8"
+  integrity sha512-T6S3m762Oz1KNsf645a/1br5Vwa3jJ0ixvSfC/SHHP6eAuBk4QRScx1sv/kJlY7eDg0SLDox4LNTFyZPlJMxKw==
+  dependencies:
+    vanilla-framework "2.4.0"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -3393,6 +3400,11 @@ validate-npm-package-license@^3.0.1:
   dependencies:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
+
+vanilla-framework@2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-2.4.0.tgz#95fd15738ce72cbb30bb667ba255cc7e9ae3f13d"
+  integrity sha512-NacSE5eKsugHnKlWlwsfKm24cDpsmcer2RC0+PCmFz4US4BLrEanQ0mZUkXg3toEwue867FFvDB+I7jiKP+zow==
 
 vanilla-framework@2.5.0:
   version "2.5.0"
