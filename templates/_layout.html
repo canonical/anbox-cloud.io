@@ -4,13 +4,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{% block title %}{% endblock %}</title>
-    <meta name="description" content="{% block description %}{% endblock %}">
+    <title>{% block title %}Anbox Cloud{% endblock %}</title>
+    <meta name="description" content="{% block description %}Anbox Cloud is the mobile cloud computing platform delivered by Canonical. Run Android in the cloud, at high scale and on any type of hardware. Canonical partners with cloud providers and computing hardware manufacturers to accelerate your time to market and provide long term commercial support.{% endblock %}">
     <script src="https://assets.ubuntu.com/v1/4176b39e-serialize.js" defer></script>
     <script src="/static/js/formValidation.js" defer></script>
     <script src="https://www.google.com/recaptcha/api.js?onload=CaptchaCallback&render=explicit" defer></script>
     <link rel="stylesheet" type="text/css" media="screen" href="/static/css/styles.css" />
     <link rel="shortcut icon" href="https://assets.ubuntu.com/v1/ee29de9e-Anbox_favicon_64px.png" type="image/x-icon">
+
+    <meta name="theme-color" content="#E95420">
+    <meta name="twitter:account_id" content="4503599627481511">
+    <meta name="twitter:site" content="@ubuntu">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://anbox-cloud.io">
+    <meta property="og:site_name" content="Anbox Cloud">
+    <meta name="copydoc" content="{% block copydoc %}{% endblock %}">
+    <meta name="google-site-verification" content="ddh2iq7ZuKf1LpkL_gtM_T7DkKDVD7ibq6Ceue4a_3M">
+    <meta name="twitter:title" content="{{  self.title() }}">
+    <meta property="og:title" content="{{  self.title() }}">
+    <meta name="twitter:description" content="{{  self.description() }}">
+    <meta property="og:description" content="{{  self.description() }}">
+    <!-- Meta image -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://assets.ubuntu.com/v1/bee9a452-social-anbox-cloud.png">
+    <meta property="og:image" content="https://assets.ubuntu.com/v1/bee9a452-social-anbox-cloud.png">
+
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
