@@ -20,3 +20,7 @@
 @include anbox-p-matrix;
 @include anbox-p-navigation;
 @include anbox-p-strip;
+
+.p-pull-quote .p-pull-quote__quote:last-of-type::after {
+  bottom: auto;
+}
