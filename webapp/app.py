@@ -5,6 +5,7 @@ import flask
 
 from canonicalwebteam.flask_base.app import FlaskBase
 from flask_openid import OpenID
+from canonicalwebteam import image_template
 
 
 LOGIN_URL = "https://login.ubuntu.com"
@@ -20,6 +21,10 @@ app = FlaskBase(
 
 app.secret_key = os.environ["SECRET_KEY"]
 open_id = OpenID(stateless=True, safe_roots=[])
+
+@app.context_processor
+def utility_processor():
+    return {"image": image_template}
 
 
 def login_required(func):
