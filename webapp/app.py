@@ -22,6 +22,7 @@ app = FlaskBase(
 app.secret_key = os.environ["SECRET_KEY"]
 open_id = OpenID(stateless=True, safe_roots=[])
 
+
 @app.context_processor
 def utility_processor():
     return {"image": image_template}
