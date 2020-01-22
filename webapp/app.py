@@ -10,7 +10,6 @@ from canonicalwebteam.flask_base.app import FlaskBase
 from flask_openid import OpenID
 from pymacaroons import Macaroon
 from webapp.macaroons import MacaroonRequest, MacaroonResponse
-from webapp.exceptions import handle_exceptions
 from flask import request
 
 LOGIN_URL = "https://login.ubuntu.com"
@@ -59,7 +58,7 @@ def login_required(func):
 def request_macaroon(params):
     url = "".join([ANBOXCLOUD_API_BASE, ANBOXCLOUD_API_TOKEN])
     response = requests.get(url=url, headers=HEADERS, params=params)
-    handle_exceptions(response)
+    response.raise_for_status()
     body = response.json()
     return body
 
@@ -103,8 +102,7 @@ def after_login(resp):
         }
     )
     response = requests.post(url=url, headers=headers, data=data)
-    handle_exceptions(response)
-
+    response.raise_for_status()
     return flask.redirect("/demo")
 
 
