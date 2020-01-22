@@ -16,13 +16,6 @@ LOGIN_URL = "https://login.ubuntu.com"
 # Only works with VPN
 # Change when deployed to production
 ANBOXCLOUD_API_BASE = "https://staging.demo-api.anbox-cloud.io/"
-ANBOXCLOUD_API_TOKEN = "1.0/token"
-ANBOXCLOUD_API_LOGIN = "1.0/login"
-HEADERS = {
-    "Accept": "application/json, application/hal+json",
-    "Content-Type": "application/json",
-    "Cache-Control": "no-cache",
-}
 
 app = FlaskBase(
     __name__,
@@ -55,14 +48,6 @@ def login_required(func):
     return is_user_logged_in
 
 
-def request_macaroon(params):
-    url = "".join([ANBOXCLOUD_API_BASE, ANBOXCLOUD_API_TOKEN])
-    response = requests.get(url=url, headers=HEADERS, params=params)
-    response.raise_for_status()
-    body = response.json()
-    return body
-
-
 def get_authorization_header(root, discharge):
     """
     Bind root and discharge macaroons and return the authorization header.
@@ -76,6 +61,21 @@ def get_authorization_header(root, discharge):
     return authorization
 
 
+def request_macaroon():
+    url = f"{ANBOXCLOUD_API_BASE}/1.0/token"
+    response = requests.get(
+        url=url,
+        headers={
+            "Accept": "application/json, application/hal+json",
+            "Content-Type": "application/json",
+            "Cache-Control": "no-cache",
+        },
+        params=[("provider", "usso")],
+    )
+    response.raise_for_status()
+    return response.json()
+
+
 @app.route("/")
 def index():
     return flask.render_template("index.html")
@@ -83,7 +83,6 @@ def index():
 
 @open_id.after_login
 def after_login(resp):
-    url = "".join([ANBOXCLOUD_API_BASE, ANBOXCLOUD_API_LOGIN])
     flask.session["macaroon_discharge"] = resp.extensions["macaroon"].discharge
     flask.session["openid"] = {
         "identity_url": resp.identity_url,
@@ -135,6 +134,33 @@ def add_headers(response):
     return response
 
 
+@app.after_request
+def add_headers(response):
+    """
+    Generic rules for headers to add to all requests
+
+    - X-Hostname: Mention the name of the host/pod running the application
+    - Cache-Control: Add cache-control headers for public and private pages
+    """
+
+    if response.status_code == 200:
+        if flask.session:
+            response.headers["Cache-Control"] = "private"
+        else:
+            # Only add caching headers to successful responses
+            if not response.headers.get("Cache-Control"):
+                response.headers["Cache-Control"] = ", ".join(
+                    {
+                        "public",
+                        "max-age=61",
+                        "stale-while-revalidate=300",
+                        "stale-if-error=86400",
+                    }
+                )
+
+    return response
+
+
 @app.route("/logout")
 def logout():
     """
@@ -160,8 +186,8 @@ def login_handler():
     params = [("provider", "usso")]
     root = request_macaroon(params)
     token = root["metadata"]["token"]
-    # API to check if user already exists goes here
-    # Ideal: If user exists return code else do not include in POST body
+    # We do not handle invitation code for now.
+    # It is embedded in the macaroon but might in the future
     invitation_code = request.args.get("invitation_code")
     flask.session["invitation_code"] = invitation_code
     location = urlparse(LOGIN_URL).hostname
