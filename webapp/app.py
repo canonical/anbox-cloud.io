@@ -40,9 +40,11 @@ def login_required(func):
 
     @functools.wraps(func)
     def is_user_logged_in(*args, **kwargs):
-        if "openid" not in flask.session:
+        if "authentication_token" not in flask.session:
             return flask.redirect("/login?next=" + flask.request.path)
 
+        # Validate authentication token
+        
         return func(*args, **kwargs)
 
     return is_user_logged_in
@@ -61,20 +63,6 @@ def get_authorization_header(root, discharge):
     return authorization
 
 
-def request_macaroon():
-    url = f"{ANBOXCLOUD_API_BASE}/1.0/token"
-    response = requests.get(
-        url=url,
-        headers={
-            "Accept": "application/json, application/hal+json",
-            "Content-Type": "application/json",
-            "Cache-Control": "no-cache",
-        },
-        params=[("provider", "usso")],
-    )
-    response.raise_for_status()
-    return response.json()
-
 
 @app.route("/")
 def index():
@@ -83,15 +71,9 @@ def index():
 
 @open_id.after_login
 def after_login(resp):
-    flask.session["macaroon_discharge"] = resp.extensions["macaroon"].discharge
-    flask.session["openid"] = {
-        "identity_url": resp.identity_url,
-        "email": resp.email,
-    }
     root = flask.session["macaroon_root"]
-    discharge = flask.session["macaroon_discharge"]
-    headers = get_authorization_header(root, discharge)
-    authorization_code = "root={} discharge={}".format(root, discharge)
+    discharge = resp.extensions["macaroon"].discharge
+    authorization_code = f"root={root} discharge={discharge}"
     invitation_code = flask.session["invitation_code"]
     data = json.dumps(
         {
@@ -100,9 +82,14 @@ def after_login(resp):
             "invitation_code": invitation_code,
         }
     )
-    response = requests.post(url=url, headers=headers, data=data)
+    response = requests.post(url=f"{ANBOXCLOUD_API_BASE}/1.0/login", data=data)
     response.raise_for_status()
-    return flask.redirect("/demo")
+    # Once get token
+    # Empty macaroon_root
+    # Add token to session["authentication_token"]
+
+
+    return flask.redirect(open_id.get_next_url())
 
 
 @app.after_request
@@ -134,39 +121,12 @@ def add_headers(response):
     return response
 
 
-@app.after_request
-def add_headers(response):
-    """
-    Generic rules for headers to add to all requests
-
-    - X-Hostname: Mention the name of the host/pod running the application
-    - Cache-Control: Add cache-control headers for public and private pages
-    """
-
-    if response.status_code == 200:
-        if flask.session:
-            response.headers["Cache-Control"] = "private"
-        else:
-            # Only add caching headers to successful responses
-            if not response.headers.get("Cache-Control"):
-                response.headers["Cache-Control"] = ", ".join(
-                    {
-                        "public",
-                        "max-age=61",
-                        "stale-while-revalidate=300",
-                        "stale-if-error=86400",
-                    }
-                )
-
-    return response
-
-
 @app.route("/logout")
 def logout():
     """
     Empty the session, used to logout.
     """
-    flask.session.pop("openid", None)
+    flask.session.pop("authentication_token", None)
     flask.session.pop("macaroon_root", None)
     flask.session.pop("macaroon_discharge", None)
 
@@ -177,14 +137,18 @@ def logout():
 @open_id.loginhandler
 def login_handler():
     if (
-        "openid" in flask.session
+        "authentication_token" in flask.session
         and "macaroon_root" in flask.session
         and "macaroon_discharge" in flask.session
     ):
         return flask.redirect(open_id.get_next_url())
 
-    params = [("provider", "usso")]
-    root = request_macaroon(params)
+    root = requests.get(
+        url=f"{ANBOXCLOUD_API_BASE}/1.0/token",
+        params=[("provider", "usso")],
+    )
+    root.raise_for_status()
+
     token = root["metadata"]["token"]
     # We do not handle invitation code for now.
     # It is embedded in the macaroon but might in the future
@@ -207,4 +171,5 @@ def login_handler():
 @app.route("/demo")
 @login_required
 def demo():
+    # logout link in the 401 page
     return flask.render_template("demo.html")
