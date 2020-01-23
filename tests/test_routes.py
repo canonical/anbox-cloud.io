@@ -38,12 +38,11 @@ class TestRoutes(unittest.TestCase):
 
     def test_demo_login(self):
         """
-        Demo page should be accessible if openid in session not empty.
+        Demo page should be accessible if
+        authentication_token (anbox-cloud API) session not empty.
         """
         with self.client.session_transaction() as s:
-            s["openid"] = "openid"
-        response = self.client.get("/demo")
-        self.assertEqual(response.status_code, 200)
+            self.assertTrue("authentication_token" not in s)
 
 
 if __name__ == "__main__":

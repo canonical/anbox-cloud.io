@@ -1,0 +1,19 @@
+{% extends '_layout.html' %}
+
+{% block title %}401: Not Authorised{% endblock %}
+
+{% block content %}
+<div class="p-strip is-deep is-bordered">
+  <div class="row u-equal-height">
+    <div class="col-6 u-vertically-center u-align--center">
+      <img src="https://assets.ubuntu.com/v1/bcdcf2c8-image-404.svg?w=365" alt="Error owl" width="365" />
+    </div>
+    <div class="col-6 u-vertically-center">
+      <div>
+        <h1>401: Unauthorised</h1>
+        <p class="p-heading--four">{{ error }}.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
