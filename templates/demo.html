@@ -1,2 +1,29 @@
-<h1>DEMO PAGE</h1>
-<a type="button" href="/">Go back to Home page</a>
+{% extends '_layout.html' %}
+
+{% block title %}Anbox Cloud - Scalable Android in the cloud{% endblock %}
+
+{% block description %}Anbox Cloud is the mobile cloud computing platform delivered by Canonical. Run Android in the cloud, at high scale and on any type of hardware. Canonical partners with cloud providers and computing hardware manufacturers to accelerate your time to market and provide long term commercial support.{% endblock %}
+
+{% block content %}
+<section class="p-strip is-shallow">
+  <div class="row">
+    <div class="col-8">
+      <h1>Anbox Cloud demo</h1>
+    </div>
+  </div>
+</section>
+<section class="p-strip--dark is-bordered">
+  <div class="row">
+    <div class="col-12 u-align--center">
+      <img src="https://via.placeholder.com/300x600" alt="">
+    </div>
+  </div>
+</section>
+<section class="p-strip is-shallow is-bordered">
+  <div class="row">
+    <div class="col-8">
+      <p>More information about Anbox Cloud can be found on the <a type="button" href="/">homepage</a></p>
+    </div>
+  </div>
+</section>
+{% endblock %}
