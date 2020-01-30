@@ -10,9 +10,6 @@ class TestRoutes(unittest.TestCase):
         app.testing = True
         self.client = app.test_client()
 
-    def tearDown(self):
-        pass
-
     def test_homepage(self):
         """
         When given the index URL,

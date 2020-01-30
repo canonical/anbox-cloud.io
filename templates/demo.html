@@ -5,6 +5,34 @@
 {% block description %}Anbox Cloud is the mobile cloud computing platform delivered by Canonical. Run Android in the cloud, at high scale and on any type of hardware. Canonical partners with cloud providers and computing hardware manufacturers to accelerate your time to market and provide long term commercial support.{% endblock %}
 
 {% block content %}
+<script type="module">
+  import AnboxStream from '/static/js/anbox-stream-sdk.js';
+  
+  let stream = new AnboxStream({
+  targetElement: "anbox-stream",
+  url: 'https://demo-api.anbox-cloud.io',
+  authToken: '{{ session["authentication_token"] }}',
+  session: {
+      app: "com.vectorunit.cobalt.canonical",
+  },
+  screen: {
+      width: 1280,
+      height: 720,
+  },
+  // Using keyboard controls to test it on non-touch device
+  controls: {
+    keyboard: true
+  },
+  callbacks: {
+      ready: () => { console.log('video stream is ready') },
+      error: (e) => { console.log('an error occurred:', e) },
+      done: () => { console.log('stream has been closed') },
+  },
+});
+stream.connect();
+
+</script>
+
 <section class="p-strip is-shallow">
   <div class="row">
     <div class="col-8">
@@ -15,7 +43,9 @@
 <section class="p-strip--dark is-bordered">
   <div class="row">
     <div class="col-12 u-align--center">
-      <img src="https://via.placeholder.com/300x600" alt="">
+      <div id="anbox-stream"></div>
+
+      <!-- <img src="https://via.placeholder.com/300x600" alt=""> -->
     </div>
   </div>
 </section>
