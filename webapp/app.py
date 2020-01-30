@@ -13,9 +13,7 @@ from posixpath import join as url_join
 
 
 LOGIN_URL = "https://login.ubuntu.com"
-# Only works with VPN
-# Change when deployed to production
-ANBOXCLOUD_API_BASE = "https://staging.demo-api.anbox-cloud.io/"
+ANBOXCLOUD_API_BASE = "https://demo-api.anbox-cloud.io/"
 
 session = requests.Session()
 app = FlaskBase(
@@ -146,7 +144,7 @@ def logout():
 def login_handler():
     if "authentication_token" in flask.session:
         return flask.redirect(open_id.get_next_url())
-
+    flask.session["invitation_code"] = request.args.get("invitation_code")
     response = _api_request(
         url_path="1.0/token", method="GET", params={"provider": "usso"}
     )
@@ -168,7 +166,6 @@ def login_handler():
 @app.route("/demo")
 @login_required
 def demo():
-    flask.session["invitation_code"] = request.args.get("invitation_code")
     authentication_token = flask.session["authentication_token"]
     authorization_header = {
         "Authorization": f"macaroon root={authentication_token}"
