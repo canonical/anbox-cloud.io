@@ -132,7 +132,7 @@ def add_headers(response):
 @app.route("/logout")
 def logout():
     """
-    Empty the session, used to logout.
+    Logout by removing the `authentication_token` from the session
     """
     flask.session.pop("authentication_token", None)
 
