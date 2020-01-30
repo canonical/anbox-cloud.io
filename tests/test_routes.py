@@ -10,6 +10,9 @@ class TestRoutes(unittest.TestCase):
         app.testing = True
         self.client = app.test_client()
 
+    def tearDown(self):
+        pass
+
     def test_homepage(self):
         """
         When given the index URL,
@@ -17,6 +20,14 @@ class TestRoutes(unittest.TestCase):
         """
 
         self.assertEqual(self.client.get("/").status_code, 200)
+
+    def test_thank_you(self):
+        """
+        When given the index URL,
+        we should return a 200 status code
+        """
+
+        self.assertEqual(self.client.get("/thank-you").status_code, 200)
 
     def test_not_found(self):
         """
@@ -31,10 +42,9 @@ class TestRoutes(unittest.TestCase):
         Demo page should redirect to login if no session.
         """
         response = self.client.get("/demo")
+        demo_uri = "http://localhost/login?next=/demo"
         self.assertEqual(self.client.get("/demo").status_code, 302)
-        self.assertEqual(
-            response.location, "http://localhost/login?next=/demo"
-        )
+        self.assertEqual(response.location, demo_uri)
 
     def test_demo_login(self):
         """
@@ -44,6 +54,10 @@ class TestRoutes(unittest.TestCase):
         with self.client.session_transaction() as s:
             self.assertTrue("authentication_token" not in s)
 
-
-if __name__ == "__main__":
-    unittest.main()
+    def test_logout(self):
+        """
+        When given the index URL,
+        we should return a 302 status code
+        """
+        self.test_demo_login()
+        self.assertEqual(self.client.get("/logout").status_code, 302)
