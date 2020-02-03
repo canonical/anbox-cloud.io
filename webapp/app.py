@@ -171,7 +171,10 @@ def demo():
         "Authorization": f"macaroon root={authentication_token}"
     }
     _api_request("1.0/instances", headers=authorization_header)
-    return flask.render_template("demo.html")
+    return flask.render_template(
+        "demo.html",
+        ANBOXCLOUD_API_BASE=ANBOXCLOUD_API_BASE
+    )
 
 
 @app.errorhandler(401)

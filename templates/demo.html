@@ -10,24 +10,21 @@
   
   let stream = new AnboxStream({
   targetElement: "anbox-stream",
-  url: 'https://demo-api.anbox-cloud.io',
+  url: '{{ANBOXCLOUD_API_BASE}}',
   authToken: '{{ session["authentication_token"] }}',
   session: {
-      app: "com.vectorunit.cobalt.canonical",
+      app: "com.vectorunit.cobalt.canonical", // Given
   },
   screen: {
+    // Currently available max resolution
+    // To change to portrait just flip the values between width and height
       width: 1280,
       height: 720,
   },
   // Using keyboard controls to test it on non-touch device
   controls: {
     keyboard: true
-  },
-  callbacks: {
-      ready: () => { console.log('video stream is ready') },
-      error: (e) => { console.log('an error occurred:', e) },
-      done: () => { console.log('stream has been closed') },
-  },
+  }
 });
 stream.connect();
 
@@ -44,8 +41,7 @@ stream.connect();
   <div class="row">
     <div class="col-12 u-align--center">
       <div id="anbox-stream"></div>
-
-      <!-- <img src="https://via.placeholder.com/300x600" alt=""> -->
+      <!-- <img src="https://via.placeholder.com/1280x720" alt=""> -->
     </div>
   </div>
 </section>
