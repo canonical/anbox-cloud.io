@@ -69,7 +69,7 @@ let stream = new AnboxStream({
     },
     screen: {
         width: 720,
-        height: 1280,
+        height: 1080,
     },
     callbacks: {
         ready: () => { console.log('video stream is ready') },
