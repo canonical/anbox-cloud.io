@@ -13,7 +13,7 @@ from posixpath import join as url_join
 
 
 LOGIN_URL = "https://login.ubuntu.com"
-ANBOXCLOUD_API_BASE = "https://demo-api.anbox-cloud.io/"
+ANBOXCLOUD_API_BASE = "https://demo-api.anbox-cloud.io"
 
 session = requests.Session()
 app = FlaskBase(
@@ -25,7 +25,7 @@ app = FlaskBase(
     template_500="500.html",
 )
 
-app.secret_key = os.environ["SECRET_KEY"]
+app.secret_key = os.environ["SECRET_KEY"] = "secret_key"
 
 open_id = OpenID(
     stateless=True, safe_roots=[], extension_responses=[MacaroonResponse]
@@ -39,7 +39,7 @@ def _api_request(url_path, method="GET", params=None, json=None, headers=None):
 
     response = session.request(
         method,
-        url_join(ANBOXCLOUD_API_BASE, url_path),
+        f"{ANBOXCLOUD_API_BASE.rstrip('/')}/{url_join(url_path).lstrip('/')}",
         params=params,
         json=json,
         headers=headers,
@@ -146,7 +146,7 @@ def login_handler():
         return flask.redirect(open_id.get_next_url())
     flask.session["invitation_code"] = request.args.get("invitation_code")
     response = _api_request(
-        url_path="1.0/token", method="GET", params={"provider": "usso"}
+        url_path="/1.0/token", method="GET", params={"provider": "usso"}
     )
     root = response["metadata"]["token"]
     location = urlparse(LOGIN_URL).hostname
@@ -170,10 +170,9 @@ def demo():
     authorization_header = {
         "Authorization": f"macaroon root={authentication_token}"
     }
-    _api_request("1.0/instances", headers=authorization_header)
+    _api_request("/1.0/instances", headers=authorization_header)
     return flask.render_template(
-        "demo.html",
-        ANBOXCLOUD_API_BASE=ANBOXCLOUD_API_BASE
+        "demo.html", ANBOXCLOUD_API_BASE=ANBOXCLOUD_API_BASE
     )
 
 

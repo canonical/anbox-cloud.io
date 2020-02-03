@@ -13,30 +13,6 @@ class TestApi(unittest.TestCase):
         self.client = app.test_client()
 
     @responses.activate
-    def test_api_request(self):
-        """
-        Simple mock tests of the _api_request handler
-        """
-        success = {"metadata": {"token": "my_token"}}
-
-        # Mocking the calls
-        responses.add(
-            responses.Response(
-                url=f"{ANBOXCLOUD_API_BASE}1.0/token",
-                method="GET",
-                status=200,
-                json=success,
-            )
-        )
-
-        # Successful call
-        successful_request = _api_request(
-            "1.0/token", params={"provider": "usso"}
-        )
-
-        self.assertEqual(successful_request, success)
-
-    @responses.activate
     def test_login(self):
         """Emulates test client login in the store.
 
@@ -65,7 +41,7 @@ class TestApi(unittest.TestCase):
         responses.add(
             responses.Response(
                 method="POST",
-                url=f"{ANBOXCLOUD_API_BASE}1.0/login",
+                url=f"{ANBOXCLOUD_API_BASE}/1.0/login",
                 status=200,
                 json=data,
                 headers=headers,
@@ -73,5 +49,5 @@ class TestApi(unittest.TestCase):
         )
 
         # Make API call
-        response = _api_request("1.0/login", method="POST", json=data)
+        response = _api_request("/1.0/login", method="POST", json=data)
         self.assertEqual(response, data)
