@@ -68,8 +68,8 @@ let stream = new AnboxStream({
         app: "some-application-name",
     },
     screen: {
-        width: "1080",
-        height: "1920",
+        width: 720,
+        height: 1080,
     },
     callbacks: {
         ready: () => { console.log('video stream is ready') },
