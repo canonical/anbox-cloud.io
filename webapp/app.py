@@ -79,6 +79,16 @@ def thank_you():
     return flask.render_template("thank-you.html")
 
 
+@app.route("/terms")
+def terms():
+    return flask.render_template("terms.html")
+
+
+@app.route("/privacy")
+def privacy():
+    return flask.render_template("privacy.html")
+
+
 @open_id.after_login
 def after_login(resp):
     """
