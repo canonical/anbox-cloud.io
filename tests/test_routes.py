@@ -61,3 +61,19 @@ class TestRoutes(unittest.TestCase):
         """
         self.test_demo_login()
         self.assertEqual(self.client.get("/logout").status_code, 302)
+
+    def test_terms(self):
+        """
+        When given the index URL,
+        we should return a 200 status code
+        """
+
+        self.assertEqual(self.client.get("/terms").status_code, 200)
+
+    def test_privacy(self):
+        """
+        When given the index URL,
+        we should return a 200 status code
+        """
+
+        self.assertEqual(self.client.get("/privacy").status_code, 200)
