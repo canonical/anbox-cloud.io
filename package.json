@@ -14,13 +14,15 @@
     "test": "yarn run lint-scss && yarn run lint-python && yarn run test-python",
     "test-python": "python3 -m unittest discover tests"
   },
-  "dependencies": {
-    "@canonical/global-nav": "2.4.0",
+  "devDependencies": {
     "autoprefixer": "9.7.4",
     "node-sass": "4.13.1",
     "postcss-cli": "7.1.0",
     "sass-lint": "1.13.1",
-    "vanilla-framework": "2.6.0",
     "watch-cli": "0.2.3"
+  },
+  "dependencies": {
+    "@canonical/global-nav": "2.4.0",
+    "vanilla-framework": "2.6.0"
   }
 }
