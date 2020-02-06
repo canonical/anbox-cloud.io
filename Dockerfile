@@ -15,6 +15,12 @@ WORKDIR /srv
 ADD package.json .
 RUN --mount=type=cache,target=/usr/local/share/.cache/yarn yarn install
 
+# Build stage: Run "yarn run build-js"
+# ===
+FROM yarn-dependencies AS build-js
+ADD static/js static/js
+ADD webpack.config.js .
+RUN yarn run build-js
 
 # Build stage: Run "yarn run build-css"
 # ===
@@ -35,6 +41,7 @@ ENV PATH="/root/.local/bin:${PATH}"
 
 # Set up environment
 ENV LANG C.UTF-8
+ENV SECRET_KEY="secret_key"
 WORKDIR /srv
 
 # Import code, build assets and mirror list
