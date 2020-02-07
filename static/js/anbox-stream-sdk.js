@@ -142,7 +142,7 @@ class AnboxStream {
             }
 
             // If we received any additional STUN/TURN servers from the gateway use them
-            if (jsonResp.metadata.stun_servers.length > 0)
+            if (jsonResp.metadata.stun_servers.length > 0 && jsonResp.metadata.stun_servers !== null)
                 this._options.stunServers.concat(jsonResp.metadata.stun_servers);
 
             this._connectSignaler(jsonResp.metadata.websocket_url);
