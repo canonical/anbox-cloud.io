@@ -5,6 +5,31 @@
 {% block description %}Anbox Cloud is the mobile cloud computing platform delivered by Canonical. Run Android in the cloud, at high scale and on any type of hardware. Canonical partners with cloud providers and computing hardware manufacturers to accelerate your time to market and provide long term commercial support.{% endblock %}
 
 {% block content %}
+<script type="module">
+  import AnboxStream from '/static/js/anbox-stream-sdk.js';
+  
+  let stream = new AnboxStream({
+  targetElement: "anbox-stream",
+  url: '{{ ANBOXCLOUD_API_BASE }}',
+  authToken: '{{ session["authentication_token"] }}',
+  session: {
+      app: "com.vectorunit.cobalt.canonical", // Given
+  },
+  screen: {
+    // Currently available max resolution
+    // To change to portrait just flip the values between width and height
+      width: 1280,
+      height: 720,
+  },
+  // Using keyboard controls to test it on non-touch device
+  controls: {
+    keyboard: true
+  }
+});
+stream.connect();
+
+</script>
+
 <section class="p-strip is-shallow">
   <div class="row">
     <div class="col-8">
@@ -15,7 +40,8 @@
 <section class="p-strip--dark is-bordered">
   <div class="row">
     <div class="col-12 u-align--center">
-      <img src="https://via.placeholder.com/300x600" alt="">
+      <div id="anbox-stream"></div>
+      <!-- <img src="https://via.placeholder.com/1280x720" alt=""> -->
     </div>
   </div>
 </section>
