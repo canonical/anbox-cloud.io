@@ -7,7 +7,7 @@
 {% block content %}
 <script type="module">
   import AnboxStream from '/static/js/anbox-stream-sdk.js';
-  
+
   let stream = new AnboxStream({
   targetElement: "anbox-stream",
   url: '{{ ANBOXCLOUD_API_BASE }}',
@@ -24,6 +24,11 @@
   // Using keyboard controls to test it on non-touch device
   controls: {
     keyboard: true
+  },
+  callbacks: {
+    error: error => {
+      console.log("AnboxStream failed: " + error.message);
+    }
   }
 });
 stream.connect();

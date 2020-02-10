@@ -79,17 +79,14 @@ class AnboxStream {
             },
         })
         .then(response => {
-            if (response.status !== 200) {
-                this._options.callbacks.error(new Error("Failed to retrieve list of instances"));
-                return
-            }
+            if (response.status !== 200)
+                throw new Error("Failed to retrieve list of instances");
+
             return response.json();
         })
         .then(jsonResp => {
-            if (jsonResp.status !== "success") {
-                this._options.callbacks.error(new Error(jsonResp.error));
-                return
-            }
+            if (jsonResp.status !== "success")
+                throw new Error(jsonResp.error);
 
             var instanceID = "";
             for (var n = 0; n < jsonResp.metadata.length; n++) {
@@ -106,6 +103,9 @@ class AnboxStream {
             }
 
             this._attachToInstance(instanceID);
+        })
+        .catch(error => {
+            this._options.callbacks.error(error);
         });
     };
 
@@ -128,25 +128,24 @@ class AnboxStream {
             body: JSON.stringify(details),
         })
         .then(response => {
-            if (response.status !== 200) {
-                this._options.callbacks.error(
-                    new Error("Failed to join instance: " + response.error));
-                return
-            }
+            if (response.status !== 200)
+                throw new Error("Failed to join instance");
+
             return response.json();
         })
         .then(jsonResp => {
-            if (jsonResp.status !== "success") {
-                this._options.callbacks.error(new Error(jsonResp.error));
-                return
-            }
+            if (jsonResp.status !== "success")
+                throw new Error(jsonResp.error)
 
             // If we received any additional STUN/TURN servers from the gateway use them
             if (jsonResp.metadata.stun_servers.length > 0)
                 this._options.stunServers.concat(jsonResp.metadata.stun_servers);
 
             this._connectSignaler(jsonResp.metadata.websocket_url);
-        });
+        })
+        .catch(error => {
+            this._options.callbacks.error(error);
+        })
     }
 
     _createNewInstance() {
@@ -165,22 +164,19 @@ class AnboxStream {
             body: JSON.stringify(details),
         })
         .then(response => {
-            if (response.status !== 200) {
-                this._options.callbacks.error(
-                    new Error("Failed to create new instance: " + response.error));
-                return
-            }
+            if (response.status !== 200)
+                throw new Error("Failed to create new instance");
+
             return response.json();
         })
         .then(jsonResp => {
-            if (jsonResp.status !== "success") {
-                this._options.callbacks.error(new Error(jsonResp.error));
-                return
-            }
+            if (jsonResp.status !== "success")
+                throw new Error(jsonResp.error);
 
             this._attachToInstance(jsonResp.metadata.id);
-        }).catch(failure => {
-            this._options.callbacks.error(new Error('failed to create a session'));
+        })
+        .catch(error => {
+            this._options.callbacks.error(error);
         });
     }
 
