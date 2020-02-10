@@ -171,7 +171,7 @@ class AnboxStream {
         })
         .then(jsonResp => {
             if (jsonResp.status !== "success")
-                throw new new Error(jsonResp.error);
+                throw new Error(jsonResp.error);
 
             this._attachToInstance(jsonResp.metadata.id);
         })
