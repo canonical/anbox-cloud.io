@@ -11,8 +11,6 @@ This website is written with the help of the [flask](http://flask.pocoo.org/) fr
 
 ## Development
 
-Run `./run` inside the root of the repository and all dependencies will automatically be installed. Afterwards the website will be available at <http://localhost:8043>.
-
-When you start changing files, the server should reload and make the changes available immediately.
-
-If you encounter issues with sass not building, Jekyll not compiling execute `./run clean-cache`
+- Run `./run` inside the root of the repository and all dependencies will automatically be installed. Afterwards the website will be available at <http://localhost:8043>.
+- To access the Anbox streaming demo you will need an invitation code. You can access it here `http://localhost:8043/login?invitation_code={invitation_code}`
+- If you are part of the webteam, you can find an invitation code in lastPass in Anbox cloud demo
