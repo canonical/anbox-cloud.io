@@ -179,6 +179,7 @@ def demo():
     authorization_header = {
         "Authorization": f"macaroon root={authentication_token}"
     }
+    # to be removed in the future
     _api_request("/1.0/instances", headers=authorization_header)
     return flask.render_template(
         "demo.html", ANBOXCLOUD_API_BASE=ANBOXCLOUD_API_BASE
@@ -190,4 +191,5 @@ def handle_unauthorised(error):
     """
     Handle 401 errors using flask as opposed to requests
     """
+    flask.session.pop("authentication_token", None)
     return flask.render_template("401.html", error=error.description), 401
