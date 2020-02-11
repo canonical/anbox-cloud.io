@@ -138,8 +138,16 @@ class AnboxStream {
                 throw new Error(jsonResp.error)
 
             // If we received any additional STUN/TURN servers from the gateway use them
-            if (jsonResp.metadata.stun_servers.length > 0)
-                this._options.stunServers.concat(jsonResp.metadata.stun_servers);
+            // If we received any additional STUN/TURN servers from the gateway use them
+            if (!this._nullOrUndef(jsonResp.metadata.stun_servers) && jsonResp.metadata.stun_servers.length > 0) {
+                for (var n = 0; n < jsonResp.metadata.stun_servers.length; n++) {
+                    this._options.stunServers.push({
+                        "urls": jsonResp.metadata.stun_servers[n].urls,
+                        "username": jsonResp.metadata.stun_servers[n].username,
+                        "credential": jsonResp.metadata.stun_servers[n].password
+                    });
+                }
+            }
 
             this._connectSignaler(jsonResp.metadata.websocket_url);
         })
