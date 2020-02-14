@@ -16,10 +16,12 @@
 @import "pattern_matrix";
 @import "pattern_navigation";
 @import "pattern_strip";
+@import "pattern_stream";
 
 @include anbox-p-matrix;
 @include anbox-p-navigation;
 @include anbox-p-strip;
+@include anbox-p-stream;
 
 .p-pull-quote .p-pull-quote__quote:last-of-type::after {
   bottom: auto;
