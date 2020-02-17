@@ -9,13 +9,13 @@
   import AnboxStream from '/static/js/anbox-stream-sdk.js';
   // @ params appName: name of the application to stream
   function streamContainer(appName, height = false, width = false) {
-    var container = document.getElementById(appName);
-    var errorContainer = container.getElementsByClassName("js-error-container")[0];
-    var errorMessage = container.getElementsByClassName("js-error")[0];
-    var button = container.getElementsByClassName("js-button")[0];
-    var player = document.getElementById(appName + "-player");
-    var loading = container.getElementsByClassName("js-loading")[0];
-    var play = container.getElementsByClassName("js-play")[0];
+    var container = document.querySelector('#' + appName);
+    var errorContainer = container.querySelector(".js-error-container");
+    var errorMessage = container.querySelector(".js-error");
+    var button = container.querySelector(".js-button");
+    var player = document.querySelector('#' + appName + "-player");
+    var loading = container.querySelector(".js-loading");
+    var play = container.querySelector(".js-play");
 
     play.classList.add("u-hide");
     loading.classList.remove("u-hide");
@@ -54,10 +54,10 @@
     stream.connect();
   }
 
-  var streams = Array.from(document.getElementsByClassName('p-stream'));
+  var streams = Array.from(document.querySelectorAll('.p-stream'));
 
   streams.forEach((stream, i) => {
-    stream.getElementsByClassName("js-button")[0].addEventListener('click', function() {
+    stream.querySelector(".js-button").addEventListener('click', function() {
       streamContainer(stream.id, stream.offsetHeight, stream.offsetWidth);
     })
   });
