@@ -1,16 +1,10 @@
 @mixin anbox-p-stream {
-  .p-stream {
-
-  }
-
   .p-stream__button {
-    // wrapper, has the click event
     display: block;
     position: relative;
   }
 
   .p-stream__status-indicator {
-    // States: play button, spinner, not-displayed
     height: 100px;
     position: absolute;
     right: calc(50% - 50px);
@@ -18,18 +12,9 @@
     width: 100px;
   }
 
-  .p-stream__placeholder {
-    //opacity: 0.3;
-  }
-
-  .p-stream__player {
-
-  }
-
   .p-stream__error {
     left: $sph-inner;
     position: absolute;
     top: $spv-inner--medium;
   }
-
 }
