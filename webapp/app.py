@@ -45,7 +45,7 @@ def _api_request(url_path, method="GET", params=None, json=None, headers=None):
     )
 
     if response.status_code == 401:
-        flask.abort(401, response.json()["error"])
+        flask.abort(401, response.json())
 
     response.raise_for_status()
 
@@ -105,7 +105,6 @@ def after_login(resp):
     }
     response = _api_request("1.0/login", method="POST", json=data)
     flask.session.pop("macaroon_root", None)
-    flask.session.pop("macaroon_discharge", None)
     flask.session["authentication_token"] = response["metadata"]["token"]
 
     return flask.redirect(open_id.get_next_url())
@@ -191,5 +190,8 @@ def handle_unauthorised(error):
     """
     Handle 401 errors using flask as opposed to requests
     """
-    flask.session.pop("authentication_token", None)
+    if error.description["error_code"] == 900:
+        flask.session.pop("authentication_token", None)
+        return flask.redirect("/login?next=" + flask.request.path)
+
     return flask.render_template("401.html", error=error.description), 401
