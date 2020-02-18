@@ -1,0 +1,20 @@
+@mixin anbox-p-stream {
+  .p-stream__button {
+    display: block;
+    position: relative;
+  }
+
+  .p-stream__status-indicator {
+    height: 100px;
+    position: absolute;
+    right: calc(50% - 50px);
+    top: calc(50% - 50px);
+    width: 100px;
+  }
+
+  .p-stream__error {
+    left: $sph-inner;
+    position: absolute;
+    top: $spv-inner--medium;
+  }
+}

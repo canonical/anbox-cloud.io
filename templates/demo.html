@@ -7,51 +7,86 @@
 {% block content %}
 <script type="module">
   import AnboxStream from '/static/js/anbox-stream-sdk.js';
+  // @ params appName: name of the application to stream
+  function streamContainer(appName, height = false, width = false) {
+    var container = document.querySelector('#' + appName);
+    var errorContainer = container.querySelector(".js-error-container");
+    var errorMessage = container.querySelector(".js-error");
+    var button = container.querySelector(".js-button");
+    var player = document.querySelector('#' + appName + "-player");
+    var loading = container.querySelector(".js-loading");
+    var play = container.querySelector(".js-play");
 
-  let stream = new AnboxStream({
-  targetElement: "anbox-stream",
-  url: '{{ ANBOXCLOUD_API_BASE }}',
-  authToken: '{{ session["authentication_token"] }}',
-  session: {
-      app: "com.vectorunit.cobalt.canonical", // Given
-  },
-  screen: {
-    // Currently available max resolution
-    // To change to portrait just flip the values between width and height
-      width: 1280,
-      height: 720,
-      fps: 25,
-  },
-  // Using keyboard controls to test it on non-touch device
-  controls: {
-    keyboard: true
-  },
-  callbacks: {
-    error: error => {
-      console.log("AnboxStream failed: " + error.message);
+    if (loading.classList.contains("u-hide")) {
+      play.classList.add("u-hide");
+      loading.classList.remove("u-hide");
+      errorContainer.classList.add('u-hide');
+
+      let stream = new AnboxStream({
+        targetElement: player.id,
+        url: '{{ ANBOXCLOUD_API_BASE }}',
+        authToken: '{{ session["authentication_token"] }}',
+        session: {
+          app: "com.vectorunit.cobalt.canonical", // Given
+        },
+        screen: {
+          width: width && width < 1104 ? width : 1104,
+          height: height && height < 628 ? height : 628,
+          fps: 25
+        },
+        // Using keyboard controls to test it on non-touch device
+        controls: {
+          keyboard: true
+        },
+        callbacks: {
+          error: error => {
+            button.classList.remove("u-hide");
+            player.classList.add('u-hide');
+            loading.classList.add("u-hide");
+            play.classList.remove("u-hide");
+            errorMessage.textContent = "Please click the play button below to try again.";
+            console.error('Anbox cloud stream error: ' + error);
+            errorContainer.classList.remove('u-hide');
+          },
+          ready: ready => {
+            button.classList.add("u-hide");
+            player.classList.remove('u-hide');
+          }
+        }
+      });
+      stream.connect();
     }
   }
-});
-stream.connect();
 
+  var streams = Array.from(document.querySelectorAll('.p-stream'));
+
+  streams.forEach((stream, i) => {
+    stream.querySelector(".js-button").addEventListener('click', function() {
+      streamContainer(stream.id, stream.offsetHeight, stream.offsetWidth);
+    })
+  });
 </script>
 
-<section class="p-strip is-shallow">
-  <div class="row">
-    <div class="col-8">
-      <h1>Anbox Cloud demo</h1>
+<section class="p-strip--dark is-bordered is-shallow" style="background-image: linear-gradient(-89deg, #E95420 0%, #772953 42%, #2C001E 94%);">
+  <div class="row p-strip is-shallow">
+    <div class="col-7">
+      <h1>Anbox Cloud: Try it yourself</h1>
     </div>
   </div>
-</section>
-<section class="p-strip--dark is-bordered">
   <div class="row">
     <div class="col-12 u-align--center">
-      <div id="anbox-stream"></div>
-      <!-- <img src="https://via.placeholder.com/1280x720" alt=""> -->
+      {% with app="buggy-racing" %}
+        {% include "_anbox-embed.html" %}
+      {% endwith %}
     </div>
   </div>
 </section>
 <section class="p-strip is-shallow is-bordered">
+  <div class="row">
+    <div class="col-8">
+      <p>I agree that my use of the services are subject to my adherence to, and acceptance of, the <a href="https://ubuntu.com/legal/anbox-cloud-terms-of-service" class="p-link--external">Terms of Service</a>, <a href="https://ubuntu.com/legal/anbox-cloud-privacy-notice" class="p-link--external">Privacy Notice</a> and <a href="https://ubuntu.com/legal/data-privacy" class="p-link--external">Privacy Policy</a>.</p>
+    </div>
+  </div>
   <div class="row">
     <div class="col-8">
       <p>More information about Anbox Cloud can be found on the <a href="/">homepage</a></p>
