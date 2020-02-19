@@ -21,22 +21,6 @@
     var containerHeight = container.offsetHeight;
     var containerWidth = container.offsetWidth;
 
-    // The stream requires EVEN width and height values
-    var streamWidth = 2 * Math.round(containerWidth / 2);
-    var streamHeight = 2 * Math.round(containerHeight / 2);
-
-    // Request a maximum resolution of 720p
-    if (streamWidth > 1280 || streamHeight > 720) {
-        streamWidth = 1280;
-        streamHeight = 720;
-    }
-
-    // Request a minimum resolution of 480p
-    if (streamWidth < 720 || streamHeight < 480) {
-        streamWidth = 720;
-        streamHeight = 480;
-    }
-
     if (loading.classList.contains("u-hide")) {
       play.classList.add("u-hide");
       loading.classList.remove("u-hide");
@@ -51,8 +35,8 @@
           app: "com.vectorunit.cobalt.canonical", // Given
         },
         screen: {
-          width: streamWidth,
-          height: streamHeight,
+          width: 1280,
+          height: 720,
           fps: 25
         },
         // Using keyboard controls to test it on non-touch device
