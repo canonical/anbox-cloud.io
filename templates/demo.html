@@ -8,7 +8,7 @@
 <script type="module">
   import AnboxStream from '/static/js/anbox-stream-sdk.js';
   // @ params appName: name of the application to stream
-  function streamContainer(appName, height = false, width = false) {
+  function streamContainer(appName) {
     var container = document.querySelector('#' + appName);
     var errorContainer = container.querySelector(".js-error-container");
     var errorMessage = container.querySelector(".js-error");
@@ -16,11 +16,16 @@
     var player = document.querySelector('#' + appName + "-player");
     var loading = container.querySelector(".js-loading");
     var play = container.querySelector(".js-play");
+    var placeholder = container.querySelector('.js-placeholder');
+
+    var containerHeight = container.offsetHeight;
+    var containerWidth = container.offsetWidth;
 
     if (loading.classList.contains("u-hide")) {
       play.classList.add("u-hide");
       loading.classList.remove("u-hide");
       errorContainer.classList.add('u-hide');
+      placeholder.style.opacity = 1;
 
       let stream = new AnboxStream({
         targetElement: player.id,
@@ -30,8 +35,8 @@
           app: "com.vectorunit.cobalt.canonical", // Given
         },
         screen: {
-          width: width && width < 1104 ? width : 1104,
-          height: height && height < 628 ? height : 628,
+          width: 1280,
+          height: 720,
           fps: 25
         },
         // Using keyboard controls to test it on non-touch device
@@ -44,12 +49,18 @@
             player.classList.add('u-hide');
             loading.classList.add("u-hide");
             play.classList.remove("u-hide");
+            placeholder.style.opacity = 1;
             errorMessage.textContent = "Please click the play button below to try again.";
             console.error('Anbox cloud stream error: ' + error);
             errorContainer.classList.remove('u-hide');
           },
           ready: () => {
-            button.classList.add("u-hide");
+            var video = player.querySelector('video');
+            if (video && placeholder) {
+              video.height = placeholder.height;
+              video.width = placeholder.width;
+            }
+            placeholder.style.opacity = 0;
             player.classList.remove('u-hide');
             if (navigator.userAgent.match(/Android/i)
                     || navigator.userAgent.match(/webOS/i)
@@ -72,7 +83,17 @@
 
   streams.forEach((stream, i) => {
     stream.querySelector(".js-button").addEventListener('click', function() {
-      streamContainer(stream.id, stream.offsetHeight, stream.offsetWidth);
+      var placeholder = stream.querySelector('.js-placeholder');
+
+      streamContainer(stream.id);
+
+      window.addEventListener("resize", function() {
+        var video = stream.querySelector('video');
+        if (video && placeholder) {
+          video.height = placeholder.height;
+          video.width = placeholder.width;
+        }
+      });
     })
   });
 </script>
