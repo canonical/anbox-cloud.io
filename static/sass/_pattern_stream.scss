@@ -1,4 +1,8 @@
 @mixin anbox-p-stream {
+  .p-stream {
+    position: relative;
+  }
+
   .p-stream__button {
     display: block;
     position: relative;
@@ -13,7 +17,13 @@
   }
 
   .p-stream__player {
-    background-color: #000;
+    position: absolute;
+    top: 0;
+
+    video {
+      background-color: #000;
+      margin: 0;
+    }
   }
 
   .p-stream__error {
