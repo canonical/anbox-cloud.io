@@ -102,6 +102,7 @@ def after_login(resp):
         "provider": "usso",
         "authorization_code": f"root={root} discharge={discharge}",
         "invitation_code": flask.session["invitation_code"],
+        "accept_tos": True,
     }
     response = _api_request("1.0/login", method="POST", json=data)
     flask.session.pop("macaroon_root", None)
