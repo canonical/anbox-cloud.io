@@ -26,6 +26,13 @@
     }
   }
 
+  .p-stream__instructions {
+    bottom: $spv-inner--medium;
+    left: $sph-inner;
+    position: absolute;
+    text-align: left;
+  }
+
   .p-stream__error {
     left: $sph-inner;
     position: absolute;

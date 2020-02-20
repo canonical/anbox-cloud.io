@@ -9,5 +9,12 @@
       </p>
     </div>
   </a>
+  {% if app == "buggy-racing" %}
+  <div class="p-stream__instructions p-card--overlay">
+    <h3 class="p-heading--four">Game controls</h3>
+    <p><span title="up arrow key">↑</span><span title="down arrow key">↓</span><span title="left arrow key">←</span><span title="right arrow key">→</span>: movement</p>
+    <p><span title="A key">🄰</span><span title="S key">🅂</span><span title="D key">🄳</span>: trigger power-ups</p>
+  </div>
+  {% endif %}
   <div id="{{ app }}-player" class="p-stream__player js-player u-hide"></div>
 </div>
