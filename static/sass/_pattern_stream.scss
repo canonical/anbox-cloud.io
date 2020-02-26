@@ -24,6 +24,13 @@
       background-color: #000;
       margin: 0;
     }
+
+    // Ensure we always hide the media controls of the player, even in fullscreen.
+    // See https://css-tricks.com/custom-controls-in-html5-video-full-screen/ for
+    // more details
+    video::-webkit-media-controls {
+      display:none !important;
+    }
   }
 
   .p-stream__instructions {
