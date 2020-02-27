@@ -17,8 +17,10 @@ run
 # Environemnt
 .env
 .env.local
+Dockerfile
+LICENSE
+renovate.json
+tests
 
 # Node is only needed for building, not running
-package.json
 node_modules
-yarn.lock
