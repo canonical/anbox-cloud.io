@@ -7,7 +7,7 @@
 {% block content %}
 <script type="module">
   import AnboxStream from '/static/js/anbox-stream-sdk.js';
-  import mobileDevice from '/static/js/detect-browser.js';
+  import mobileDevice from '/static/js/detect-device.js';
 
   if (mobileDevice()) {
     document.querySelector('.p-stream__instructions').classList.add("u-hide")
@@ -76,7 +76,7 @@
             }
             placeholder.style.opacity = 0;
             player.classList.remove('u-hide');
-          if (mobileDevice(navigator))
+          if (mobileDevice())
             {
               console.log("SDK: detected mobile browser, trying to enable fullscreen");
               stream.requestFullscreen();
