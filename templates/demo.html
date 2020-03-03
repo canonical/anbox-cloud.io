@@ -24,14 +24,23 @@
     var play = container.querySelector(".js-play");
     var placeholder = container.querySelector('.js-placeholder');
 
-    var containerHeight = container.offsetHeight;
-    var containerWidth = container.offsetWidth;
-
-    if (loading.classList.contains("u-hide")) {
+    const hidePlaceholder = () => {
       play.classList.add("u-hide");
       loading.classList.remove("u-hide");
       errorContainer.classList.add('u-hide');
+      placeholder.style.opacity = 1
+    };
+
+    const showPlacerholder = () => {
+      button.classList.remove("u-hide");
+      player.classList.add('u-hide');
+      loading.classList.add("u-hide");
+      play.classList.remove("u-hide");
       placeholder.style.opacity = 1;
+    };
+
+    if (loading.classList.contains("u-hide")) {
+      hidePlaceholder();
 
       let stream = new AnboxStream({
         targetElement: player.id,
@@ -50,15 +59,14 @@
           keyboard: true
         },
         callbacks: {
+          done: () => {
+            showPlacerholder();
+          },
           error: error => {
-            button.classList.remove("u-hide");
-            player.classList.add('u-hide');
-            loading.classList.add("u-hide");
-            play.classList.remove("u-hide");
-            placeholder.style.opacity = 1;
+            showPlacerholder();
             errorMessage.textContent = "Please click the play button below to try again.";
-            console.error('Anbox cloud stream error: ' + error);
             errorContainer.classList.remove('u-hide');
+            console.error('Anbox cloud stream error: ' + error);
           },
           ready: () => {
             var video = player.querySelector('video');
@@ -76,6 +84,14 @@
           }
         }
       });
+
+      document.onfullscreenchange = () => {
+        // https://developer.mozilla.org/en-US/docs/Web/API/Document/onfullscreenchange
+        if (document.fullscreenElement === null) {
+          stream.disconnect();
+        }
+      };
+
       stream.connect();
     }
   }
