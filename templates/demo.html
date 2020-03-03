@@ -7,6 +7,12 @@
 {% block content %}
 <script type="module">
   import AnboxStream from '/static/js/anbox-stream-sdk.js';
+  import mobileDevice from '/static/js/detect-browser.js';
+
+  if (mobileDevice()) {
+    document.querySelector('.p-stream__instructions').classList.add("u-hide")
+  }
+
   // @ params appName: name of the application to stream
   function streamContainer(appName) {
     var container = document.querySelector('#' + appName);
@@ -62,13 +68,7 @@
             }
             placeholder.style.opacity = 0;
             player.classList.remove('u-hide');
-            if (navigator.userAgent.match(/Android/i)
-                    || navigator.userAgent.match(/webOS/i)
-                    || navigator.userAgent.match(/iPhone/i)
-                    || navigator.userAgent.match(/iPad/i)
-                    || navigator.userAgent.match(/iPod/i)
-                    || navigator.userAgent.match(/BlackBerry/i)
-                    || navigator.userAgent.match(/Windows Phone/i))
+          if (mobileDevice(navigator))
             {
               console.log("SDK: detected mobile browser, trying to enable fullscreen");
               stream.requestFullscreen();
