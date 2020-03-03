@@ -36,10 +36,13 @@
   }
 
   .p-stream__instructions {
-    bottom: $spv-inner--medium;
-    left: $sph-inner;
-    position: absolute;
     text-align: left;
+
+    @media (min-width: $breakpoint-medium) {
+      bottom: $spv-inner--medium;
+      left: $sph-inner;
+      position: absolute;
+    }
   }
 
   .p-stream__error {

@@ -68,7 +68,7 @@
             }
             placeholder.style.opacity = 0;
             player.classList.remove('u-hide');
-          if (mobileDevice(navigator))
+          if (mobileDevice())
             {
               console.log("SDK: detected mobile browser, trying to enable fullscreen");
               stream.requestFullscreen();
