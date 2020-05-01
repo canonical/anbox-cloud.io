@@ -1,5 +1,5 @@
 canonicalwebteam.flask-base==0.6.0
 Flask-OpenID-Stateless==1.2.6
 requests==2.23.0
-responses==0.10.12
+responses==0.10.14
 pymacaroons==0.13.0
