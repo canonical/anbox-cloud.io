@@ -1,0 +1,21 @@
+domain: anbox-cloud.io
+
+image: prod-comms.docker-registry.canonical.com/anbox-cloud.io
+
+env:
+  - name: SENTRY_DSN
+    value: https://37706e022f2841448dbb094990420522@sentry.is.canonical.com//23
+
+production:
+  replicas: 5
+  nginxConfigurationSnippet: |
+    if ($host != 'anbox-cloud.io' ) {
+      rewrite ^ https://anbox-cloud.io$request_uri? permanent;
+    }
+    more_set_headers "Link: <https://assets.ubuntu.com>; rel=preconnect;crossorigin, <https://assets.ubuntu.com>; rel=preconnect";
+
+staging:
+  replicas: 3
+  nginxConfigurationSnippet: |
+    more_set_headers "X-Robots-Tag: noindex";
+    more_set_headers "Link: <https://assets.ubuntu.com>; rel=preconnect; crossorigin, <https://assets.ubuntu.com>; rel=preconnect";

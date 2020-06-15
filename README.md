@@ -14,3 +14,6 @@ This website is written with the help of the [flask](http://flask.pocoo.org/) fr
 - Run `./run` inside the root of the repository and all dependencies will automatically be installed. Afterwards the website will be available at <http://localhost:8043>.
 - To access the Anbox streaming demo you will need an invitation code. You can access it here `http://localhost:8043/login?next=/demo&invitation_code={invitation_code}`
 - If you are part of the webteam, you can find an invitation code in lastPass in Anbox cloud demo
+
+# Deploy
+You can find the deployment config in the deploy folder.
