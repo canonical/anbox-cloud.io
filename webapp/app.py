@@ -9,7 +9,7 @@ from flask import request
 from canonicalwebteam.discourse_docs import (
     DiscourseAPI,
     DiscourseDocs,
-    DocParser
+    DocParser,
 )
 from canonicalwebteam.flask_base.app import FlaskBase
 from flask_openid import OpenID
@@ -41,7 +41,7 @@ session = talisker.requests.get_session()
 
 discourse_docs = DiscourseDocs(
     parser=DocParser(
-        api = DiscourseAPI(
+        api=DiscourseAPI(
             base_url="https://discourse.ubuntu.com/", session=session
         ),
         category_id=49,
