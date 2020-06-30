@@ -3,8 +3,14 @@ from urllib.parse import urlparse
 
 import flask
 import requests
+import talisker
 from flask import request
 
+from canonicalwebteam.discourse_docs import (
+    DiscourseAPI,
+    DiscourseDocs,
+    DocParser
+)
 from canonicalwebteam.flask_base.app import FlaskBase
 from flask_openid import OpenID
 from pymacaroons import Macaroon
@@ -29,6 +35,23 @@ app.secret_key = os.environ["SECRET_KEY"]
 open_id = OpenID(
     stateless=True, safe_roots=[], extension_responses=[MacaroonResponse]
 )
+
+# Discourse docs
+session = talisker.requests.get_session()
+
+discourse_docs = DiscourseDocs(
+    parser=DocParser(
+        api = DiscourseAPI(
+            base_url="https://discourse.ubuntu.com/", session=session
+        ),
+        category_id=49,
+        index_topic_id=17028,
+        url_prefix="/docs",
+    ),
+    document_template="docs/document.html",
+    url_prefix="/docs",
+)
+discourse_docs.init_app(app)
 
 
 def _api_request(url_path, method="GET", params=None, json=None, headers=None):
