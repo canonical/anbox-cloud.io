@@ -17,11 +17,11 @@
   },
   "dependencies": {
     "@canonical/global-nav": "2.4.1",
-    "autoprefixer": "9.8.0",
+    "autoprefixer": "9.8.4",
     "node-sass": "4.14.1",
     "postcss-cli": "7.1.1",
     "sass-lint": "1.13.1",
-    "vanilla-framework": "2.12.1",
+    "vanilla-framework": "2.13.0",
     "watch-cli": "0.2.3"
   }
 }
