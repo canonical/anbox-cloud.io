@@ -1,3 +1,4 @@
+canonicalwebteam.discourse-docs==1.0.0
 canonicalwebteam.flask-base==0.6.3
 Flask-OpenID-Stateless==1.2.6
 requests==2.24.0
