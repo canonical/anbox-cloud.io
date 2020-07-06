@@ -44,8 +44,7 @@ discourse_docs = DiscourseDocs(
         api=DiscourseAPI(
             base_url="https://discourse.ubuntu.com/", session=session
         ),
-        category_id=49,
-        index_topic_id=17028,
+        index_topic_id=17029,
         url_prefix="/docs",
     ),
     document_template="docs/document.html",

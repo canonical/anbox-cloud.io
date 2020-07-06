@@ -74,3 +74,11 @@ class TestRoutes(unittest.TestCase):
         """
 
         self.assertEqual(self.client.get("/privacy").status_code, 200)
+
+    def test_docs(self):
+        """
+        When given the index URL,
+        we should return a 200 status code
+        """
+
+        self.assertEqual(self.client.get("/docs").status_code, 200)
