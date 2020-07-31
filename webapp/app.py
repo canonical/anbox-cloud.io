@@ -16,6 +16,7 @@ from flask_openid import OpenID
 from pymacaroons import Macaroon
 from webapp.macaroons import MacaroonRequest, MacaroonResponse
 from posixpath import join as url_join
+from canonicalwebteam import image_template
 
 
 LOGIN_URL = "https://login.ubuntu.com"
@@ -225,3 +226,7 @@ def handle_unauthorised(error):
         flask.render_template("401.html", error=error.description["error"]),
         401,
     )
+
+@app.context_processor()
+def utility_processor():
+    return{"image": image_template}
