@@ -90,9 +90,11 @@ def login_required(func):
 
     return is_user_logged_in
 
+
 @app.context_processor
 def utility_processor():
     return {"image": image_template}
+
 
 @app.route("/")
 def index():
