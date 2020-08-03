@@ -90,6 +90,9 @@ def login_required(func):
 
     return is_user_logged_in
 
+@app.context_processor
+def utility_processor():
+    return {"image": image_template}
 
 @app.route("/")
 def index():
@@ -226,7 +229,3 @@ def handle_unauthorised(error):
         flask.render_template("401.html", error=error.description["error"]),
         401,
     )
-
-@app.context_processor()
-def utility_processor():
-    return{"image": image_template}
