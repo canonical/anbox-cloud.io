@@ -4,3 +4,4 @@ Flask-OpenID-Stateless==1.2.6
 requests==2.24.0
 responses==0.10.15
 pymacaroons==0.13.0
+canonicalwebteam.image-template==1.1.0

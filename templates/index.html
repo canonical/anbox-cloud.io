@@ -16,7 +16,15 @@
       <p><a href="https://ubuntu.com/engage/anbox-cloud-gaming-whitepaper" class="p-link--external">Read the joint whitepaper with Intel</a></p>
     </div>
     <div class="col-5 col-start-large-8 u-hide--small">
-      <img src="https://assets.ubuntu.com/v1/6a688b44-Anbox-Cloud+computing_outline.svg" alt="">
+      {{
+        image(
+          url="https://assets.ubuntu.com/v1/6a688b44-Anbox-Cloud+computing_outline.svg",
+          alt="",
+          width="441",
+          height="321",
+          hi_def=True,
+        ) | safe
+      }}
     </div>
   </div>
 </section>
@@ -109,7 +117,16 @@
   <div class="row">
     <div class="col-12">
       <blockquote class="p-pull-quote">
-        <img src="https://assets.ubuntu.com/v1/25fce4da-Anbox-logo-packet.png" alt="Packet logo" class="p-pull-quote__image">
+        {{
+          image(
+            url="https://assets.ubuntu.com/v1/25fce4da-Anbox-logo-packet.png",
+            alt="Packet logo",
+            width="88",
+            height="32",
+            hi_def=True,
+            attrs={"class": "p-pull-quote__image"},
+          ) | safe
+        }}
         <p class="p-pull-quote__quote">As small, low-powered devices inundate our world, offloading applications to nearby cloud servers opens up a huge number of opportunities for efficiency, as well as new experiences. We're excited to support the Anbox Cloud team as they grow alongside the worldwide rollout of 5G.</p>
         <cite class="p-pull-quote__citation">Jacob Smith<br>Co-founder and CMO</cite>
       </blockquote>
@@ -121,14 +138,32 @@
   <div class="row p-divider">
     <div class="col-6 p-divider__block">
       <blockquote class="p-pull-quote has-image">
-        <img src="https://assets.ubuntu.com/v1/cd5f83be-Anbox-logo-ampere.png" alt="Ampere logo" class="p-pull-quote__image">
+        {{
+          image(
+            url="https://assets.ubuntu.com/v1/cd5f83be-Anbox-logo-ampere.png",
+            alt="Ampere logo",
+            width="72",
+            height="32",
+            hi_def=True,
+            attrs={"class": "p-pull-quote__image"},
+          ) | safe
+        }}
         <p class="p-pull-quote__quote">The combination of Ampere’s Arm-based servers with a provisioned virtualisation solution like Canonical’s Anbox Cloud delivers the flexible, high-performance and secure infrastructure that developers need in order to deliver a better user experience for consumers.</p>
         <cite class="p-pull-quote__citation">Jeff Wittich<br>SVP of Products at <a href="https://amperecomputing.com/" class="p-link--external">Ampere</a></cite>
       </blockquote>
     </div>
     <div class="col-6 p-divider__block">
       <blockquote class="p-pull-quote has-image">
-        <img src="https://assets.ubuntu.com/v1/c24cb4b9-logo-intel.svg" alt="Intel logo" class="p-pull-quote__image">
+        {{
+          image(
+            url="https://assets.ubuntu.com/v1/c24cb4b9-logo-intel.svg",
+            alt="Intel logo",
+            width="48",
+            height="32",
+            hi_def=True,
+            attrs={"class": "p-pull-quote__image"},
+          ) | safe
+        }}
         <p class="p-pull-quote__quote">Canonical’s inclusion of the Intel Visual Cloud Accelerator Card - Render as part of their newly launched Anbox Cloud solution will enable the delivery of enhanced cloud and mobile gaming experiences on Android devices, supporting an emerging industry opportunity today, and for the upcoming 5G era.</p>
         <cite class="p-pull-quote__citation">Lynn Comp<br>Vice President, Data Platforms Group and General manager of the Visual Cloud Division, Intel</cite>
       </blockquote>
@@ -140,22 +175,70 @@
   <h2 class="p-muted-heading u-align-text--center">On public clouds and on-premises</h2>
   <div class="row">
     <div class="col-small-1 col-medium-1 col-2 col-start-medium-2 col-start-large-3">
-      <img src="https://assets.ubuntu.com/v1/1f3b6478-Anbox-logo-packet.png" alt="Packet logo" width="157" height="157">
+      {{
+        image(
+          url="https://assets.ubuntu.com/v1/1f3b6478-Anbox-logo-packet.png",
+          alt="Packet logo",
+          width="157",
+          height="157",
+          hi_def=False,
+        ) | safe
+      }}
     </div>
     <div class="col-small-1 col-medium-1 col-2">
-      <img src="https://assets.ubuntu.com/v1/83acf500-Anbox-logo-google.png" alt="Google Cloud Platform" width="157" height="157">
+      {{
+        image(
+          url="https://assets.ubuntu.com/v1/83acf500-Anbox-logo-google.png",
+          alt="Google Cloud Platform",
+          width="157",
+          height="157",
+          hi_def=False,
+        ) | safe
+      }}
     </div>
     <div class="col-small-1 col-medium-1 col-2">
-      <img src="https://assets.ubuntu.com/v1/fc61db3b-Anbox-logo-azure.png" alt="Azure logo" width="157" height="157">
+      {{
+        image(
+          url="https://assets.ubuntu.com/v1/fc61db3b-Anbox-logo-azure.png",
+          alt="Azure logo",
+          width="157",
+          height="157",
+          hi_def=False,
+        ) | safe
+      }}
     </div>
     <div class="col-small-1 col-medium-1 col-2">
-      <img src="https://assets.ubuntu.com/v1/43d45da9-Anbox-logo-aws.png" alt="Amazon Web Services logo" width="157" height="157">
+      {{
+        image(
+          url="https://assets.ubuntu.com/v1/43d45da9-Anbox-logo-aws.png",
+          alt="Amazon Web Services logo",
+          width="157",
+          height="157",
+          hi_def=False,
+        ) | safe
+      }}
     </div>
     <div class="col-small-1 col-medium-1 col-2 col-start-small-2 col-start-medium-3 col-start-large-5">
-      <img src="https://assets.ubuntu.com/v1/8094dce2-Anbox-logo-openstack.png" alt="Openstack logo" width="157" height="157">
+      {{
+        image(
+          url="https://assets.ubuntu.com/v1/8094dce2-Anbox-logo-openstack.png",
+          alt="Openstack logo",
+          width="157",
+          height="157",
+          hi_def=False,
+        ) | safe
+      }}
     </div>
     <div class="col-small-1 col-medium-1 col-2">
-      <img src="https://assets.ubuntu.com/v1/53d93b1d-Anbox-logo-maas.png" alt="MAAS logo" width="157" height="157">
+      {{
+        image(
+          url="https://assets.ubuntu.com/v1/53d93b1d-Anbox-logo-maas.png",
+          alt="MAAS logo",
+          width="157",
+          height="157",
+          hi_def=False,
+        ) | safe
+      }}
     </div>
   </div>
 </section>
@@ -169,7 +252,15 @@
       </div>
     </div>
     <div class="col-5 col-start-large-8">
-      <img src="https://assets.ubuntu.com/v1/22804069-Anbox-Cloud+containers_outline.svg" alt="">
+      {{
+        image(
+          url="https://assets.ubuntu.com/v1/22804069-Anbox-Cloud+containers_outline.svg",
+          alt="",
+          width="441",
+          height="321",
+          hi_def=True,
+        ) | safe
+      }}
     </div>
   </div>
 </section>
@@ -183,7 +274,15 @@
       <p>Anbox Cloud is capable of running on any computer architecture. Whether on x86 or ARM — as most Android devices — it delivers top performance. Deployment is just as easy with or without GPU support. This flexibility lets you focus on operating your platforms without worrying about portability and integration.</p>
     </div>
     <div class="col-6 u-align--center u-vertically-center">
-      <img src="https://assets.ubuntu.com/v1/2833a9b9-Anbox-Cloud+logos_outline.svg" width="350" alt="">
+      {{
+        image(
+          url="https://assets.ubuntu.com/v1/2833a9b9-Anbox-Cloud+logos_outline.svg",
+          alt="",
+          width="350",
+          height="154",
+          hi_def=True,
+        ) | safe
+      }}
     </div>
   </div>
 </section>
@@ -198,7 +297,15 @@
       <p><a href="https://ubuntu.com/support" class="p-link--external">Learn about Ubuntu Advantage</a></p>
     </div>
     <div class="col-6 u-align--center u-vertically-center u-hide--small">
-      <img src="https://assets.ubuntu.com/v1/60d9b81e-picto-canonical.svg" width="175" alt="">
+      {{
+        image(
+          url="https://assets.ubuntu.com/v1/60d9b81e-picto-canonical.svg",
+          alt="",
+          width="175",
+          height="175",
+          hi_def=True,
+        ) | safe
+      }}
     </div>
   </div>
 </section>
@@ -215,7 +322,15 @@
       {% with id="3498", returnURL="https://anbox-cloud.io/thank-you" %}{% include '_engage-form.html' %}{% endwith %}
     </div>
     <div class="col-5 col-start-large-8 u-hide--small">
-      <img src="https://assets.ubuntu.com/v1/c4b290c8-Contact+us.svg" width="350" alt="">
+      {{
+        image(
+          url="https://assets.ubuntu.com/v1/c4b290c8-Contact+us.svg",
+          alt="",
+          width="350",
+          height="249",
+          hi_def=True,
+        ) | safe
+      }}
     </div>
   </div>
 </section>

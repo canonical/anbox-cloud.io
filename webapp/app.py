@@ -16,6 +16,7 @@ from flask_openid import OpenID
 from pymacaroons import Macaroon
 from webapp.macaroons import MacaroonRequest, MacaroonResponse
 from posixpath import join as url_join
+from canonicalwebteam import image_template
 
 
 LOGIN_URL = "https://login.ubuntu.com"
@@ -88,6 +89,11 @@ def login_required(func):
         return func(*args, **kwargs)
 
     return is_user_logged_in
+
+
+@app.context_processor
+def utility_processor():
+    return {"image": image_template}
 
 
 @app.route("/")
