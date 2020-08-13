@@ -1,7 +1,7 @@
-canonicalwebteam.discourse-docs==1.0.0
+canonicalwebteam.discourse-docs==1.0.1
 canonicalwebteam.flask-base==0.6.3
 Flask-OpenID-Stateless==1.2.6
 requests==2.24.0
-responses==0.10.15
+responses==0.10.16
 pymacaroons==0.13.0
-canonicalwebteam.image-template==1.1.0
+canonicalwebteam.image-template==1.2.0
