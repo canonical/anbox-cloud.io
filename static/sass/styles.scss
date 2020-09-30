@@ -11,6 +11,9 @@
 // import vanilla-framework
 @import 'vanilla-framework/scss/build';
 
+// import cookie policy
+@import "@canonical/cookie-policy/build/css/cookie-policy";
+
 // import site specific patterns and overrides
 
 @import "pattern_matrix";
