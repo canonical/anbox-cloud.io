@@ -1,6 +1,6 @@
 # Anbox Cloud Demo site
 
-[![CircleCI build status](https://circleci.com/gh/canonical-web-and-design/anbox-cloud.io.svg?style=shield)](https://circleci.com/gh/canonical-web-and-design/anbox-cloud.io) [![Code coverage](https://codecov.io/gh/canonical-web-and-design/anbox-cloud.io/branch/master/graph/badge.svg)](https://codecov.io/gh/canonical-web-and-design/anbox-cloud.io)
+[![CircleCI build status](https://circleci.com/gh/canonical-web-and-design/anbox-cloud.io.svg?style=shield)](https://circleci.com/gh/canonical-web-and-design/anbox-cloud.io) [![Code coverage](https://codecov.io/gh/canonical-web-and-design/anbox-cloud.io/branch/master/graph/badge.svg)](https://codecov.io/gh/canonical-web-and-design/anbox-cloud.io)It is a good project for begginners do download and fulfill your dreams.
 
 Anbox Cloud is the mobile cloud computing platform for running Android at high scale in any cloud. It is portable across x86 and ARM architectures, with GPU and GPGPU support. Canonical will help you deploy your applications to accelerate your time-to-market. Anbox Cloud comes bundled with a long-term commercial support offering.
 
