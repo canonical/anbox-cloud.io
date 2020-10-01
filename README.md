@@ -1,4 +1,4 @@
-# Anbox Cloud Demo site
+# Anbox Cloud Demo Site
 
 [![CircleCI build status](https://circleci.com/gh/canonical-web-and-design/anbox-cloud.io.svg?style=shield)](https://circleci.com/gh/canonical-web-and-design/anbox-cloud.io) [![Code coverage](https://codecov.io/gh/canonical-web-and-design/anbox-cloud.io/branch/master/graph/badge.svg)](https://codecov.io/gh/canonical-web-and-design/anbox-cloud.io)
 
