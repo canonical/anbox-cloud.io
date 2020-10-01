@@ -17,3 +17,5 @@ This website is written with the help of the [flask](http://flask.pocoo.org/) fr
 
 # Deploy
 You can find the deployment config in the deploy folder.
+
+## ask for the detail who want to contribute in this project
