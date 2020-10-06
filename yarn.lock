@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@canonical/cookie-policy@3.0.2":
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/@canonical/cookie-policy/-/cookie-policy-3.0.2.tgz#5a6a3d5f02c2fc139e38749e25e14254d4b3cdd8"
-  integrity sha512-xe25hHA9jrfgWTs+pVjO4UL/INnM1Pp0ukYgolMYTc+kwSguAmnXXDN3vhoSOToS6DPU5E6yh7U/wQqXVqos7g==
+"@canonical/cookie-policy@3.0.3":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@canonical/cookie-policy/-/cookie-policy-3.0.3.tgz#77ff09de8cc91c3bd12d23bfeaaf23a0206995ad"
+  integrity sha512-cTNrBAO+w5Akrn32Arkp/YGgT9KXTUuCMAgE8ipABBtkEIQ2Z708mTkZ3FNgefxPvMuDuLCVvKhvHik31SEShg==
 
 "@canonical/global-nav@2.4.3":
   version "2.4.3"
@@ -2690,10 +2690,10 @@ vanilla-framework@2.13.0:
   resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-2.13.0.tgz#ac73e745150bcef183eb35e3ee47f3fd079ddd3e"
   integrity sha512-EuxlGxO4SmCGL4GVzcye5aas2HGVqRhPxlTHg84Lfw1e1E4F/Coxs78i3xxkPGw3LOcfea0KU096ar1PnLNuXQ==
 
-vanilla-framework@2.17.0:
-  version "2.17.0"
-  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-2.17.0.tgz#e33f072b34e98f98ab611e8292ba9277216adeb9"
-  integrity sha512-Zqn0UVcvKjffO16ajSidzOwlZAcIJFOZu2LsK0IWDiZGFdlCe/iQZH0tcM6M5repcbDPi93I9Thv4kpfPMAeqg==
+vanilla-framework@2.19.1:
+  version "2.19.1"
+  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-2.19.1.tgz#f071deed5504a5fe2104d6d9b087ce654e190881"
+  integrity sha512-y79SKAwertvgHVAf1PbGxiq6QvVxNI78txilSgESx80HUWBrooT1nXCDUuHC/ySGEq+JUpmVIv0PrmXXilYWdg==
 
 verbalize@^0.1.2:
   version "0.1.2"
