@@ -19,7 +19,6 @@ RUN --mount=type=cache,target=/usr/local/share/.cache/yarn yarn install
 # ===
 FROM yarn-dependencies AS build-js
 ADD static/js static/js
-ADD webpack.config.js .
 RUN yarn run build-js
 
 # Build stage: Run "yarn run build-css"
@@ -42,8 +41,9 @@ ENV PATH="/root/.local/bin:${PATH}"
 
 # Import code, build assets and mirror list
 COPY . .
-RUN rm -rf package.json yarn.lock .babelrc webpack.config.js requirements.txt
+RUN rm -rf package.json yarn.lock requirements.txt
 COPY --from=build-css /srv/static/css static/css
+COPY --from=build-js /srv/static/js static/js
 
 # Set revision ID
 ARG BUILD_ID
