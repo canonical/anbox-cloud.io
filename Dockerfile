@@ -44,6 +44,7 @@ ENV PATH="/root/.local/bin:${PATH}"
 COPY . .
 RUN rm -rf package.json yarn.lock .babelrc webpack.config.js requirements.txt
 COPY --from=build-css /srv/static/css static/css
+COPY --from=build-js /srv/static/js static/js
 
 # Set revision ID
 ARG BUILD_ID
