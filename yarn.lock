@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@canonical/cookie-policy@3.0.3":
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/@canonical/cookie-policy/-/cookie-policy-3.0.3.tgz#77ff09de8cc91c3bd12d23bfeaaf23a0206995ad"
-  integrity sha512-cTNrBAO+w5Akrn32Arkp/YGgT9KXTUuCMAgE8ipABBtkEIQ2Z708mTkZ3FNgefxPvMuDuLCVvKhvHik31SEShg==
+"@canonical/cookie-policy@3.0.4":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@canonical/cookie-policy/-/cookie-policy-3.0.4.tgz#c2d6d990dc0993344a9bf5c244374e3f51fe34f1"
+  integrity sha512-pI65cRFh9xU2xo3d9R8ifGbQoH72tk3p8xh/4ANuj9kREeh9G/gcim/iHQS7IffSocHT9l6ZtUXBcQ12m/CBMw==
 
 "@canonical/global-nav@2.4.3":
   version "2.4.3"
