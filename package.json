@@ -19,9 +19,9 @@
   },
   "dependencies": {
     "@canonical/cookie-policy": "3.0.4",
-    "@canonical/global-nav": "2.4.3",
+    "@canonical/global-nav": "2.4.5",
     "postcss": "8.1.1",
-    "vanilla-framework": "2.19.1"
+    "vanilla-framework": "2.19.2"
   },
   "devDependencies": {
     "autoprefixer": "10.0.1",

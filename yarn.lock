@@ -28,12 +28,12 @@
   resolved "https://registry.yarnpkg.com/@canonical/cookie-policy/-/cookie-policy-3.0.4.tgz#c2d6d990dc0993344a9bf5c244374e3f51fe34f1"
   integrity sha512-pI65cRFh9xU2xo3d9R8ifGbQoH72tk3p8xh/4ANuj9kREeh9G/gcim/iHQS7IffSocHT9l6ZtUXBcQ12m/CBMw==
 
-"@canonical/global-nav@2.4.3":
-  version "2.4.3"
-  resolved "https://registry.yarnpkg.com/@canonical/global-nav/-/global-nav-2.4.3.tgz#9d552bad1968537c4b952747b27d5d3db21cf327"
-  integrity sha512-8ttxoViIlE16dKBIcuVsvBF2GhsJbC/c7fxLf93EXmn5DKoUYf+rjyhXvEDaRGCtTAnS4finwBwMMo7nQFOSEA==
+"@canonical/global-nav@2.4.5":
+  version "2.4.5"
+  resolved "https://registry.yarnpkg.com/@canonical/global-nav/-/global-nav-2.4.5.tgz#e300d2995aaccf9b35c83cdf8c37b1c9b9d2559a"
+  integrity sha512-OoSfKtD86QDbj9zcOrRg1je3CDQQRPm8Erq+yfDuR5jnN0eB8NfsT7JjAEDcANkzyJues3gMDDmv+cjN3Tu5KQ==
   dependencies:
-    vanilla-framework "2.13.0"
+    vanilla-framework "2.19.1"
 
 "@nodelib/fs.scandir@2.1.3":
   version "2.1.3"
@@ -2730,15 +2730,15 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
-vanilla-framework@2.13.0:
-  version "2.13.0"
-  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-2.13.0.tgz#ac73e745150bcef183eb35e3ee47f3fd079ddd3e"
-  integrity sha512-EuxlGxO4SmCGL4GVzcye5aas2HGVqRhPxlTHg84Lfw1e1E4F/Coxs78i3xxkPGw3LOcfea0KU096ar1PnLNuXQ==
-
 vanilla-framework@2.19.1:
   version "2.19.1"
   resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-2.19.1.tgz#f071deed5504a5fe2104d6d9b087ce654e190881"
   integrity sha512-y79SKAwertvgHVAf1PbGxiq6QvVxNI78txilSgESx80HUWBrooT1nXCDUuHC/ySGEq+JUpmVIv0PrmXXilYWdg==
+
+vanilla-framework@2.19.2:
+  version "2.19.2"
+  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-2.19.2.tgz#7a82d9f48c22e6fd805575140c70c011d5e6d54c"
+  integrity sha512-J4l4ug4MP0SPmbv5CY37aS/xLPxzh2pMO/Cex1fIH75pkrraj2a90oH2zD6hIQ8ri11IDLGaxI6s9BNDxBKVEg==
 
 verbalize@^0.1.2:
   version "0.1.2"
