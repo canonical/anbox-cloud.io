@@ -6,9 +6,9 @@ import requests
 import talisker
 from flask import request
 
-from canonicalwebteam.discourse_docs import (
+from canonicalwebteam.discourse import (
     DiscourseAPI,
-    DiscourseDocs,
+    Docs,
     DocParser,
 )
 from canonicalwebteam.flask_base.app import FlaskBase
@@ -40,7 +40,7 @@ open_id = OpenID(
 # Discourse docs
 session = talisker.requests.get_session()
 
-discourse_docs = DiscourseDocs(
+discourse_docs = Docs(
     parser=DocParser(
         api=DiscourseAPI(
             base_url="https://discourse.ubuntu.com/", session=session
