@@ -1,5 +1,5 @@
-canonicalwebteam.discourse==2.0.2
-canonicalwebteam.flask-base==0.6.4
+canonicalwebteam.discourse==2.1.0
+canonicalwebteam.flask-base==0.7.1
 Flask-OpenID-Stateless==1.2.6
 requests==2.24.0
 responses==0.12.0
