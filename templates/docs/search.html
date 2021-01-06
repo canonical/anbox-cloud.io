@@ -13,7 +13,7 @@
 {% block content %}
   <section id="search-docs" class="p-strip--light is-shallow">
     <div class="row">
-      <form class="p-search-box"  action="/docs/search">
+      <form class="p-search-box u-no-margin--bottom"  action="/docs/search">
         <input type="search" class="p-search-box__input" name="q" {% if query %} value="{{ query }}"{% endif %} placeholder="Search documentation" required/>
         <button type="reset" class="p-search-box__reset"><i class="p-icon--close"></i></button>
         <button type="submit" class="p-search-box__button"><i class="p-icon--search"></i></button>
@@ -36,8 +36,8 @@
 
     {% if results and results.entries %}
     {% for item in results.entries %}
-    <div class="p-strip is-bordered is-shallow">
-      <div class="row">
+    <div class="p-strip is-shallow is-bordered">
+      <div class="row ">
         <div class="col-12">
           <h5><a href="{{ item.link }}" class="title-main">{{ item.htmlTitle | safe}}</a></h5>
           <p>
