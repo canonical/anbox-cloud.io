@@ -17,7 +17,7 @@ from pymacaroons import Macaroon
 from webapp.macaroons import MacaroonRequest, MacaroonResponse
 from posixpath import join as url_join
 from canonicalwebteam import image_template
-
+from canonicalwebteam.search import build_search_view
 
 LOGIN_URL = "https://login.ubuntu.com"
 ANBOXCLOUD_API_BASE = "https://demo-api.anbox-cloud.io"
@@ -52,6 +52,14 @@ discourse_docs = Docs(
     url_prefix="/docs",
 )
 discourse_docs.init_app(app)
+
+app.add_url_rule(
+    "/docs/search",
+    "docs-search",
+    build_search_view(
+        site="anbox-cloud.io/docs", template_path="docs/search.html"
+    ),
+)
 
 
 def _api_request(url_path, method="GET", params=None, json=None, headers=None):
