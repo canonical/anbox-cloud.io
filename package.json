@@ -18,10 +18,10 @@
     "test-python": "python3 -m unittest discover tests"
   },
   "dependencies": {
-    "@canonical/cookie-policy": "3.1.2",
+    "@canonical/cookie-policy": "3.2.0",
     "@canonical/global-nav": "2.4.5",
     "postcss": "8.2.4",
-    "vanilla-framework": "2.23.0"
+    "vanilla-framework": "2.24.0"
   },
   "devDependencies": {
     "autoprefixer": "10.2.3",
