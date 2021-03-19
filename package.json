@@ -1,6 +1,6 @@
 {
   "author": "Canonical webteam",
-  "license": "LGPL v3",
+  "license": "LGPL-3.0-or-later",
   "scripts": {
     "start": "yarn run build && concurrently --kill-others --raw 'yarn run watch' 'yarn run serve'",
     "clean": "rm -rf node_modules yarn-error.log css static/css *.log *.sqlite _site/ build/ .jekyll-metadata .bundle",

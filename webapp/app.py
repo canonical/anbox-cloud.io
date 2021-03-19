@@ -57,7 +57,9 @@ app.add_url_rule(
     "/docs/search",
     "docs-search",
     build_search_view(
-        site="anbox-cloud.io/docs", template_path="docs/search.html"
+        session=session,
+        site="anbox-cloud.io/docs",
+        template_path="docs/search.html",
     ),
 )
 
