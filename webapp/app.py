@@ -116,6 +116,11 @@ def thank_you():
     return flask.render_template("thank-you.html")
 
 
+@app.route("/contact-us")
+def contact_us():
+    return flask.render_template("contact-us.html")
+
+
 @app.route("/terms")
 def terms():
     return flask.render_template("terms.html")
