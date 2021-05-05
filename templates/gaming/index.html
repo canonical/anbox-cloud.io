@@ -10,35 +10,37 @@
 
 <section class="p-strip--suru-half-and-half-reversed is-dark">
   <div class="row u-equal-height u-vertically-center">
-  <div class="col-6">
-    <h1>
-    A game streaming platform on Arm and x86
-    </h1>
-    <p class="p-heading--four">
-    Deliver advanced gaming experiences to any device
-    </p>
-  </div>
-  <div class="col-6 u-align--center u-hide--small">
-    {{ image (
-    url="https://assets.ubuntu.com/v1/00caf669-Anbox_GameStream_Game.svg",
-    alt="",
-    width="152",
-    height="195",
-    hi_def=True,
-    loading="auto"
-    ) | safe
-    }}
-  </div>
+    <div class="col-6">
+      <h1>
+      A game streaming platform on Arm and x86
+      </h1>
+      <p class="p-heading--four">
+      Deliver advanced gaming experiences to any device
+      </p>
+    </div>
+    <div class="col-6 u-align--center u-hide--small">
+      {{ image (
+      url="https://assets.ubuntu.com/v1/00caf669-Anbox_GameStream_Game.svg",
+      alt="",
+      width="152",
+      height="195",
+      hi_def=True,
+      loading="auto"
+      ) | safe
+      }}
+    </div>
   </div>
 </section>
 
 <section>
   <div class="p-strip u-no-padding--bottom">
     <div class="row">
-      <div class="col-8">
-        <p>
+      <div class="col-6">
+        <h4>
           Streaming from the cloud is emerging as a channel for direct game distribution. However, the economics of game streaming solutions are challenging. Anbox Cloud is a highly scalable platform for game streaming with an attractive cost to performance ratio.
-        </p>
+        </h4>
+      </div>
+      <div class="col-6">
         <p>
           Video games were traditionally enjoyed on sophisticated game consoles or expensive desktop PCs. Increasingly, gaming experiences are becoming mobile, spontaneous and casual. This change is driven by the proliferation of smartphones, broadband internet access and the cloud.
         </p>
@@ -48,38 +50,41 @@
       </div>
     </div>
   </div>
-  <div class="p-strip">
+  <div class="u-fixed-width">
+    <hr class="p-separator">
+  </div>
+  <div class="p-strip u-no-padding--top u-hide--small">
     <div class="row u-align--center">
-      <div class="col-4 u-hide--small">
+      <div class="col-4">
         {{ image (
         url="https://assets.ubuntu.com/v1/767f8475-Anbox_GameStream_Robot.svg",
         alt="",
         width="148",
         height="190",
         hi_def=True,
-        loading="auto"
+        loading="lazy"
         ) | safe
         }}
       </div>
-      <div class="col-4 u-hide--small">
+      <div class="col-4">
         {{ image (
           url="https://assets.ubuntu.com/v1/1bdb05f5-Anbox_GameStream_Services.svg",
           alt="",
           width="176",
           height="190",
           hi_def=True,
-          loading="auto"
+          loading="lazy"
           ) | safe
         }}
       </div>
-      <div class="col-4 u-hide--small">
+      <div class="col-4">
         {{ image (
           url="https://assets.ubuntu.com/v1/519b80fb-Anbox_GameStream_Support.svg",
           alt="",
           width="195",
           height="190",
           hi_def=True,
-          loading="auto"
+          loading="lazy"
           ) | safe
         }}
       </div>
@@ -152,7 +157,7 @@
         width="229",
         height="75",
         hi_def=True,
-        loading="auto"
+        loading="lazy"
         ) | safe
       }}
     </div>
@@ -172,14 +177,14 @@
         width="208",
         height="75",
         hi_def=True,
-        loading="auto"
+        loading="lazy"
         ) | safe
         }}
     </div>
   </div>
 </section>
 
-<section class="p-strip">
+<section class="p-strip is-bordered">
   <div class="row u-vertically-center">
     <div class="col-6 u-align--center u-hide--small">
       {{ image (
@@ -188,14 +193,14 @@
         width="289",
         height="205",
         hi_def=True,
-        loading="auto"
+        loading="lazy"
         ) | safe
       }}
     </div>
     <div class="col-5">
-      <h3>Stream Android games</h3>
+      <h2>Stream Android games</h2>
       <p>Get in touch with Canonical to explore avenues to deliver your games to millions via cloud streaming. </p>
-      <button href="/contact-us"  class="p-button--positive">Get in touch</button>
+      <a href="/contact-us"  class="p-button--positive">Get in touch</a>
     </div>
   </div>
 </section>
