@@ -16,12 +16,14 @@
 
 // import site specific patterns and overrides
 @import "pattern_docs";
+@import "pattern_heading-icon";
 @import "pattern_matrix";
 @import "pattern_navigation";
 @import "pattern_strip";
 @import "pattern_stream";
 
 @include anbox-p-docs;
+@include anbox-p-heading-icon;
 @include anbox-p-matrix;
 @include anbox-p-navigation;
 @include anbox-p-strip;
