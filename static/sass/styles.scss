@@ -15,6 +15,7 @@
 @import "@canonical/cookie-policy/build/css/cookie-policy";
 
 // import site specific patterns and overrides
+@import "pattern_deployment-table";
 @import "pattern_docs";
 @import "pattern_heading-icon";
 @import "pattern_matrix";
@@ -22,6 +23,7 @@
 @import "pattern_strip";
 @import "pattern_stream";
 
+@include anbox-p-deployment-table;
 @include anbox-p-docs;
 @include anbox-p-heading-icon;
 @include anbox-p-matrix;

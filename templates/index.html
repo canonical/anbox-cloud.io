@@ -8,22 +8,16 @@
 
 {% block content %}
 <section class="p-strip--suru-image">
-  <div class="row">
+  <div class="row u-vertically-center">
     <div class="col-6">
       <h1>Android containers<br/>in the cloud</h1>
       <p class="u-sv2">Anbox Cloud lets you stream mobile apps securely, at any scale, to any device letting you focus on your apps. Run Android in system containers, not emulators, on AWS, Azure, GCP or your private cloud.</p>
       <p><a href="/contact-us" class="p-button--positive">Get Anbox Cloud</a></p>
     </div>
-    <div class="col-5 col-start-large-8 u-hide--small">
-      {{
-        image(
-          url="https://assets.ubuntu.com/v1/6a688b44-Anbox-Cloud+computing_outline.svg",
-          alt="",
-          width="441",
-          height="321",
-          hi_def=True,
-        ) | safe
-      }}
+    <div class="col-6 u-align--cente">
+      <div class="u-embedded-media">
+        <iframe title="Scalable Android Cloud with Anbox Cloud" class="u-embedded-media__element" src="https://www.youtube.com/embed/drOCjcDpnng" allowfullscreen=""></iframe>
+      </div>
     </div>
   </div>
 </section>
@@ -264,27 +258,6 @@
           <div class="p-heading-icon__header">
             {{
               image(
-                url="https://assets.ubuntu.com/v1/4ab8ff35-Whitepaper+-+white.svg",
-                alt="",
-                height="32",
-                width="32",
-                hi_def=True,
-                loading="lazy",
-                attrs={"class": "p-heading-icon__img p-heading-icon__img--small"},
-              ) | safe
-            }}
-            <p class="p-heading-icon__title p-heading--4" style="line-height: 1.5rem; color: #fff">Whitepaper</p>
-          </div>
-          <div class="p-matrix__desc">
-            <a class="p-link--inverted p-link--external" href="https://pages.ubuntu.com/rs/066-EOV-335/images/Scale_Android_Anbox_02.07.20.pdf">Scale Android applications economically</a>
-          </div>
-        </div>
-      </li>
-      <li class="p-matrix__item">
-        <div class="p-heading-icon--muted">
-          <div class="p-heading-icon__header">
-            {{
-              image(
               url="https://assets.ubuntu.com/v1/005c3416-webinar-white.svg",
               alt="",
               width="32",
@@ -322,6 +295,7 @@
           </div>
         </div>
       </li>
+      <li class="p-matrix__item"></li>
     </ul>
   </div>
 </section>
@@ -491,59 +465,59 @@
       <tbody>
         <tr>
           <th>Streaming capabilities</th>
-          <td aria-label="Deploy on AWS" class="u-align--center"><i class="p-icon--success">Yes</i></td>
-          <td aria-label="Custom deployment" class="u-align--center"><i class="p-icon--success">Yes</i></td>
-          <td aria-label="Fully managed deployment" class="u-align--center"><i class="p-icon--success">Yes</i></td>
+          <td aria-label="Deploy on AWS" class="table-cell"><i class="p-icon--success">Yes</i></td>
+          <td aria-label="Custom deployment" class="table-cell"><i class="p-icon--success">Yes</i></td>
+          <td aria-label="Fully managed deployment" class="table-cell"><i class="p-icon--success">Yes</i></td>
         </tr>
         <tr>
           <th>Dashboard</th>
-          <td aria-label="Deploy on AWS" class="u-align--center"><i class="p-icon--success">Yes</i></td>
-          <td aria-label="Custom deployment" class="u-align--center"><i class="p-icon--success">Yes</i></td>
-          <td aria-label="Fully managed deployment" class="u-align--center"><i class="p-icon--success">Yes</i></td>
+          <td aria-label="Deploy on AWS" class="table-cell"><i class="p-icon--success">Yes</i></td>
+          <td aria-label="Custom deployment" class="table-cell"><i class="p-icon--success">Yes</i></td>
+          <td aria-label="Fully managed deployment" class="table-cell"><i class="p-icon--success">Yes</i></td>
         </tr>
         <tr>
           <th>Android API version</th>
-          <td aria-label="Deploy on AWS" class="u-align--center">10, 11</td>
-          <td aria-label="Custom deployment" class="u-align--center">10, 11</td>
-          <td aria-label="Fully managed deployment" class="u-align--center">10, 11</td>
+          <td aria-label="Deploy on AWS" class="table-cell">10, 11</td>
+          <td aria-label="Custom deployment" class="table-cell">10, 11</td>
+          <td aria-label="Fully managed deployment" class="table-cell">10, 11</td>
         </tr>
         <tr>
           <th>Long term security updates</th>
-          <td aria-label="Deploy on AWS" class="u-align--center"><i class="p-icon--success">Yes</i></td>
-          <td aria-label="Custom deployment" class="u-align--center"><i class="p-icon--success">Yes</i></td>
-          <td aria-label="Fully managed deployment" class="u-align--center"><i class="p-icon--success">Yes</i></td>
+          <td aria-label="Deploy on AWS" class="table-cell"><i class="p-icon--success">Yes</i></td>
+          <td aria-label="Custom deployment" class="table-cell"><i class="p-icon--success">Yes</i></td>
+          <td aria-label="Fully managed deployment" class="table-cell"><i class="p-icon--success">Yes</i></td>
         </tr>
         <tr>
           <th>Community support</th>
-          <td aria-label="Deploy on AWS" class="u-align--center"><i class="p-icon--success">Yes</i></td>
-          <td aria-label="Custom deployment" class="u-align--center"><i class="p-icon--success">Yes</i></td>
-          <td aria-label="Fully managed deployment" class="u-align--center"><i class="p-icon--success">Yes</i></td>
+          <td aria-label="Deploy on AWS" class="table-cell"><i class="p-icon--success">Yes</i></td>
+          <td aria-label="Custom deployment" class="table-cell"><i class="p-icon--success">Yes</i></td>
+          <td aria-label="Fully managed deployment" class="table-cell "><i class="p-icon--success">Yes</i></td>
         </tr>
         <tr>
           <th>Vendor support</th>
-          <td aria-label="Deploy on AWS" class="u-align--center"><span aria-label="No">&ndash;</span></td>
-          <td aria-label="Custom deployment" class="u-align--center"><i class="p-icon--success">Yes</i></td>
-          <td aria-label="Fully managed deployment" class="u-align--center"><i class="p-icon--success">Yes</i></td>
+          <td aria-label="Deploy on AWS" class="table-cell"><span aria-label="No">&ndash;</span></td>
+          <td aria-label="Custom deployment" class="table-cell"><i class="p-icon--success">Yes</i></td>
+          <td aria-label="Fully managed deployment" class="table-cell"><i class="p-icon--success">Yes</i></td>
         </tr>
         <tr>
           <th>Monitoring</th>
-          <td aria-label="Deploy on AWS" class="u-align--center"><span aria-label="No">&ndash;</span></td>
-          <td aria-label="Custom deployment" class="u-align--center"><i class="p-icon--success">Yes</i></td>
-          <td aria-label="Fully managed deployment" class="u-align--center"><i class="p-icon--success">Yes</i></td>
+          <td aria-label="Deploy on AWS" class="table-cell"><span aria-label="No">&ndash;</span></td>
+          <td aria-label="Custom deployment" class="table-cell"><i class="p-icon--success">Yes</i></td>
+          <td aria-label="Fully managed deployment" class="table-cell"><i class="p-icon--success">Yes</i></td>
         </tr>
         <tr>
           <th>SLAs</th>
-          <td aria-label="Deploy on AWS" class="u-align--center"><span aria-label="No">&ndash;</span></td>
-          <td aria-label="Custom deployment" class="u-align--center"><span aria-label="No">&ndash;</span></td>
-          <td aria-label="Fully managed deployment" class="u-align--center"><i class="p-icon--success">Yes</i></td>
+          <td aria-label="Deploy on AWS" class="table-cell"><span aria-label="No">&ndash;</span></td>
+          <td aria-label="Custom deployment" class="table-cell"><span aria-label="No">&ndash;</span></td>
+          <td aria-label="Fully managed deployment" class="table-cell"><i class="p-icon--success">Yes</i></td>
         </tr>
       </tbody>
       <tfoot>
         <tr>
           <th></th>
-          <td aria-label="Deploy on AWS" class="u-align--center"><a href="#" class="p-button--neutral">Deploy on AWS</a></td>
-          <td aria-label="Custom deployment" class="u-align--center"><a href="/contact-us" class="p-button--neutral">Contact us</a></td>
-          <td aria-label="Fully managed deployment" class="u-align--center"><a href="/contact-us" class="p-button--neutral">Contact us</a></td>
+          <td aria-label="Deploy on AWS" class="table-cell"><a href="#" class="p-button--neutral">Deploy on AWS</a></td>
+          <td aria-label="Custom deployment" class="table-cell"><a href="/contact-us" class="p-button--neutral">Contact us</a></td>
+          <td aria-label="Fully managed deployment" class="table-cell"><a href="/contact-us" class="p-button--neutral">Contact us</a></td>
         </tr>
       </tfoot>
     </table>
@@ -572,5 +546,9 @@
     </div>
   </div>
 </section>
+
+<style>
+
+</style>
 
 {% endblock %}

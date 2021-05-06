@@ -1,0 +1,8 @@
+@mixin anbox-p-deployment-table {
+  .table-cell {
+    @media (min-width: $breakpoint-medium) {
+      justify-content: center !important;
+      text-align: center !important;
+    }
+  }
+}
