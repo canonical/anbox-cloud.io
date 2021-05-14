@@ -1,0 +1,243 @@
+{% extends '_layout.html' %}
+
+
+{% block title %}Telco. The 5G mobile subscriber experience.{% endblock %}
+{% block meta_description %}Delighting network customers with 5G apps.
+{% endblock %}
+{% block meta_copydoc %}https://docs.google.com/document/d/1DEG0SELYXIJCdqwaJOWM6R1yCiTnEub4kaK0aX4bT2I/edit#heading=h.44dtjnxyfix2#{% endblock meta_copydoc %}
+
+{% block content %}
+
+<div class="wrapper">
+    <div id="main-content" class="inner-wrapper">
+
+        <section class="p-strip--suru-half-and-half-reversed is-dark">
+            <div class="row u-equal-height u-vertically-center">
+              <div class="col-6">
+                <h1>
+                    The 5G mobile <br>subscriber experience
+                </h1>
+                <p class="p-heading--four">
+                    Delighting network customers with 5G apps
+                </p>
+              </div>
+              <div class="col-6 u-hide--small u-align--center">
+                    {{ image (
+                        url="https://assets.ubuntu.com/v1/55cff1c7-Anbox_Telco_5G.svg",
+                        alt="",
+                        width="152",
+                        height="195",
+                        hi_def=True,
+                        loading="auto"
+                        ) | safe
+                    }}
+              </div>
+            </div>
+        </section>
+
+        <section class="p-strip--light">
+            <div class="row u-equal-height u-vertically-center">
+                <div class="col-6">
+                    <p>
+                        5G lifts broadband and latency limitations in mobile networks. </br>
+                        However, building scalable infrastructure to deliver 5G apps to mobile subscribers is expensive. Anbox Cloud is a scalable platform to host 5G apps in telco RANs in the cloud and at the edge.
+                    </p>
+                    <p>
+                        Leading telco service providers are rolling out 5G networks to offer a new generation of broadband access to their subscribers. The virtually unlimited bandwidth and latency of 5G unlock new possibilities. Telcos that create innovative value-added services will be winners in the 5G race.
+                    </p>
+                    <p>
+                        With 5G, elastic computing in the cloud becomes available to mobile users at zero latency. However, mobile handset capabilities are restricted and will remain a bottleneck. Offloading compute and storage  to the cloud via 5G networks could be a way to circumvent these limitations.
+                    </p>
+                    <p>
+                        <a href="">
+                            Learn about value-added telco services with Anbox Cloud >
+                        </a>
+                    </p>
+                </div>
+                <div class="col-6 u-align--center">
+                    {{ image (
+                        url="https://assets.ubuntu.com/v1/d5de891a-Acceleration.svg",
+                        alt="",
+                        width="287",
+                        height="160",
+                        hi_def=True,
+                        loading="auto"
+                        ) | safe
+                    }}
+                </div>
+            </div>
+        </section>
+
+        <section class="p-strip">
+            <div class="row u-vertically-center">
+                <div class="row col-7">
+                    <div class="col-9">
+                        <h2>Inventing value-added services for 5G</h2>
+                    </div>
+                    <p>
+                        5G makes ultra-rich media content, games, AR/VR, and even AI, accessible within telco RANs. With unrestricted computing capabilities available on demand, telcos can create innovative subscriber experiences across various mobile form factors to offer differentiated services to their subscribers.
+                    </p>
+                    <p>
+                        What does it take to realise this vision? Considering the scale, this first and foremost requires servers in the cloud with an outstanding cost to performance ratio, equipped with application accelerators like GPUs, FGPAs and ASICs. Furthermore, to minimise latency, mobile workloads should be deployed at the edge, closer to mobile subscribers. Finally, instant elasticity and scalability are required to accommodate subscriber mobility patterns.
+                    </p>
+                </div>
+                <div class="col-5">
+                    <div class="p-card">
+                        <h4>
+                            Key challenges:
+                        </h4>
+                        <hr class="u-sv1">
+                        <ul class="p-list">
+                            <li class="p-list__item is-ticked">Access to elastic compute </li>
+                            <li class="p-list__item is-ticked">Deployment agility into edge RANs</li>
+                            <li class="p-list__item is-ticked">Multi-cloud software automation</li>
+                        </ul>
+                        <p>
+                            Anbox Cloud is engineered to address these challenges. The commercially supported platform builds on open source software to empower innovators to leverage Android at scale in the cloud.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-strip">
+                <div class="row u-align--center">
+                    <div class="col-4">
+                        {{ image (
+                            url="https://assets.ubuntu.com/v1/1bdb05f5-Anbox_GameStream_Services.svg",
+                            alt="",
+                            width="176",
+                            height="190",
+                            hi_def=True,
+                            loading="auto"
+                            ) | safe
+                        }}
+                    </div>
+                    <div class="col-4">
+                        {{ image (
+                            url="https://assets.ubuntu.com/v1/033bc13f-Anbox_Telco_VR.svg",
+                            alt="",
+                            width="203",
+                            height="190",
+                            hi_def=True,
+                            loading="auto"
+                            ) | safe
+                        }}
+                    </div>
+                    <div class="col-4">
+                        {{ image (
+                            url="https://assets.ubuntu.com/v1/553512df-Anbox_Telco_Video.svg",
+                            alt="",
+                            width="190",
+                            height="190",
+                            hi_def=True,
+                            loading="auto"
+                            ) | safe
+                        }}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <h2>Virtual mobile infrastructure <br>for RANs</h2>
+                </div>
+            </div>
+            <div class="row u-equal-height">
+                <div class="col-6 p-card">
+                    <h3>Scalability and high-density</h3>
+                    <hr>
+                    <p>Anbox Cloud scales vertically with a high container density on servers. The platform also scales horizontally across edge data centers. Scalability allows telco service providers to instantly match compute capacity to subscriber demands. High container density keeps the unit economics low.</p>
+                </div>
+                <div class="col-6 p-card">
+                    <h3>Infrastructure automation</h3>
+                    <hr>
+                    <p>The key components that make up Anbox Cloud are deployed and orchestrated automatically on server infrastructure. Automation reduces the cost of operations for telco service providers using Anbox Cloud. Anbox Cloud is an easily deployed platform that will be operated at minimal effort by telco teams.</p>
+                </div>
+            </div>
+            <div class="row u-equal-height">
+                <div class="col-6 p-card">
+                    <h3>Simple client-side integration</h3>
+                    <hr>
+                    <p>Anbox Cloud is easy to integrate into mobile clients. Graphical output is streamed from the cloud to mobile devices. Sensor inputs and output from mobile devices are synchronised with Android virtual machines in the cloud. This data exchange is based on the WebRTC protocol, which makes mobile client development simple.</p>
+                </div>
+                <div class="col-6 p-card">
+                    <h3>Cloud-side latency optimisation</h3>
+                    <hr>
+                    <p>Anbox Cloud leverages hardware acceleration for rich graphical rendering, animations and effects. The platform also enables high-performance video encoding and decoding and streaming. To minimise latency bottlenecks, compute intensive tasks like encoding and decoding are pooled on GPUs on the server side to offload mobile devices.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="p-strip--light u-no-padding--bottom">
+                <div class="row">
+                    <div class="col-6">
+                        <h2>What’s under the hood</h2>
+                        <h4>Anbox Cloud builds on a powerful stack of open-source software to deliver Android app streaming from the cloud.</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-strip--light">
+                <div class="row u-vertically-center">
+                    <div class="col-7">
+                        <h3>Android in containers</h3>
+                        <p>Unlike Android emulators that make use of virtual machines, Anbox Cloud leverages system containers through LXD, the next generation system container manager. It offers a user experience similar to virtual machines but using lightweight Linux containers instead manageable via a REST API. It also exposes GPUs through a passthrough. You will therefore take advantage of any hardware accelerators to deliver rich mobile experiences.</p>
+                    </div>
+                    <div class="col-5 u-align--center">
+                        {{ image (
+                            url="https://assets.ubuntu.com/v1/ac9a0e00-lxd_primary.svg",
+                            alt="",
+                            width="229",
+                            height="75",
+                            hi_def=True,
+                            loading="auto"
+                            ) | safe
+                        }}
+                    </div>
+                </div>
+                <div class="u-fixed-width">
+                    <hr class="p-separator">
+                </div>
+                <div class="row u-vertically-center">
+                    <div class="col-7">
+                        <h3>Software orchestration</h3>
+                        <p>Streaming Android apps to thousands of mobile and desktop clients simultaneously requires orchestration and monitoring of several software components. This involves streaming servers, image repositories, applications, a dashboard application for management and more. Thanks to Juju and MAAS, you can deploy your stack automatically anywhere. </p>
+                    </div>
+                    <div class="col-5 u-align--center">
+                        {{ image (
+                            url="https://assets.ubuntu.com/v1/48a8eddf-juju_black-orange_hex.svg",
+                            alt="",
+                            width="208",
+                            height="75",
+                            hi_def=True,
+                            loading="auto"
+                            ) | safe
+                          }}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="p-strip">
+            <div class="row u-vertically-center">
+                <div class="col-6 u-align--center">
+                    {{ image (
+                        url="https://assets.ubuntu.com/v1/c4b290c8-Contact+us.svg",
+                        alt="",
+                        width="289",
+                        height="205",
+                        hi_def=True,
+                        loading="auto"
+                        ) | safe
+                    }}
+                </div>
+                <div class="col-5">
+                    <h3>Invent future mobile services</h3>
+                    <p>Get in touch with Canonical to explore avenues to deliver <br>new value-added services to millions via cloud streaming. </p>
+                    <button class="p-button--positive">Get in touch</button>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+{% endblock content %}
