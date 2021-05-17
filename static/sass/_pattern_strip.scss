@@ -106,25 +106,25 @@
     background-blend-mode: multiply, normal, normal, normal;
 
     background-image: linear-gradient(
-        25deg,
-        rgba(119, 41, 83, 0.16) 0%,
-        rgba(119, 41, 83, 0.16) 49.9%,
-        rgba(119, 41, 83, 0) 50%,
-        rgba(119, 41, 83, 0) 100%
+      25deg,
+      rgba(119, 41, 83, .16) 0%,
+      rgba(119, 41, 83, .16) 49.9%,
+      rgba(119, 41, 83, 0) 50%,
+      rgba(119, 41, 83, 0) 100%
       ),
-      linear-gradient(
-        to left,
-        transparent 0%,
-        transparent 41.9%,
-        rgba(255, 255, 255, 0) 42%,
-        rgba(255, 255, 255, 0) 100%
+    linear-gradient(
+      to left,
+      transparent 0%,
+      transparent 41.9%,
+      rgba(255, 255, 255, 0) 42%,
+      rgba(255, 255, 255, 0) 100%
       ),
-      linear-gradient(
-        289deg,
-        transparent 46.3%,
-        #a63b3e 20%,
-        #772953 63%,
-        #2c001e 100%
+    linear-gradient(
+      289deg,
+      transparent 46.3%,
+      #a63b3e 20%,
+      #772953 63%,
+      #2c001e 100%
       );
     background-position: top 60% left, top left, center right;
     background-repeat: no-repeat;
