@@ -62,7 +62,7 @@
           </span>
           <ul class="p-navigation__items" role="menu">
             <li class="p-navigation__item" role="menuitem"><a class="p-navigation__link" href="/#use-cases">Use cases</a></li>
-            <li class="p-navigation__item" role="menuitem"><a class="p-navigation__link p-link--external" href="https://oem-share.canonical.com/partners/indore/share/docs/1.5/en/index.html">Docs</a></li>
+            <li class="p-navigation__item {% if request.path == '/docs' %}is-selected{% endif %}" role="menuitem"><a class="p-navigation__link" href="/docs">Docs</a></li>
             <li class="p-navigation__item" role="menuitem"><a class="p-navigation__link p-link--external" href="https://discourse.ubuntu.com/c/anbox-cloud/">Discourse</a></li>
           </ul>
         </nav>
