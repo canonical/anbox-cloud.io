@@ -135,6 +135,7 @@ def privacy():
 def telco():
     return flask.render_template("telco/index.html")
 
+
 @open_id.after_login
 def after_login(resp):
     """
