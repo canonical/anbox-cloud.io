@@ -1,0 +1,208 @@
+{% extends '_layout.html' %}
+
+
+{% block title %}Stream Android games at scale in the cloud.{% endblock %}
+{% block meta_description %}A game streaming platform on Arm and x86. Deliver advanced gaming experiences to any device.
+{% endblock %}
+{% block meta_copydoc %}https://docs.google.com/document/d/1c9WcMRx1OlQxUntC6YF5oq_wjmwA5vI-RDZC926EYmo/edit#{% endblock meta_copydoc %}
+
+{% block content %}
+
+<section class="p-strip--suru-half-and-half-reversed is-dark">
+    <div class="row u-equal-height u-vertically-center">
+        <div class="col-6">
+            <h1>
+                A game streaming platform on Arm and x86
+            </h1>
+            <p class="p-heading--four">
+                Deliver advanced gaming experiences to any device
+            </p>
+        </div>
+        <div class="col-6 u-align--center u-hide--small">
+            {{ image (
+            url="https://assets.ubuntu.com/v1/00caf669-Anbox_GameStream_Game.svg",
+            alt="",
+            width="152",
+            height="195",
+            hi_def=True,
+            loading="auto"
+            ) | safe
+            }}
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="p-strip u-no-padding--bottom">
+        <div class="row">
+            <div class="col-8">
+                <p>
+                    Streaming from the cloud is emerging as a channel for direct game distribution. However, the economics of game streaming solutions are challenging. Anbox Cloud is a highly scalable platform for game streaming with an attractive cost to performance ratio.
+                </p>
+                <p>
+                    Video games were traditionally enjoyed on sophisticated game consoles or expensive desktop PCs. Increasingly, gaming experiences are becoming mobile, spontaneous and casual. This change is driven by the proliferation of smartphones, broadband internet access and the cloud.
+                </p>
+                <p>
+                    With the cloud providing a high-performance and scalable computing backend for games, video streaming is emerging as an attractive distribution channel. Game streaming from the cloud does away with expensive devices. Gamers can play games hosted in the cloud on any smartphone, laptop or tablet with an identical experience as more expensive consoles.
+                </p>
+                <p>
+                    <a href="">
+                        Learn about value-added telco services with Anbox Cloud >
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="p-strip">
+        <div class="row u-align--center">
+            <div class="col-4 u-hide--small">
+                {{ image (
+                url="https://assets.ubuntu.com/v1/767f8475-Anbox_GameStream_Robot.svg",
+                alt="",
+                width="148",
+                height="190",
+                hi_def=True,
+                loading="auto"
+                ) | safe
+                }}
+            </div>
+            <div class="col-4 u-hide--small">
+                {{ image (
+                    url="https://assets.ubuntu.com/v1/1bdb05f5-Anbox_GameStream_Services.svg",
+                    alt="",
+                    width="176",
+                    height="190",
+                    hi_def=True,
+                    loading="auto"
+                    ) | safe
+                }}
+            </div>
+            <div class="col-4 u-hide--small">
+                {{ image (
+                    url="https://assets.ubuntu.com/v1/519b80fb-Anbox_GameStream_Support.svg",
+                    alt="",
+                    width="195",
+                    height="190",
+                    hi_def=True,
+                    loading="auto"
+                    ) | safe
+                }}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="p-strip--light">
+    <div class="row">
+        <h2>Cloud games for Android </h2>
+        <p>With over three million apps, the Android operating system has the most extensive  inventory of games with one of the largest existing ecosystems of developers. Running Android games in the cloud, and delivering them via streaming, levels the playing field for hardware. There is no need for the latest and greatest smartphones to be able to enjoy the most exciting gaming experiences. Rich graphical rendering becomes accessible even to low end smartphones. Game discovery becomes simple, with a Netflix-like experience. Gamers play on demand, on the go, with less battery drain than ever.</p>
+        <p>What does it take to realise this vision? As one can imagine, this would first and foremost require scalable virtualisation capabilities for Android in the cloud. Furthermore, virtualisation should occur in a way that supports hardware acceleration for high-quality and high-speed video encoding for streaming purposes. Finally, for commercial-grade deployments, manageability, reliability and security will be required. The key challenges are:</p>
+        <ul class="p-list">
+            <li class="p-list__item is-ticked">High density for attractive unit economics</li>
+            <li class="p-list__item is-ticked">Software automation for low cost operations</li>
+            <li class="p-list__item is-ticked">Commercial-grade support for reliability</li>
+        </ul>
+        <p>Anbox Cloud is engineered to address these challenges. The commercially supported platform builds on open source software to empower innovators to stream Android games at scale in the cloud.</p>
+    </div>
+</section>
+
+<section class="p-strip">
+    <div class="row">
+        <div class="col-6">
+            <h2>A scalable infrastructure for <br /> game streaming</h2>
+        </div>
+    </div>
+    <div class="row u-equal-height">
+        <div class="col-6 p-card">
+            <h3>Games Arm and x86 servers</h3>
+            <hr>
+            <p>Anbox Cloud is hardware agnostic. Run Android games natively on ARM servers from Ampere in the cloud. Alternatively, take advantage of the newest generations of x86 processors from Intel or AMD.</p>
+        </div>
+        <div class="col-6 p-card">
+            <h3>Simultaneous sessions at scale</h3>
+            <hr>
+            <p>Simultaneous gaming sessions can run very densely on a single server with Anbox Cloud. This approach containerises Android fully, with the low overhead and the manageability of Linux containers. </p>
+        </div>
+    </div>
+    <div class="row u-equal-height">
+        <div class="col-6 p-card">
+            <h3>Host on private and public clouds</h3>
+            <hr>
+            <p>Anbox Cloud enables you to deploy your gaming closer to your customers. Deploy in you a target region on your favorite cloud, or on your very own infrastructure at the edge. </p>
+        </div>
+        <div class="col-6 p-card">
+            <h3>Leverage GPUs and GPGPUs</h3>
+            <hr>
+            <p>Anbox Cloud leverages hardware acceleration rich graphical rendering, animations and effects. The platform also enables high-quality video encoding and streaming.</p>
+        </div>
+    </div>
+</section>
+
+<section class="p-strip--light">
+    <div class="row">
+        <div class="col-6">
+            <h2>What’s under the hood</h2>
+            <h4>Anbox Cloud builds on a powerful stack of open-source software to deliver Android game streaming from the cloud.</h4>
+        </div>
+    </div>
+    <div class="row u-vertically-center">
+        <div class="col-7">
+            <h3>Android in containers</h3>
+            <p>Unlike Android emulators that make use of virtual machines, Anbox Cloud leverages system containers through <a href="https://linuxcontainers.org/">LXD</a>, the next generation system container manager. It offers a user experience similar to virtual machines but using lightweight Linux containers instead manageable via a REST API. It also exposes GPUs through a passthrough. You will therefore take advantage of any hardware accelerators to deliver rich mobile experiences.</p>
+        </div>
+        <div class="col-5 u-align--center u-hide--small">
+            {{ image (
+                url="https://assets.ubuntu.com/v1/ac9a0e00-lxd_primary.svg",
+                alt="",
+                width="229",
+                height="75",
+                hi_def=True,
+                loading="auto"
+                ) | safe
+            }}
+        </div>
+    </div>
+    <div class="u-fixed-width">
+        <hr class="p-separator">
+    </div>
+    <div class="row u-vertically-center">
+        <div class="col-7">
+            <h3>Software orchestration</h3>
+            <p>Streaming Android apps to thousands of mobile and desktop clients simultaneously requires orchestration and monitoring of several software components. This involves streaming servers, image repositories, applications, a dashboard application for management and <a href="https://anbox-cloud.io/docs/overview">more</a>. Thanks to <a href="https://jaas.ai/">Juju</a> and <a href="https://maas.io/">MAAS</a>, you can deploy your stack automatically anywhere.</p>
+        </div>
+        <div class="col-5 u-align--center u-hide--small">
+            {{ image (
+                url="https://assets.ubuntu.com/v1/48a8eddf-juju_black-orange_hex.svg",
+                alt="",
+                width="208",
+                height="75",
+                hi_def=True,
+                loading="auto"
+                ) | safe
+                }}
+        </div>
+    </div>
+</section>
+
+<section class="p-strip">
+    <div class="row u-vertically-center">
+        <div class="col-6 u-align--center u-hide--small">
+            {{ image (
+                url="https://assets.ubuntu.com/v1/c4b290c8-Contact+us.svg",
+                alt="",
+                width="289",
+                height="205",
+                hi_def=True,
+                loading="auto"
+                ) | safe
+            }}
+        </div>
+        <div class="col-5">
+            <h3>Stream Android games</h3>
+            <p>Get in touch with Canonical to explore avenues to <br /> deliver your games to millions via cloud streaming. </p>
+            <button class="p-button--positive">Get in touch</button>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
