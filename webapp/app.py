@@ -141,6 +141,11 @@ def gaming():
     return flask.render_template("gaming/index.html")
 
 
+@app.route("/testing")
+def testing():
+    return flask.render_template("testing/index.html")
+
+
 @open_id.after_login
 def after_login(resp):
     """
