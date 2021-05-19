@@ -111,6 +111,11 @@ def index():
     return flask.render_template("index.html")
 
 
+@app.route("/contact-us")
+def contact_us():
+    return flask.render_template("contact-us.html")
+
+
 @app.route("/thank-you")
 def thank_you():
     return flask.render_template("thank-you.html")
