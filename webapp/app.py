@@ -136,6 +136,11 @@ def telco():
     return flask.render_template("telco/index.html")
 
 
+@app.route("/gaming")
+def gaming():
+    return flask.render_template("gaming/index.html")
+
+
 @open_id.after_login
 def after_login(resp):
     """
