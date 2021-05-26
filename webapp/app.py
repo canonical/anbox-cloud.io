@@ -136,6 +136,11 @@ def telco():
     return flask.render_template("telco/index.html")
 
 
+@app.route("/enterprise")
+def enterprise():
+    return flask.render_template("enterprise/index.html")
+
+
 @open_id.after_login
 def after_login(resp):
     """
