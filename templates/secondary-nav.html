@@ -1,0 +1,25 @@
+<nav class="p-navigation--secondary">
+  <div class="row p-navigation__wrapper">
+    <div class="col-12 u-equal-height">
+      <a class="p-navigation--secondary__banner u-hide--mobile" href="/">
+        <h5 class="p-navigation--secondary__logo">
+          Overview
+        </h5>
+      </a>
+      <ul class="breadcrumbs--secondary" style="margin-bottom: 0.6rem">
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link {% if request.path == '/telco' %}p-link--active{% else %}p-link--soft{% endif %}" href="/telco">Telco</a>
+        </li>
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link {% if request.path == '/gaming' %}p-link--active{% else %}p-link--soft{% endif %}" href="/gaming">Gaming</a>
+        </li>
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link {% if request.path == '/testing' %}p-link--active{% else %}p-link--soft{% endif %}" href="/testing">Testing</a>
+        </li>
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link {% if request.path == '/enterprise' %}p-link--active{% else %}p-link--soft{% endif %}" href="/enterprise">Enterprise</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
