@@ -131,9 +131,9 @@ def privacy():
     return flask.render_template("privacy.html")
 
 
-@app.route("/telco")
-def telco():
-    return flask.render_template("telco/index.html")
+@app.route("/virtual")
+def virtual():
+    return flask.render_template("virtual/index.html")
 
 
 @app.route("/enterprise")
