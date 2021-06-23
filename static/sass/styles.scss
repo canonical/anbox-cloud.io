@@ -9,7 +9,7 @@
 // @import "cookie-policy/build/css/cookie-policy";
 
 // import vanilla-framework
-@import 'vanilla-framework/scss/build';
+@import "vanilla-framework/scss/build";
 
 // import cookie policy
 @import "@canonical/cookie-policy/build/css/cookie-policy";
@@ -28,6 +28,7 @@
 @include anbox-p-heading-icon;
 @include anbox-p-matrix;
 @include anbox-p-navigation;
+@include anbox-p-secondary-navigation;
 @include anbox-p-strip;
 @include anbox-p-stream;
 

@@ -44,32 +44,38 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <header id="navigation" class="p-navigation is-dark">
-      <div class="p-navigation__row">
-        <div class="p-navigation__banner">
-          <div class="p-navigation__logo u-vertically-center">
-            <a class="p-navigation__link" href="/" style="color:white">
-              Anbox Cloud
-            </a>
-          </div>
-          <div>
-            <a href="#navigation" class="p-navigation__toggle--open" title="menu">Menu</a>
-            <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">Close menu</a>
+      <div class="row p-navigation__wrapper">
+        <div class="col-12">
+          <div class="p-navigation__row">
+            <div class="p-navigation__banner">
+              <div class="p-navigation__logo u-vertically-center">
+                <a class="p-navigation__link" href="/" style="color:white">
+                  Anbox Cloud
+                </a>
+              </div>
+              <div>
+                <a href="#navigation" class="p-navigation__toggle--open" title="menu">Menu</a>
+                <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">Close menu</a>
+              </div>
+            </div>
+            <nav class="p-navigation__nav" role="menubar">
+              <span class="u-off-screen">
+                <a href="#main-content">Jump to main content</a>
+              </span>
+              <ul class="p-navigation__items" role="menu">
+                <li class="p-navigation__item" role="menuitem"><a class="p-navigation__link" href="/#use-cases">Use cases</a></li>
+                <li class="p-navigation__item {% if request.path == '/docs' %}is-selected{% endif %}" role="menuitem"><a class="p-navigation__link" href="/docs">Docs</a></li>
+                <li class="p-navigation__item" role="menuitem"><a class="p-navigation__link p-link--external" href="https://discourse.ubuntu.com/c/anbox-cloud/">Discourse</a></li>
+              </ul>
+            </nav>
           </div>
         </div>
-        <nav class="p-navigation__nav" role="menubar">
-          <span class="u-off-screen">
-            <a href="#main-content">Jump to main content</a>
-          </span>
-          <ul class="p-navigation__items" role="menu">
-            <li class="p-navigation__item" role="menuitem"><a class="p-navigation__link" href="/#use-cases">Use cases</a></li>
-            <li class="p-navigation__item {% if request.path == '/docs' %}is-selected{% endif %}" role="menuitem"><a class="p-navigation__link" href="/docs">Docs</a></li>
-            <li class="p-navigation__item" role="menuitem"><a class="p-navigation__link p-link--external" href="https://discourse.ubuntu.com/c/anbox-cloud/">Discourse</a></li>
-          </ul>
-        </nav>
       </div>
     </header>
     <main>
-      {% block content %} {% endblock %}
+      {% block content %}
+        {% include "/secondary-nav.html" %}
+      {% endblock %}
     </main>
     {% include 'footer.html' %}
   </body>

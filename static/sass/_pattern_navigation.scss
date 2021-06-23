@@ -1,23 +1,101 @@
 @mixin anbox-p-navigation {
-  .p-navigation__banner {
-    background-color: $ubuntu-orange;
+
+  .p-navigation__wrapper {
+    @media (max-width: $breakpoint-navigation-threshold) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    @media (min-width: $breakpoint-navigation-threshold + 1) {
+      padding-left: $grid-margin-width;
+      padding-right: $grid-margin-width;
+    }
   }
 
-  .p-navigation .p-navigation__row {
-
+  .p-navigation {
     .p-navigation__banner {
-      padding: 0 $sph-inner--large;
+      background-color: $ubuntu-orange;
+      padding: 0 1rem;
+    }
 
-      .p-navigation__logo {
-        font-weight: 400;
-        margin-right: 0;
-      }
+    .p-navigation__logo {
+      font-weight: 400;
+      margin-right: 0;
     }
 
     .p-navigation__link a {
       height: 100%;
       padding-left: $sph-inner--large;
       padding-right: $sph-inner--large;
+    }
+  }
+}
+
+@mixin anbox-p-secondary-navigation {
+  .p-navigation--secondary {
+    background-color: #f7f7f7;
+    display: flex;
+    margin-top: 0;
+    position: relative;
+    width: 100%;
+    z-index: 38;
+
+    &::after {
+      background-color: none;
+      height: 0;
+    }
+
+    .p-navigation--secondary__banner {
+      background-color: #e95420;
+      float: left;
+      font-weight: 300;
+      margin-left: 0;
+      text-decoration-color: #fff !important;
+    }
+
+    .p-navigation--secondary__logo {
+      align-items: center;
+      color: #fff;
+      display: flex;
+      font-size: .875rem;
+      margin-bottom: .6rem;
+      padding: .55rem 1rem 0;
+      position: relative;
+      width: 7.8rem;
+    }
+  }
+
+  .breadcrumbs--secondary {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-left: 0;
+    width: auto;
+  }
+
+  .breadcrumbs__item {
+    color: #fff;
+    display: inline-flex;
+    list-style: none;
+  }
+
+  .breadcrumbs__link {
+    font-size: .875rem;
+    padding-left: .75rem;
+    padding-right: .75rem;
+    padding-top: .55rem;
+
+    &:first-child {
+      padding-left: 1rem;
+    }
+
+    &.p-link--active {
+      color: $ubuntu-orange;
+    }
+
+    &.p-link--soft {
+      color: #111;
     }
   }
 }
