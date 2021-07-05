@@ -7,8 +7,8 @@
     }
 
     @media (min-width: $breakpoint-navigation-threshold + 1) {
-      padding-left: $grid-margin-width;
-      padding-right: $grid-margin-width;
+      padding-left: map("$grid-gutter-widths", "large");
+      padding-right: map("$grid-gutter-widths", "large");
     }
   }
 
