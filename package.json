@@ -18,7 +18,7 @@
     "test-python": "python3 -m unittest discover tests"
   },
   "dependencies": {
-    "@canonical/cookie-policy": "3.2.0",
+    "@canonical/cookie-policy": "3.3.0",
     "@canonical/global-nav": "2.5.0",
     "postcss": "8.2.10",
     "vanilla-framework": "2.32.0"
