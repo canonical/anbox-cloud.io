@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://anbox-cloud.io/</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://anbox-cloud.io/contact-us</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://anbox-cloud.io/terms</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://anbox-cloud.io/privacy</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://anbox-cloud.io/virtual</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://anbox-cloud.io/enterprise</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://anbox-cloud.io/gaming</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://anbox-cloud.io/testing</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+</urlset>

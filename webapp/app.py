@@ -151,6 +151,24 @@ def testing():
     return flask.render_template("testing/index.html")
 
 
+@app.route("/sitemap.xml")
+def sitemap_index():
+    xml_sitemap = flask.render_template("sitemap/sitemap-index.xml")
+    response = flask.make_response(xml_sitemap)
+    response.headers["Content-Type"] = "application/xml"
+
+    return response
+
+
+@app.route("/sitemap-links.xml")
+def sitemap_links():
+    xml_sitemap = flask.render_template("sitemap/sitemap-links.xml")
+    response = flask.make_response(xml_sitemap)
+    response.headers["Content-Type"] = "application/xml"
+
+    return response
+
+
 @open_id.after_login
 def after_login(resp):
     """
