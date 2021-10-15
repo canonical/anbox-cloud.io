@@ -2,23 +2,35 @@ name: docs links on anbox-cloud.io/docs
 
 on:
   schedule:
-    - cron: "0 13 * * 1"
+    - cron: "0 13 * * *"
 
 jobs:
   check-links:
-    if: github.repository == 'canonical-web-and-design/anbox-cloud.io'
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout master
+      - name: Checkout main
         uses: actions/checkout@v2
 
       - name: Install linkchecker
         run: sudo pip install LinkChecker
 
+      - name: Write linkchecker config file
+        run: |
+          mkdir -p ~/.linkchecker
+          cp scripts/linkcheckerrc ~/.linkchecker/
+
       - name: Run linkchecker
-        run: linkchecker --threads 2 --ignore-url "https://res.cloudinary.com*" --ignore-url '.*&start=.*' --ignore-url /q_auto --ignore-url /fl_sanitize --ignore-url /w_* --ignore-url /h_* --ignore-url "https://assets.ubuntu.com$" --check-extern --no-warnings https://anbox-cloud.io/docs
+        run: linkchecker https://anbox-cloud.io/docs > ~/.linkchecker/linkchecker-out.txt
+
+      - name: Parse linkchecker output
+        run: scripts/parseDocsLinkcheckerOutput
 
       - name: Send message on failure
         if: failure()
-        run: curl -X POST -F "workflow=${GITHUB_WORKFLOW}" -F "repo_name=${GITHUB_REPOSITORY}" -F "action_id=${GITHUB_RUN_ID}" ${{ secrets.BOT_URL }}?room=docs
+        run: |
+          curl -X POST \
+          -F "workflow=${GITHUB_WORKFLOW}" \
+          -F "repo_name=${GITHUB_REPOSITORY}" \
+          -F "action_id=${GITHUB_RUN_ID}" \
+          ${{ secrets.BOT_URL }}?room=docs
