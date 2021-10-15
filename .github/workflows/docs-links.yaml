@@ -21,6 +21,7 @@ jobs:
           cp scripts/linkcheckerrc ~/.linkchecker/
 
       - name: Run linkchecker
+        continue-on-error: true
         run: linkchecker https://anbox-cloud.io/docs > ~/.linkchecker/linkchecker-out.txt
 
       - name: Parse linkchecker output
