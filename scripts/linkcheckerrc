@@ -12,7 +12,7 @@ ignore=
   /w_
   /h_
   https://assets\.ubuntu\.com
-  https://bugs.launchpad.net/indore-extern/+filebug
+  https://bugs.launchpad.net/indore-extern/*
 
 [output]
 status=0
