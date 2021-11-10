@@ -1,4 +1,4 @@
-canonicalwebteam.flask-base==0.9.0
+canonicalwebteam.flask-base==0.9.2
 canonicalwebteam.discourse==4.0.4
 Flask-OpenID-Stateless==1.2.6
 requests==2.25.1
