@@ -34,7 +34,9 @@ app = FlaskBase(
 
 app.secret_key = os.environ["SECRET_KEY"]
 open_id = OpenID(
-    stateless=True, safe_roots=[], extension_responses=[MacaroonResponse]
+    store_factory=lambda: None,
+    safe_roots=[],
+    extension_responses=[MacaroonResponse],
 )
 
 # Discourse docs
