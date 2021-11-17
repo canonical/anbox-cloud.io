@@ -70,7 +70,9 @@
                   <h3>{{ nav_group.navlink_text }}</h3>
                 {% endif %}
               {% endif %}
+              {% if not nav_group.hidden %}
               {{ create_navigation(nav_group.children) }}
+              {% endif %}
             {% endfor %}
           </div>
         </nav>
