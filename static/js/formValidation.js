@@ -3,24 +3,26 @@
 * to disable the normal submit, and instead use backgroundSubmit
 */
 
-backgroundSubmitHandlerClosure = function(submitEvent) {
-  return function(submitEvent) {
+import serialize from '../third-party/serialize';
 
+const backgroundSubmitHandlerClosure = function () {
+  return function (submitEvent) {
     // Prevent normal submit
-    submitEvent.preventDefault ? submitEvent.preventDefault() : submitEvent.returnValue = false;
-
+    submitEvent.preventDefault
+      ? submitEvent.preventDefault()
+      : (submitEvent.returnValue = false);
     // get form
     var marketoForm = document.getElementById(submitEvent.target.id);
 
     // Change the form's action location
-    marketoForm.action = "https://ubuntu.com/marketo/submit";
+    marketoForm.action = 'https://ubuntu.com/marketo/submit';
 
     // Submit the form in the background
     backgroundSubmit(marketoForm);
-  }
-}
+  };
+};
 
-backgroundSubmit = function(marketoForm, submitCallback) {
+const backgroundSubmit = function(marketoForm, submitCallback) {
   var request = new XMLHttpRequest();
   var submitUrl = marketoForm.getAttribute('action');
   var formData = serialize(marketoForm);
@@ -41,28 +43,6 @@ backgroundSubmit = function(marketoForm, submitCallback) {
       }
     });
   }
-
-  // recaptcha test
-  var recaptchaListElement = marketoForm.getElementsByClassName('g-recaptcha')[0];
-  var recaptchaWidgetId = recaptchaListElement.dataset.widgetId;
-  var response = grecaptcha.getResponse(recaptchaWidgetId);
-  var already_errored = document.getElementById('recaptcha-msg');
-  if (response === '') {
-    if (!already_errored) {
-      recaptchaListElement.classList.add("recaptcha-is-error");
-      recaptchaListElement.insertAdjacentHTML('afterend', '<p id="recaptcha-msg" class="p-form-validation__message" role="alert"><strong>Error:</strong> You need to complete the recaptcha to submit this form. </p>');
-    }
-    return false;
-  } else {
-    if (already_errored) {
-      recaptchaListElement.classList.remove("recaptcha-is-error");
-      var msg = document.getElementById('recaptcha-msg');
-      msg.parentNode.removeChild(msg);
-    }
-  }
-
-  // copy recaptcha to marketo field
-  var formData = formData.concat("&grecaptcharesponse=" + response);
 
   // Send off the POST request
   request.send(formData);
@@ -90,13 +70,12 @@ backgroundSubmit = function(marketoForm, submitCallback) {
   if (thankYouMessage != null) {
     thankYouMessage = thankYouMessage.value;
   }
-  formid = this.id;
+ 
 
   // reset form and captcha
   if (!document.querySelector('.js-feedback-notification')) {
     marketoForm.reset();
   }
-  grecaptcha.reset();
 
   // deal with the post submit actions
   afterSubmit(download_asset_url, return_url, isModal, thankYouMessage, marketoForm, isWhitepaper);
@@ -109,7 +88,7 @@ backgroundSubmit = function(marketoForm, submitCallback) {
 * start download and send the user to the instructions page
 */
 
-afterSubmit = function(download_asset_url, return_url, isModal, thankYouMessage, marketoForm, isWhitepaper) {
+const afterSubmit = function(download_asset_url, return_url, isModal, thankYouMessage, marketoForm, isWhitepaper) {
 
   // Now start the download
   if (download_asset_url) {
@@ -137,38 +116,37 @@ afterSubmit = function(download_asset_url, return_url, isModal, thankYouMessage,
   // if someone submitted a form without a thank you action
   if (return_url === null && isModal === false && isWhitepaper === false) {
     if (thankYouMessage === null) {
-      thankYouMessage = 'Thank you<br />A member of our team will be in touch within one working day';
+      thankYouMessage =
+        'Thank you<br />A member of our team will be in touch within one working day';
     }
     var feedbackArea = document.querySelector('.js-feedback-notification');
     if (feedbackArea) {
-      feedbackArea.innerHTML = '<div class="p-notification--positive"><p class="p-notification__response">' + thankYouMessage + '</p></div>';
+      feedbackArea.innerHTML =
+        '<div class="p-notification--positive"><p class="p-notification__response">' +
+        thankYouMessage +
+        '</p></div>';
       var inputs = marketoForm.querySelectorAll('input, button');
       for (var i = 0; i < inputs.length; i++) {
-        inputs[i].disabled = "disabled";
+        inputs[i].disabled = 'disabled';
       }
-      var recaptcha = marketoForm.querySelector('.g-recaptcha');
-      if (recaptcha) {
-        recaptcha.classList.add('u-hide');
-      }
-      marketoForm.style.opacity = ".5";
+
+      marketoForm.style.opacity = '.5';
     } else {
-      document.getElementById('main-content').insertAdjacentHTML('afterbegin', '<div class="p-strip is-shallow u-no-padding--bottom"><div class="row"><div class="p-notification--positive"><p class="p-notification__response">' + thankYouMessage + '</p></div></div></div>');
-      window.scrollTo(0,0);
+      document
+        .getElementById('main-content')
+        .insertAdjacentHTML(
+          'afterbegin',
+          '<div class="p-strip is-shallow u-no-padding--bottom"><div class="row"><div class="p-notification--positive"><p class="p-notification__response">' +
+            thankYouMessage +
+            '</p></div></div></div>'
+        );
+      window.scrollTo(0, 0);
     }
   }
 
   if (isWhitepaper) {
     whitepaperAfterSubmit();
   }
-}
-
-// recaptcha submitCallback
-CaptchaCallback = function() {
-  let recaptchas = document.querySelectorAll("div[class^=g-recaptcha]");
-  recaptchas.forEach(function(field){
-    recaptchaWidgetId = grecaptcha.render(field, {'sitekey' : '6LfYBloUAAAAAINm0KzbEv6TP0boLsTEzpdrB8if'});
-    field.setAttribute("data-widget-id", recaptchaWidgetId);
-  });
 }
 
 // attach handler to all forms
