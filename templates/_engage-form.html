@@ -1,69 +1,55 @@
 <!-- MARKETO FORM -->
-<form action="https://pages.ubuntu.com/index.php/leadCapture/save" method="post" class="marketo-form" id="mktoForm_{{ id }}">
+<form action="https://ubuntu.com/marketo/submit" method="post" id="mktoForm_{{ id }}">
     <ul class="p-list">
-      <li class="mktFormReq mktField p-list__item">
-        <label for="FirstName" class="mktoLabel">First name:</label>
-        <input required id="FirstName" name="FirstName" maxlength="255" class="mktoField   mktoRequired" type="text"
+      <li class="p-list__item">
+        <label for="firstName">First name:</label>
+        <input required id="firstName" name="firstName" maxlength="255" type="text"
           aria-label="First Name">
       </li>
-      <li class="mktFormReq mktField p-list__item">
-        <label for="LastName" class="mktoLabel ">Last name:</label>
-        <input required id="LastName" name="LastName" maxlength="255" class="mktoField   mktoRequired" type="text"
+      <li class="p-list__item">
+        <label for="lastName">Last name:</label>
+        <input required id="lastName" name="lastName" maxlength="255" type="text"
           aria-label="Last Name">
       </li>
-      <li class="mktFormReq mktField p-list__item">
-        <label for="Email" class="mktoLabel ">Work email:</label>
-        <input required id="Email" name="Email" maxlength="255" class="mktoField mktoEmailField  mktoRequired" type="email"
+      <li class="p-list__item">
+        <label for="email">Work email:</label>
+        <input required id="email" name="email" maxlength="255" type="email"
           aria-label="Email">
       </li>
-      <li class="mktFormReq mktField p-list__item">
-        <label for="Company" class="mktoLabel ">Company name:</label>
-        <input required id="Company" name="Company" maxlength="255" class="mktoField   mktoRequired" type="text"
+      <li class="p-list__item">
+        <label for="company">Company name:</label>
+        <input required id="company" name="company" maxlength="255" type="text"
           aria-label="Company Name">
       </li>
-      <li class="mktFormReq mktField p-list__item">
-        <label for="Title" class="mktoLabel ">Job title:</label>
-        <input required id="Title" name="Title" maxlength="255" class="mktoField   mktoRequired" type="text" aria-label="Job Title">
+      <li class="p-list__item">
+        <label for="title">Job title:</label>
+        <input required id="title" name="title" maxlength="255" type="text" aria-label="Job Title">
       </li>
-      <li class="mktFormReq mktField p-list__item">
-        <label for="Phone" class="mktoLabel ">Mobile/cell phone number:</label>
-        <input required id="Phone" name="Phone" maxlength="255" class="mktoField mktoTelField  mktoRequired" type="tel"
+      <li class="p-list__item">
+        <label for="phone">Mobile/cell phone number:</label>
+        <input required id="phone" name="phone" maxlength="255" type="tel"
           aria-label="Phone Number">
       </li>
-      <li class="mktField">
-        <input name="utm_campaign" aria-label="utm_campaign" class="mktoField  mktoFormCol" value="{{utm_campaign}}"
-          type="hidden">
-      </li>
-      <li class="mktField">
-        <input name="utm_medium" aria-label="utm_medium" class="mktoField  mktoFormCol" value="{{utm_medium}}" type="hidden">
-      </li>
-      <li class="mktField">
-        <input name="utm_source" aria-label="utm_source" class="mktoField  mktoFormCol" value="{{utm_source}}" type="hidden">
-      </li>
-      <li class="mktField">
+      <li>
         <input name="canonicalUpdatesOptIn" aria-label="canonicalUpdatesOptIn" id="canonicalUpdatesOptIn" value="yes"
-          class="mktoField" type="checkbox"><label for="canonicalUpdatesOptIn" class="mktoLabel ">I agree to receive information about Canonical’s products and services.</label>
+          type="checkbox"><label for="canonicalUpdatesOptIn">I agree to receive information about Canonical’s products and services.</label>
       </li>
-      <li class="mktField">
+      <li>
         <p>In submitting this form, I confirm that I have read and agree to <a href="https://ubuntu.com/legal/data-privacy/contact">Canonical&rsquo;s Privacy Notice</a> and <a href="https://ubuntu.com/legal/data-privacy">Privacy Policy</a>.
           <input name="RichText" aria-label="RichText" type="hidden">
         </p>
       </li>
-      <li class="mktField">
-        <div class="g-recaptcha" data-sitekey="6LfYBloUAAAAAINm0KzbEv6TP0boLsTEzpdrB8if" style="margin: 2rem 0;"></div>
+      <li>
+        <input name="Consent_to_Processing__c" aria-label="Consent" value="Yes" type="hidden">
       </li>
-      <li class="mktField">
-        <input name="Consent_to_Processing__c" aria-label="Consent" class="mktoField  mktoFormCol" value="Yes" type="hidden">
-      </li>
-      <li class="mktField">
+      <li>
         <button type="submit" class="p-button--positive u-no-margin--bottom">{% if cta %}{{ cta }}{% else %}Talk to us about Anbox Cloud{% endif %}</button>
-        <input type="hidden" aria-hidden="true" aria-label="hidden field" name="munchkinId" class="mktoField" value="066-EOV-335" />
-        <input name="formid" aria-label="formid" class="mktoField" value="{{ id }}" type="hidden">
-        <input name="formVid" aria-label="formid" class="mktoField" value="{{ id }}" type="hidden">
+        <input name="formid" aria-label="formid" value="{{ id }}" type="hidden">
         <input type="hidden" name="returnURL" aria-label="returnURL" value="{{ returnURL }}" />
-        <input type="hidden" name="retURL" aria-label="retURL" value="{{ returnURL }}" />
-        <input type="hidden" aria-hidden="true" aria-label="hidden field" name="return_url" value="{{returnURL}}" />
-      </li>
+        <input type="hidden" aria-hidden="true" aria-label="hidden field" name="utm_campaign" id="utm_campaign" value="" />
+        <input type="hidden" aria-hidden="true" aria-label="hidden field" name="utm_medium" id="utm_medium" value="" />
+        <input type="hidden" aria-hidden="true" aria-label="hidden field" name="utm_source" id="utm_source" value="" />  
+    </li>
     </ul>
 </form>
 <!-- /MARKETO FORM -->
