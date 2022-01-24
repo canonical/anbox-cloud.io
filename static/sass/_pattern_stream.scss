@@ -38,16 +38,16 @@
   .p-stream__instructions {
     text-align: left;
 
-    @media (min-width: $breakpoint-medium) {
-      bottom: $spv-inner--medium;
-      left: $sph-inner;
+    @media (min-width: $breakpoint-small) {
+      bottom: $spv--medium;
+      left: $sph--large;
       position: absolute;
     }
   }
 
   .p-stream__error {
-    left: $sph-inner;
+    left: $sph--large;
     position: absolute;
-    top: $spv-inner--medium;
+    top: $spv--medium;
   }
 }
