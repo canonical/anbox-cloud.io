@@ -42,29 +42,11 @@ class TestRoutes(unittest.TestCase):
 
         self.assertEqual(self.client.get("/not-found-url").status_code, 404)
 
-    def test_demo_no_session(self):
-        """
-        Demo page should redirect to login if no session.
-        """
-        response = self.client.get("/demo")
-        demo_uri = "http://localhost/login?next=/demo"
-        self.assertEqual(self.client.get("/demo").status_code, 302)
-        self.assertEqual(response.location, demo_uri)
-
-    def test_demo_login(self):
-        """
-        Demo page should be accessible if
-        authentication_token (anbox-cloud API) session not empty.
-        """
-        with self.client.session_transaction() as s:
-            self.assertTrue("authentication_token" not in s)
-
     def test_logout(self):
         """
         When given the index URL,
         we should return a 302 status code
         """
-        self.test_demo_login()
         self.assertEqual(self.client.get("/logout").status_code, 302)
 
     def test_terms(self):

@@ -36,9 +36,8 @@
   bottom: auto;
 }
 
-// @carkod Carlos - 13/08/20: Can be removed once the following issue has been resolved:
-// https://github.com/canonical-web-and-design/vanilla-framework/issues/3206
-.p-side-navigation--raw-html {
-  max-height: none;
-  position: static;
+// Adjust logo width to secondary navigation 
+.p-navigation .p-navigation__banner {
+  padding-left: 0;
+  padding-right: 0;
 }

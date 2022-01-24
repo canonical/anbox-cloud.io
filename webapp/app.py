@@ -237,24 +237,6 @@ def login_handler():
     )
 
 
-@app.route("/demo")
-@login_required
-def demo():
-    authentication_token = flask.session["authentication_token"]
-    authorization_header = {
-        "Authorization": f"macaroon root={authentication_token}"
-    }
-    # to be removed in the future
-    _api_request("/1.0/instances", headers=authorization_header)
-
-    content = flask.render_template(
-        "demo.html", ANBOXCLOUD_API_BASE=ANBOXCLOUD_API_BASE
-    )
-    resp = flask.make_response(content)
-    resp.set_cookie("api_token", authentication_token)
-    return resp
-
-
 @app.errorhandler(401)
 def handle_unauthorised(error):
     """
