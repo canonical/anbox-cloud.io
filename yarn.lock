@@ -33,10 +33,10 @@
   resolved "https://registry.yarnpkg.com/@canonical/cookie-policy/-/cookie-policy-3.4.0.tgz#0d6708da340df5867fd2cc9dbd95538c46f20cf8"
   integrity sha512-cdVqxQmGu+j+Q86UobihWWVFzGzHlekFeMFxlbRpm+yqxEOUCrLkA9/t/RsMfLNDToP2ECPgsMbS20aPlA2tIg==
 
-"@canonical/global-nav@2.6.0":
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/@canonical/global-nav/-/global-nav-2.6.0.tgz#3fa03a8704cdb362fa1c7da28dbc6329b414462f"
-  integrity sha512-W695y0kdy7hQzAvs8u3bsIAJDQQSd4+Z1+sIT+JguyFkKLckUzRcDwJ4FFIpCOkSDqeZqzR8V20jvrBhk/hh5A==
+"@canonical/global-nav@2.7.0":
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/@canonical/global-nav/-/global-nav-2.7.0.tgz#6a61cba769a367c984b89bb7c4286a674f88354a"
+  integrity sha512-jepwipTPIlceeHMvLSC8mafziknvhefr0SNCvSWMOdkPnZC28Rd45wBahfnEJ7THi4qt9xkZ99I+xHuJVKfpOA==
   dependencies:
     vanilla-framework "3.0.1"
 
