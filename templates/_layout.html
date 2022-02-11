@@ -76,6 +76,8 @@
         {% include "/secondary-nav.html" %}
       {% endblock %}
     </main>
-    {% include 'footer.html' %}
+    {% block footer %}
+      {% include 'footer.html' %}
+    {% endblock %}
   </body>
 </html>
