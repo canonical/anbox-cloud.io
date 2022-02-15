@@ -1,5 +1,6 @@
 import os
 from urllib.parse import urlparse
+from datetime import datetime
 
 import flask
 import requests
@@ -64,6 +65,11 @@ app.add_url_rule(
         template_path="docs/search.html",
     ),
 )
+
+
+@app.context_processor
+def inject_now():
+    return {"now": datetime.utcnow()}
 
 
 def _api_request(url_path, method="GET", params=None, json=None, headers=None):
