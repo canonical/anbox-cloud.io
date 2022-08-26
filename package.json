@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@canonical/cookie-policy": "3.4.0",
-    "@canonical/global-nav": "3.0.0",
+    "@canonical/global-nav": "2.7.0",
     "postcss": "8.4.5",
     "postcss-cli": "8.3.1",
     "sass": "1.46.0",
