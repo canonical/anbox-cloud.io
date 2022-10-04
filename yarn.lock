@@ -23,27 +23,17 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@canonical/cookie-policy@3.3.0":
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/@canonical/cookie-policy/-/cookie-policy-3.3.0.tgz#99df0aad2bf01c43e0a6d524b062ebc6066a3121"
-  integrity sha512-G4u2dr04t138BoIsdbnVsL5i2vBl3supgqkAG03AfvAIbbkt1QlIlodGtrv0s3sczmUTEiSNfmT3iC70GY0Suw==
-
 "@canonical/cookie-policy@3.4.0":
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/@canonical/cookie-policy/-/cookie-policy-3.4.0.tgz#0d6708da340df5867fd2cc9dbd95538c46f20cf8"
   integrity sha512-cdVqxQmGu+j+Q86UobihWWVFzGzHlekFeMFxlbRpm+yqxEOUCrLkA9/t/RsMfLNDToP2ECPgsMbS20aPlA2tIg==
 
-"@canonical/global-nav@2.7.0":
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/@canonical/global-nav/-/global-nav-2.7.0.tgz#6a61cba769a367c984b89bb7c4286a674f88354a"
-  integrity sha512-jepwipTPIlceeHMvLSC8mafziknvhefr0SNCvSWMOdkPnZC28Rd45wBahfnEJ7THi4qt9xkZ99I+xHuJVKfpOA==
+"@canonical/global-nav@3.1.4":
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/@canonical/global-nav/-/global-nav-3.1.4.tgz#f75ccf951086f219f33791aedc9fac326b6886ff"
+  integrity sha512-gNWGvElqG6RFW0QpMqwq4bQXjUnZR2bTFgu+Ms1UL9/oD8u0anQ+k7lE5fZivcJPej3OJTkPL9GZQ6LGtWoeNg==
   dependencies:
-    vanilla-framework "3.0.1"
-
-"@canonical/latest-news@1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@canonical/latest-news/-/latest-news-1.3.0.tgz#14fcd8a80051eb65fb274a0cec086e9aca3f19f0"
-  integrity sha512-VwGcZo9LGzdeQ/sKt+5TQttIibTxjZEpsEtuWbbsacbqqzqVfqZhDsZkkg/7WNxKQ2lpnyq+4mLT70u9YbYSYA==
+    vanilla-framework "3.7.1"
 
 "@canonical/latest-news@1.4.1":
   version "1.4.1"
@@ -1907,15 +1897,6 @@ sass-lint@1.13.1:
     path-is-absolute "^1.0.0"
     util "^0.10.3"
 
-sass@1.45.2:
-  version "1.45.2"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.45.2.tgz#130b428c1692201cfa181139835d6fc378a33323"
-  integrity sha512-cKfs+F9AMPAFlbbTXNsbGvg3y58nV0mXA3E94jqaySKcC8Kq3/8983zVKQ0TLMUrHw7hF9Tnd3Bz9z5Xgtrl9g==
-  dependencies:
-    chokidar ">=3.0.0 <4.0.0"
-    immutable "^4.0.0"
-    source-map-js ">=0.6.2 <2.0.0"
-
 sass@1.46.0:
   version "1.46.0"
   resolved "https://registry.yarnpkg.com/sass/-/sass-1.46.0.tgz#923117049525236026a7ede69715580eb0fac751"
@@ -2255,17 +2236,19 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
-vanilla-framework@3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-3.0.1.tgz#16a7f19ccb24f6b3885b6d176b5754113e4d9c0d"
-  integrity sha512-KwZ0wZCbNhEjuTb50BkAX2frWwNjtgmKRcQEDHOQFNuEweDUT2O1E0ps2GLHv7lSOVxli1jQv56VvIBEr0+lqw==
+vanilla-framework@3.7.1:
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-3.7.1.tgz#ee107f0695cffb386760164a2bb1901a610d3929"
+  integrity sha512-QR188kOz6mENe4/owkifksgrK6EsTcymG39Wr3nereUadxh1GlipNsxo0MhozhBP0ZvQkBwD8V734j8wjdcydg==
   dependencies:
-    "@canonical/cookie-policy" "3.3.0"
-    "@canonical/latest-news" "1.3.0"
-    autoprefixer "10.4.1"
-    postcss "8.4.5"
+    "@canonical/cookie-policy" "3.4.0"
+    "@canonical/latest-news" "1.4.1"
+    autoprefixer "10.4.8"
+    postcss "8.4.14"
     postcss-cli "9.1.0"
-    sass "1.45.2"
+    postcss-scss "4.0.4"
+    sass "1.54.0"
+    yaml "1.10.2"
 
 vanilla-framework@3.8.0:
   version "3.8.0"
