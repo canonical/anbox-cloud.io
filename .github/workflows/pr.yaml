@@ -77,19 +77,25 @@ jobs:
           sudo apt-get update && sudo apt-get install --yes python3-setuptools
           sudo pip3 install -r requirements.txt
 
-      - name: Install dependencies
-        run: sudo pip3 install coverage
+      - name: Install dotrun
+        uses: canonical/install-dotrun@main
 
       - name: Install node dependencies
-        run: yarn install --immutable
+        run: /snap/bin/dotrun install
+
+      - name: Install dependencies
+        run: /snap/bin/dotrun exec pip3 install coverage
 
       - name: Build resources
-        run: yarn build
+        run: /snap/bin/dotrun build
 
       - name: Run tests with coverage
-        run: |
-          coverage run  --source=. -m unittest discover tests
-          bash <(curl -s https://codecov.io/bash) -cF python
+        run: /snap/bin/dotrun exec coverage run --source=. -m unittest discover tests
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          flags: python
 
   inclusive-naming-check:
     runs-on: ubuntu-latest
