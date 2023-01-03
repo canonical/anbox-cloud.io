@@ -22,12 +22,12 @@
     "@canonical/global-nav": "3.2.1",
     "autoprefixer": "10.4.13",
     "postcss": "8.4.20",
-    "postcss-cli": "8.3.1",
+    "postcss-cli": "10.1.0",
     "sass": "1.57.1",
     "vanilla-framework": "3.9.0"
   },
   "devDependencies": {
-    "concurrently": "5.3.0",
+    "concurrently": "7.6.0",
     "sass-lint": "1.13.1",
     "watch-cli": "0.2.3"
   }
