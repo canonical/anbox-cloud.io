@@ -28,12 +28,12 @@
   resolved "https://registry.yarnpkg.com/@canonical/cookie-policy/-/cookie-policy-3.4.0.tgz#0d6708da340df5867fd2cc9dbd95538c46f20cf8"
   integrity sha512-cdVqxQmGu+j+Q86UobihWWVFzGzHlekFeMFxlbRpm+yqxEOUCrLkA9/t/RsMfLNDToP2ECPgsMbS20aPlA2tIg==
 
-"@canonical/global-nav@3.2.3":
-  version "3.2.3"
-  resolved "https://registry.yarnpkg.com/@canonical/global-nav/-/global-nav-3.2.3.tgz#03391e0db8e9885999c1d9c691da171dece78f9c"
-  integrity sha512-SzH4LL1/ZDCIV7djrpafpVxH3bqY8y8zHm6sbl3A1mhDDEtA1L2FlrDNb2dBVnWwucWMnddfJbNap/sFwwoYjA==
+"@canonical/global-nav@3.2.4":
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/@canonical/global-nav/-/global-nav-3.2.4.tgz#2f2b74fee19ce7efbca248e224876fc30230785e"
+  integrity sha512-F2q7ubipvNEisNgPLeEyySDokUmsBtImEehnotrbPZ/A6Bka/y2MUTgTXdVVrZPMPBtLReGafwqQjR2x0XeJpw==
   dependencies:
-    vanilla-framework "3.9.0"
+    vanilla-framework "3.11.1"
 
 "@canonical/latest-news@1.4.1":
   version "1.4.1"
@@ -1539,15 +1539,6 @@ postcss-value-parser@^4.2.0:
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz#723c09920836ba6d3e5af019f92bc0971c02e514"
   integrity sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==
 
-postcss@8.4.19:
-  version "8.4.19"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.19.tgz#61178e2add236b17351897c8bcc0b4c8ecab56fc"
-  integrity sha512-h+pbPsyhlYj6N2ozBmHhHrs9DzGmbaarbLvWipMRO7RLS+v4onj26MPFXA5OBYFxyqYhUJK456SwDcY9H2/zsA==
-  dependencies:
-    nanoid "^3.3.4"
-    picocolors "^1.0.0"
-    source-map-js "^1.0.2"
-
 postcss@8.4.20:
   version "8.4.20"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.20.tgz#64c52f509644cecad8567e949f4081d98349dc56"
@@ -1725,15 +1716,6 @@ sass-lint@1.13.1:
     merge "^1.2.0"
     path-is-absolute "^1.0.0"
     util "^0.10.3"
-
-sass@1.56.1:
-  version "1.56.1"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.56.1.tgz#94d3910cd468fd075fa87f5bb17437a0b617d8a7"
-  integrity sha512-VpEyKpyBPCxE7qGDtOcdJ6fFbcpOM+Emu7uZLxVrkX8KVU/Dp5UF7WLvzqRuUhB6mqqQt1xffLoG+AndxTZrCQ==
-  dependencies:
-    chokidar ">=3.0.0 <4.0.0"
-    immutable "^4.0.0"
-    source-map-js ">=0.6.2 <2.0.0"
 
 sass@1.57.1:
   version "1.57.1"
@@ -2031,20 +2013,6 @@ vanilla-framework@3.11.1:
     postcss-cli "9.1.0"
     postcss-scss "4.0.6"
     sass "1.58.0"
-    yaml "1.10.2"
-
-vanilla-framework@3.9.0:
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-3.9.0.tgz#7eac24cac2b09ea9e218c2c2aa3ef9547e6db320"
-  integrity sha512-fwWNny4ZhcSGDoTXENQ6GPUNjznvecrr0B4nShwlMKOvZMMpCexKtGGSuxKTg3s7Je3KEc0Ell6eivrOlhLsSA==
-  dependencies:
-    "@canonical/cookie-policy" "3.4.0"
-    "@canonical/latest-news" "1.4.1"
-    autoprefixer "10.4.13"
-    postcss "8.4.19"
-    postcss-cli "9.1.0"
-    postcss-scss "4.0.6"
-    sass "1.56.1"
     yaml "1.10.2"
 
 verbalize@^0.1.2:
