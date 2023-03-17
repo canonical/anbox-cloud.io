@@ -1,17 +1,17 @@
 {% extends '_layout.html' %}
- 
- 
+
+
 {% block title %}Virtual mobile devices for value added services{% endblock %}
 {% block meta_description %}Anbox Cloud enables you create virtual Android devices running on any cloud.
 {% endblock %}
 {% block meta_copydoc %}https://docs.google.com/document/d/18SJoqttKOsDZ0zLO2eqcH6rot7T69TsNzy43nQbDgJs/edit#{% endblock meta_copydoc %}
- 
+
 {% block content %}
 {% include "/secondary-nav.html" %}
- 
+
 <section class="p-strip--suru-half-and-half-reversed is-dark">
  <div class="row u-equal-height u-vertically-center">
-   <div class="col-6">
+   <div class="col-7 col-medium-3">
      <h1>
       Mobile devices in the cloud
      </h1>
@@ -19,7 +19,7 @@
       Virtual mobile infrastructure for LTE and 5G networks
      </p>
    </div>
-   <div class="col-6 u-align--center u-hide--small">
+   <div class="col-5 u-align--center u-hide--small u-hide--medium">
     {{ image (
       url="https://assets.ubuntu.com/v1/14299fcc-Anbox_Testing_StarRating.svg",
       alt="",
@@ -34,11 +34,11 @@
 </section>
 
 <section>
-  <div class="p-strip u-no-padding--bottom">
+  <div class="p-strip">
     <div class="row">
       <div class="col-6">
         <p class="p-heading--4">
-          The Android platform hosts the largest ecosystem of mobile applications, with over 3 millions titles in the app store. With overcrowded app stores, mobile application developers compete intensively for app real estate on user mobile devices. 
+          The Android platform hosts the largest ecosystem of mobile applications, with over 3 millions titles in the app store. With overcrowded app stores, mobile application developers compete intensively for app real estate on user mobile devices.
         </p>
       </div>
       <div class="col-6">
@@ -52,12 +52,10 @@
       </div>
     </div>
   </div>
-  <div class="u-fixed-width">
-    <hr class="p-separator">
-  </div>
-  <div class="p-strip u-no-padding--top u-hide--small">
+  <hr class="is-fixed-width u-hide--small u-hide--medium">
+  <div class="p-strip u-hide--small u-hide--medium">
     <div class="row u-align--center">
-      <div class="col-4 u-hide--small">
+      <div class="col-4">
         {{ image (
           url="https://assets.ubuntu.com/v1/9559a2dd-Anbox_Testing_Robot_Signal.svg",
           alt="",
@@ -68,7 +66,7 @@
           ) | safe
         }}
       </div>
-      <div class="col-4 u-hide--small">
+      <div class="col-4">
         {{ image (
           url="https://assets.ubuntu.com/v1/fa122b37-Anbox_Testing_Cloud_Environment.svg",
           alt="",
@@ -79,7 +77,7 @@
           ) | safe
         }}
       </div>
-      <div class="col-4 u-hide--small">
+      <div class="col-4">
         {{ image (
           url="https://assets.ubuntu.com/v1/3ea644ce-Anbox_Testing_StarRating_Horiz.svg",
           alt="",
@@ -161,12 +159,12 @@
       <h3>Android in containers</h3>
       <p>Unlike Android emulators that make use of virtual machines, Anbox Cloud leverages system containers through <a href="https://linuxcontainers.org/">LXD</a>. LXD is a next generation system container manager. It offers a user experience similar to virtual machines but using lightweight Linux containers instead manageable via a REST API. You will therefore take advantage of automation-friendly interfaces to streamline your CI/CD testing pipeline.</p>
     </div>
-    <div class="col-5 u-align--center u-hide--small">
+    <div class="col-5 u-align--center u-hide--small u-hide--medium">
       {{ image (
-        url="https://assets.ubuntu.com/v1/ac9a0e00-lxd_primary.svg",
+        url="https://assets.ubuntu.com/v1/52b3819e-lxd-logo-long.svg",
         alt="",
-        width="229",
-        height="75",
+        width="254",
+        height="55",
         hi_def=True,
         loading="lazy"
         ) | safe
@@ -181,12 +179,12 @@
       <h3>Software orchestration</h3>
       <p>Emulating Android applications in thousands of virtual mobile devices mobile simultaneously requires orchestration and monitoring of several software components. This involves streaming servers, image repositories, mobile applications, a dashboard application for management and <a href="/docs/overview">more</a>. Thanks to <a href="https://juju.is">Juju</a> and <a href="https://maas.io/">MAAS</a>, you can deploy your stack automatically anywhere.</p>
     </div>
-    <div class="col-5 u-align--center u-hide--small">
+    <div class="col-5 u-align--center u-hide--small u-hide--medium">
       {{ image (
-        url="https://assets.ubuntu.com/v1/48a8eddf-juju_black-orange_hex.svg",
+        url="https://assets.ubuntu.com/v1/2840d6f1-juju-logo-55.svg",
         alt="",
-        width="208",
-        height="75",
+        width="254",
+        height="55",
         hi_def=True,
         loading="lazy"
         ) | safe
@@ -197,7 +195,7 @@
 
 <section class="p-strip is-bordered">
   <div class="row u-vertically-center">
-    <div class="col-6 u-align--center u-hide--small">
+    <div class="col-6 u-align--center u-hide--small u-hide--medium">
       {{ image (
         url="https://assets.ubuntu.com/v1/c4b290c8-Contact+us.svg",
         alt="",
