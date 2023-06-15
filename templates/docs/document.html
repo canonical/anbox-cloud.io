@@ -73,22 +73,24 @@
               </a>
             </div>
             {% for nav_group in navigation.nav_items %}
-            {% if nav_group.navlink_text %}
-              {% if nav_group.navlink_href %}
-              <h3 class="p-side-navigation__heading--linked">
-                <a class="p-side-navigation__link" href="{{ nav_group.navlink_href }}" {% if nav_group.is_active %}aria-current="page"{% endif %}>
-                  {{ nav_group.navlink_text }}
-                </a>
-              </h3>
-              {% else %}
-                <h3 class="p-side-navigation__heading">{{ nav_group.navlink_text }}</h3>
-              {% endif %}
+	    {% if not nav_group.hidden %}
+	      {% if nav_group.navlink_text %}
+		{% if nav_group.navlink_href %}
+		<h3 class="p-side-navigation__heading--linked">
+		  <a class="p-side-navigation__link" href="{{ nav_group.navlink_href }}" {% if nav_group.is_active %}aria-current="page"{% endif %}>
+		    {{ nav_group.navlink_text }}
+		  </a>
+		</h3>
+		{% else %}
+		  <h3 class="p-side-navigation__heading">{{ nav_group.navlink_text }}</h3>
+		{% endif %}
+	      {% endif %}
+	      {#
+		Use `create_navigation(nav_group.children)` for a default, fully expanded navigation.
+		Use `create_navigation(nav_group.children, expandable=True)` for the nested nav levels to expand only when parent page is active.
+	      #}
+	      {{ create_navigation(nav_group.children, expandable=True) }}
             {% endif %}
-            {#
-              Use `create_navigation(nav_group.children)` for a default, fully expanded navigation.
-              Use `create_navigation(nav_group.children, expandable=True)` for the nested nav levels to expand only when parent page is active.
-            #}
-            {{ create_navigation(nav_group.children, expandable=True) }}
           {% endfor %}
           </div>
         </nav>
