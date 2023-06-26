@@ -1,6 +1,6 @@
 domain: anbox-cloud.io
 
-image: prod-comms.docker-registry.canonical.com/anbox-cloud.io
+image: prod-comms.ps5.docker-registry.canonical.com/anbox-cloud.io
 
 env:
   - name: SENTRY_DSN
