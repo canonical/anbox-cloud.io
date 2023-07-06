@@ -139,26 +139,6 @@ def privacy():
     return flask.render_template("privacy.html")
 
 
-@app.route("/virtual")
-def virtual():
-    return flask.render_template("virtual/index.html")
-
-
-@app.route("/enterprise")
-def enterprise():
-    return flask.render_template("enterprise/index.html")
-
-
-@app.route("/gaming")
-def gaming():
-    return flask.render_template("gaming/index.html")
-
-
-@app.route("/testing")
-def testing():
-    return flask.render_template("testing/index.html")
-
-
 @app.route("/sitemap.xml")
 def sitemap_index():
     xml_sitemap = flask.render_template("sitemap/sitemap-index.xml")

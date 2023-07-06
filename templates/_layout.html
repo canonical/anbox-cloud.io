@@ -113,7 +113,11 @@
               </span>
               <ul class="p-navigation__items" role="menu">
                 <li class="p-navigation__item" role="menuitem">
-                  <a class="p-navigation__link" href="/#use-cases">Use cases</a>
+                  <a
+                    class="p-navigation__link"
+                    href="/docs/howto/install-appliance/landing"
+                    >Install</a
+                  >
                 </li>
                 <li
                   class="p-navigation__item {% if request.path == '/docs' %}is-selected{% endif %}"
@@ -125,17 +129,18 @@
                   <a
                     class="p-navigation__link"
                     href="https://discourse.ubuntu.com/c/anbox-cloud/"
-                    >Discourse</a
+                    >Forum</a
                   >
                 </li>
               </ul>
+              <ul class="p-navigation__items global-nav"></ul>
             </nav>
           </div>
         </div>
       </div>
     </header>
     <main>
-      {% block content %} {% include "/secondary-nav.html" %} {% endblock %}
+      {% block content %} {% endblock %}
     </main>
     {% include 'footer.html' %}
   </body>

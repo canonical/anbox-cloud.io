@@ -19,24 +19,4 @@
     <loc>https://anbox-cloud.io/privacy</loc>
     <changefreq>weekly</changefreq>
   </url>
-
-  <url>
-    <loc>https://anbox-cloud.io/virtual</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://anbox-cloud.io/enterprise</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://anbox-cloud.io/gaming</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://anbox-cloud.io/testing</loc>
-    <changefreq>weekly</changefreq>
-  </url>
 </urlset>
