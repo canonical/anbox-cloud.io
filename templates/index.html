@@ -55,9 +55,6 @@
       </ul>
     </div>
   </div>
-  <div class="u-fixed-width">
-    <a class="p-button--positive" href="https://assets.ubuntu.com/v1/cc844737-Anbox_Cloud_Datasheet-latest.pdf">Download the datasheet</a>
-  </div>
 </section>
 
 <section class="p-strip" id="use-cases">
@@ -179,7 +176,7 @@
       <p>Do you have other use cases in mind for Android in the cloud with Anbox Cloud?</p>
     </div>
     <div class="col-5">
-      <a class="p-button--positive" href="/contact-us">Tell us more</a>
+      <a class="p-button js-invoke-modal" href="/contact-us">Tell us more</a>
     </div>
   </div>
 </section>
@@ -589,13 +586,13 @@
             <tr class="u-hide--small">
               <th></th>
               <td data-heading="Appliance" class="table-cell">
-                <a href="/docs/howto/install-appliance/landing" class="p-button--neutral">Install now</a>
+                <a href="/docs/howto/install-appliance/landing" class="p-button">Install now</a>
               </td>
               <td data-heading="Regular deployment" class="table-cell">
-                <a href="/docs/howto/install/deploy-juju" class="p-button--neutral">Install now</a>
+                <a href="/docs/howto/install/deploy-juju" class="p-button">Install now</a>
               </td>
               <td data-heading="Fully managed deployment" class="table-cell">
-                <a href="/contact-us" class="p-button--neutral">Contact us</a>
+                <a href="/contact-us" class="p-button js-invoke-modal">Contact us</a>
               </td>
             </tr>
           </tbody>
@@ -603,7 +600,7 @@
       </div>
       <ul class="p-inline-list u-hide--medium u-hide--large">
         <li class="p-inline-list__item">
-          <a href="/contact-us" class="p-button--neutral">Contact us</a>
+          <a href="/contact-us" class="p-button--neutral js-invoke-modal">Contact us</a>
         </li>
       </ul>
     </div>
@@ -616,7 +613,7 @@
       <h2>Tell us what you have in mind</h2>
       <p>Anbox Cloud is a platform which offers new ways to deliver mobile apps. You can test it out in the cloud in a few clicks!</p>
       <p>If you'd like to chat or learn more about how we can help accelerate your company, please reach out to us here!</p>
-      <a class="p-button--positive" href="/contact-us">Talk to an expert</a>
+      <a class="p-button js-invoke-modal" href="/contact-us">Talk to an expert</a>
     </div>
     <div class="col-6 u-align--center u-hide--small">
       {{ image (
@@ -631,6 +628,12 @@
     </div>
   </div>
 </section>
+<div
+  class="u-hide"
+  id="contact-form-container"
+  data-form-location="/modals/contact-us"
+></div>
+<script src="/static/js/modals.js" defer></script>
 
 <style>
 

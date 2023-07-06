@@ -69,3 +69,4 @@ bower_components/
 build/
 dist/
 static/js/modules/
+static/js/utils.js

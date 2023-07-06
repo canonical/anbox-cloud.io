@@ -31,6 +31,9 @@
 @include anbox-p-strip;
 @include anbox-p-stream;
 
+// import additional styles
+@import "intl-tel-input";
+
 .p-pull-quote .p-pull-quote__quote:last-of-type::after {
   bottom: auto;
 }
@@ -39,4 +42,11 @@
 .p-navigation .p-navigation__banner {
   padding-left: 0;
   padding-right: 0;
+}
+
+@media (min-width: 975px) {
+  #contact-modal.p-modal .p-modal__dialog {
+    max-width: 875px;
+    min-width: 875px;
+  }
 }

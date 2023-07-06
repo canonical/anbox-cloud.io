@@ -1,0 +1,42 @@
+<div class="p-modal" id="contact-modal">
+  <div class="p-modal__dialog" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description">
+    <header class="p-modal__header" style="display: block; border-bottom: 0;">
+      <button class="p-modal__close" aria-label="Close active modal" style="margin-left: -1rem">Close</button>
+      <h2 class="p-modal__title" id="modal-title">Let's get in touch</h2>
+    </header>
+    <form action="https://ubuntu.com/marketo/submit" method="post" id="mktoForm_3498">
+      <h3 class="p-heading--5 u-no-margin--bottom">Please briefly tell us about your use case</h3>
+      <textarea id="Comments_from_lead__c" name="Comments_from_lead__c" rows="4" maxlength="2000"
+                placeholder="Anything you'd like to communicate about your needs or interests?"></textarea>
+      <div class="row u-no-padding">
+        <div class="col-6 u-sv1">
+          <h3 class="p-heading--5 u-no-margin--bottom">How should we get in touch?</h3>
+          <label for="firstName">First name:</label>
+          <input required id="firstName" name="firstName" maxlength="255" type="text" class="u-no-margin--bottom" />
+          <label for="lastName">Last name:</label>
+          <input required id="lastName" name="lastName" maxlength="255" type="text" class="u-no-margin--bottom" />
+          <label for="email">Work email:</label>
+          <input required id="email" name="email" maxlength="255" type="email" pattern="^[^ ]+@[^ ]+\.[a-z]{2,26}$" class="u-no-margin--bottom" />
+          <label for="phone">Mobile/cell phone number:</label>
+          <input required id="phone" name="phone" maxlength="255" type="tel" class="u-no-margin--bottom" />
+        </div>
+      </div>
+      <div class="u-no-margin--bottom">
+        <input value="yes" id="canonicalUpdatesOptIn" name="canonicalUpdatesOptIn" type="checkbox" />
+        <label for="canonicalUpdatesOptIn">I agree to receive information about Canonical's products and
+          services.</label>
+      </div>
+      <div class="u-sv2">In submitting this form, I confirm that I have read and agree to Canonical's <a
+              href="https://ubuntu.com/legal/data-privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
+      </div>
+
+      <button type="submit" class="p-button--positive">Let's discuss</button>
+      <!-- hidden fields -->
+      <input type="hidden" aria-hidden="true" aria-label="hidden field" name="formid" value="3498" />
+      <input type="hidden" aria-hidden="true" aria-label="hidden field" name="returnURL"
+             value="https://anbox-cloud.io/thank-you" />
+      <input type="hidden" aria-hidden="true" aria-label="hidden field" name="Consent_to_Processing__c" value="yes" />
+  </div>
+  </form>
+</div>
+</div>
