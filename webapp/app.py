@@ -20,6 +20,8 @@ from posixpath import join as url_join
 from canonicalwebteam import image_template
 from canonicalwebteam.search import build_search_view
 
+from webapp.views import get_user_country_by_ip
+
 LOGIN_URL = "https://login.ubuntu.com"
 ANBOXCLOUD_API_BASE = "https://demo-api.anbox-cloud.io"
 
@@ -65,6 +67,8 @@ app.add_url_rule(
         template_path="docs/search.html",
     ),
 )
+
+app.add_url_rule("/user-country.json", view_func=get_user_country_by_ip)
 
 
 @app.context_processor
@@ -122,6 +126,11 @@ def index():
 @app.route("/contact-us")
 def contact_us():
     return flask.render_template("contact-us.html")
+
+
+@app.route("/modals/contact-us")
+def modals_contact_us():
+    return flask.render_template("/modals/contact-us.html")
 
 
 @app.route("/thank-you")

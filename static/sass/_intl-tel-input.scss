@@ -1,0 +1,17 @@
+// import dial-code dropdown
+@import "intl-tel-input/build/css/intlTelInput";
+
+// Overide the path to flags for dial codes
+.iti__flag {
+  background-image: url("//assets.ubuntu.com/v1/21572c97-flags.png");
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .iti__flag {
+    background-image: url("//assets.ubuntu.com/v1/d6f84371-flags%402x.png");
+  }
+}
+
+.iti {
+  width: 100%;
+}
