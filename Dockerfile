@@ -19,7 +19,9 @@ RUN --mount=type=cache,target=/usr/local/share/.cache/yarn yarn install --produc
 # Build stage: Run "yarn run build-js"
 # ===
 FROM yarn-dependencies AS build-js
+WORKDIR /srv
 ADD static/js static/js
+ADD build.js build.js
 RUN yarn run build-js
 
 # Build stage: Run "yarn run build-css"
