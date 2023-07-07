@@ -37,7 +37,6 @@ rules:
   no-misspelled-properties: 2
   no-trailing-whitespace: 2
   no-trailing-zero: 2
-  no-url-protocols: 2
 
   # Line Spacing
   one-declaration-per-line: 2
@@ -45,7 +44,6 @@ rules:
   single-line-per-selector: 2
 
   # Disallows
-  no-ids: 2
   no-qualifying-elements:
     - 2
     - allow-element-with-attribute: true
