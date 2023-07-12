@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@canonical/cookie-policy": "3.4.0",
-    "@canonical/global-nav": "3.2.5",
+    "@canonical/global-nav": "3.3.0",
     "autoprefixer": "10.4.13",
     "esbuild": "0.14.10",
     "intl-tel-input": "17.0.19",
