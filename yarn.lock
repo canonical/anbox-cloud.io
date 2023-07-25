@@ -7,12 +7,12 @@
   resolved "https://registry.yarnpkg.com/@canonical/cookie-policy/-/cookie-policy-3.5.0.tgz#1c7e6cc2d5a7218375001b2cff2996a927693e89"
   integrity sha512-XLCIl8+h+3BRfvqADqFsmAfWdaDGDchY/TPCKtpeQdb4r64SR6arsdNftlOb7vX8EuLCK2QRp6evUy0J+qnQTg==
 
-"@canonical/global-nav@3.3.0":
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/@canonical/global-nav/-/global-nav-3.3.0.tgz#3228d9d7507b33e09d887ac4b4655fc339943fdd"
-  integrity sha512-GF6eCvEyw339Md+aACk5MdUGEHI5g2zRB5A+Q3lXf/jP7dlc3QfQkxOc4zOwRxvRKeLDMVDtgJ0SexyGNSpAPQ==
+"@canonical/global-nav@3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@canonical/global-nav/-/global-nav-3.4.0.tgz#e565c9446fe43281622857e965bcf53bbed0e5c6"
+  integrity sha512-KDlFVPTnO6on8okYfSUtqTdEaMpQE42gqZV82DHcfFOmrDVe8lrLPUl5bS8khJ0WbZhozMIMSTI0PUC/PCgl1Q==
   dependencies:
-    vanilla-framework "4.0.0"
+    vanilla-framework "3.14.0"
 
 "@nodelib/fs.scandir@2.1.3":
   version "2.1.3"
@@ -1865,6 +1865,11 @@ util@^0.10.3:
   integrity sha512-0Pm9hTQ3se5ll1XihRic3FDIku70C+iHUdT/W926rSgHV5QgXsYbKZN8MSC3tJtSkhuROzvsQjAaFENRXr+19A==
   dependencies:
     inherits "2.0.3"
+
+vanilla-framework@3.14.0:
+  version "3.14.0"
+  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-3.14.0.tgz#c5b94d7e2e3ef2d3c9f24091b7efc4abf8054cf9"
+  integrity sha512-06Vr2nhjU72N9IivwCLcd7FgqFNopkiHfzANJUCNdvs8FkbTjIB7fcsFgJ6O76KnOBsEiAoJAssRkTh9x3a2jw==
 
 vanilla-framework@4.0.0:
   version "4.0.0"
