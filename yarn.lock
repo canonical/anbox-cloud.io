@@ -7,10 +7,10 @@
   resolved "https://registry.yarnpkg.com/@canonical/cookie-policy/-/cookie-policy-3.5.0.tgz#1c7e6cc2d5a7218375001b2cff2996a927693e89"
   integrity sha512-XLCIl8+h+3BRfvqADqFsmAfWdaDGDchY/TPCKtpeQdb4r64SR6arsdNftlOb7vX8EuLCK2QRp6evUy0J+qnQTg==
 
-"@canonical/global-nav@3.5.0":
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/@canonical/global-nav/-/global-nav-3.5.0.tgz#44773fee2fa085682fe2f73151cda9ce2ff7f8d8"
-  integrity sha512-yq1RU/sym6kGnnFV7b5X4KKCFOk20NGtwz6DenaAeUTVs0ZySFNz9bvyk1ZtvhdpQ4cHzp84n6vu1aaJREpLfw==
+"@canonical/global-nav@3.6.0":
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/@canonical/global-nav/-/global-nav-3.6.0.tgz#5edf3b0fb51c18ab6a3df533ce60f03596fab28a"
+  integrity sha512-QkuKIZTrZemW9gQRKCSBjdFkL+iHH/yHyIGIk5F9u+6yuvFZO8d6RkzjxyhBMuT22ljlLqv8E1naYjHp449cvg==
   dependencies:
     vanilla-framework "4.0.0"
 
