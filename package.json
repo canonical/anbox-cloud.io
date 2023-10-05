@@ -24,7 +24,7 @@
     "autoprefixer": "10.4.13",
     "esbuild": "0.14.10",
     "intl-tel-input": "17.0.19",
-    "postcss": "8.4.20",
+    "postcss": "8.4.31",
     "postcss-cli": "10.1.0",
     "sass": "1.57.1",
     "vanilla-framework": "4.3.0"
