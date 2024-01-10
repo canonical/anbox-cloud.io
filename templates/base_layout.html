@@ -71,7 +71,8 @@
     </script>
     <!-- End Google Tag Manager -->
   </head>
-  <body>
+
+  <body class="no-js is-paper {% block body_class %}l-site{% endblock %}">
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
@@ -82,66 +83,23 @@
       ></iframe
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <header id="navigation" class="p-navigation is-dark">
-      <div class="row p-navigation__wrapper" data-nosnippet>
-        <div class="col-12">
-          <div class="p-navigation__row">
-            <div class="p-navigation__banner">
-              <div class="p-navigation__logo u-vertically-center">
-                <a class="p-navigation__link" href="/" style="color: white">
-                  Anbox Cloud
-                </a>
-              </div>
-              <div>
-                <a
-                  href="#navigation"
-                  class="p-navigation__toggle--open"
-                  title="menu"
-                  >Menu</a
-                >
-                <a
-                  href="#navigation-closed"
-                  class="p-navigation__toggle--close"
-                  title="close menu"
-                  >Close menu</a
-                >
-              </div>
-            </div>
-            <nav class="p-navigation__nav" role="menubar">
-              <span class="u-off-screen">
-                <a href="#main-content">Jump to main content</a>
-              </span>
-              <ul class="p-navigation__items" role="menu">
-                <li class="p-navigation__item" role="menuitem">
-                  <a
-                    class="p-navigation__link"
-                    href="/docs/howto/install-appliance/landing"
-                    >Install</a
-                  >
-                </li>
-                <li
-                  class="p-navigation__item {% if request.path == '/docs' %}is-selected{% endif %}"
-                  role="menuitem"
-                >
-                  <a class="p-navigation__link" href="/docs">Docs</a>
-                </li>
-                <li class="p-navigation__item" role="menuitem">
-                  <a
-                    class="p-navigation__link"
-                    href="https://discourse.ubuntu.com/c/anbox-cloud/"
-                    >Forum</a
-                  >
-                </li>
-              </ul>
-              <ul class="p-navigation__items global-nav"></ul>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </header>
-    <main>
-      {% block content %} {% endblock %}
+    {% block body %}
+    {% include "partial/_navigation.html" %}
+
+    <main id="main-content">
+      {% block content %}{% endblock content %}
     </main>
-    {% include 'footer.html' %}
+
+    {% include "partial/_footer.html" %}
+    {% endblock %}
+
+    <script src="/static/js/modules/cookie-policy/cookie-policy.js"></script>
+    <script src="/static/js/modules/global-nav/global-nav.js"></script>
+    <script>
+      canonicalGlobalNav.createNav({
+        maxWidth: '72rem',
+      });
+      cpNs.cookiePolicy();
+    </script>
   </body>
 </html>

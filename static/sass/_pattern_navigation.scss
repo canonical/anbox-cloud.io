@@ -1,32 +1,25 @@
 @mixin anbox-p-navigation {
-
-  .p-navigation__wrapper {
-    @media (max-width: $breakpoint-navigation-threshold) {
-      padding-left: 0;
-      padding-right: 0;
-    }
-
-    @media (min-width: $breakpoint-navigation-threshold + 1) {
-      padding-left: map("$grid-gutter-widths", "large");
-      padding-right: map("$grid-gutter-widths", "large");
-    }
-  }
-
   .p-navigation {
-    .p-navigation__banner {
-      background-color: $ubuntu-orange;
-      padding: 0 1rem;
-    }
+    &__row {
+      &-banner {
+        padding: 0 ($sph--small + $sph--large);
 
-    .p-navigation__logo {
-      font-weight: 400;
-      margin-right: 0;
-    }
+        @media only screen and (max-width: $breakpoint-small) {
+          padding-left: 1rem;
+        }
+      }
 
-    .p-navigation__link a {
-      height: 100%;
-      padding-left: $spv--large;
-      padding-right: $spv--large;
+      &-logo {
+        font-weight: 400;
+        margin-right: 0;
+      }
+
+      &-toggle {
+        &--open,
+        &--close {
+          font-weight: 400;
+        }
+      }
     }
   }
 }

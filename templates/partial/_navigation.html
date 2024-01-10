@@ -1,0 +1,59 @@
+{% macro nav_logo() %}
+<div class="p-navigation__banner {% if not is_docs %}u-no-padding--left{% endif %}">
+  <div class="p-navigation__tagged-logo">
+    <a class="p-navigation__link" href="/">
+      <div class="p-navigation__logo-tag">
+        <img class="p-navigation__logo-icon" src="/static/logo.svg" alt="Anbox Cloud">
+      </div>
+      <span class="p-navigation__logo-title">Anbox Cloud</span>
+    </a>
+  </div>
+  <a href="#navigation" class="p-navigation__toggle--open" title="menu">Menu</a>
+  <a href="#navigation-closed" class="p-navigation__toggle--close" title="close menu">Close menu</a>
+</div>
+{% endmacro %}
+
+{% macro nav_items() %}
+<nav class="p-navigation__nav" aria-label="main-navigation">
+  <ul class="p-navigation__items" {% if not is_docs %}style="margin-left: -.75rem;" {% endif %} role="menu">
+    <li class="p-navigation__item" role="menuitem">
+      <a href="/docs/howto/install-appliance/landing" class="p-navigation__link">Install</a>
+    </li>
+    <li class="p-navigation__item {% if request.path == '/docs' %}is-selected{% endif %}" role="menuitem">
+      <a href="/docs" class="p-navigation__link">Docs</a>
+    </li>
+    <li class="p-navigation__item {% if request.path in ['/resources',] %}is-selected{% endif %}" role="menuitem">
+      <a href="https://discourse.ubuntu.com/c/anbox-cloud/" class="p-navigation__link">Forum</a>
+    </li>
+  </ul>
+  <ul class="p-navigation__items global-nav"></ul>
+</nav>
+{% endmacro %}
+
+<a href="#main-content" class="p-link--skip">Jump to main content</a>
+
+<header id="navigation" class="p-navigation is-dark">
+  {% block header_banner %}
+  {% if is_docs %}
+  <div class="l-docs__subgrid">
+    <div class="l-docs__sidebar">
+      {{ nav_logo() }}
+    </div>
+    <div class="l-docs__main">
+      <div class="p-navigation__row u-fixed-width">
+        {{ nav_items() }}
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <div class="row">
+    <div class="col-3">
+      {{ nav_logo() }}
+    </div>
+    <div class="col-9">
+      {{ nav_items() }}
+    </div>
+  </div>
+  {% endif %}
+  {% endblock header_banner %}
+</header>

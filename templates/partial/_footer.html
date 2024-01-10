@@ -1,0 +1,70 @@
+{% if is_docs %}
+<footer class="p-footer">
+  <div class="l-docs__subgrid">
+    <div class="l-docs__sidebar">
+      <div class="u-fixed-width">
+        <p>© {{ now.year }} Canonical Ltd.</p>
+      </div>
+    </div>
+    <div class="l-docs__main">
+      <div class="row">
+        <div class="col-3 col-medium-2">
+          <ul class="p-list is-dark" style="padding-top: .4rem;">
+            <li class="p-list__item--condensed">
+              <a href="https://www.ubuntu.com/legal">Legal information</a>
+            </li>
+            <li class="p-list__item--condensed">
+              <a href="" class="js-revoke-cookie-manager">Manage your tracker settings</a>
+            </li>
+            <li class="p-list__item--condensed">
+              <a class="p-footer__link" href="https://github.com/canonical-web-and-design/anbox-cloud.io/issues/new">Report a bug on this site</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-9">
+          <ul class="p-list">
+            <li class="p-list__item--condensed">
+              <p>Android is a trademark of Google LLC. Anbox Cloud uses assets available through the Android Open Source Project.</p>
+            </li>
+            <li class="p-list__item--condensed">
+              <p>Ubuntu and Canonical are registered trademarks of Canonical&nbsp;Ltd.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+{% else %}
+<footer class="p-footer l-footer--sticky">
+  <div class="row">
+    <div class="col-3 col-medium-2">
+      <p>© {{ now.year }} Canonical Ltd.</p>
+    </div>
+    <div class="col-3 col-medium-2">
+      <ul class="p-list is-dark" style="padding-top: .4rem;">
+        <li class="p-list__item--condensed">
+          <a href="https://www.ubuntu.com/legal">Legal information</a>
+        </li>
+        <li class="p-list__item--condensed">
+          <a href="" class="js-revoke-cookie-manager">Manage your tracker settings</a>
+        </li>
+        <li class="p-list__item--condensed">
+          <a class="p-footer__link" href="https://github.com/canonical-web-and-design/anbox-cloud.io/issues/new">Report a bug on this site</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-6">
+      <ul class="p-list">
+        <li class="p-list__item--condensed">
+          <p>Android is a trademark of Google LLC. Anbox Cloud uses assets available through the Android Open Source Project.</p>
+        </li>
+        <li class="p-list__item--condensed">
+          <p>Ubuntu and Canonical are registered trademarks of Canonical&nbsp;Ltd.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+{% endif %}
+

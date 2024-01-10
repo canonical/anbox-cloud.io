@@ -70,3 +70,4 @@ build/
 dist/
 static/js/modules/
 static/js/utils.js
+static/js/modals.js
