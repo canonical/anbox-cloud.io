@@ -22,6 +22,7 @@
 @import "pattern_navigation";
 @import "pattern_strip";
 @import "pattern_stream";
+@import "pattern_footer";
 
 @include anbox-p-deployment-table;
 @include anbox-p-docs;
@@ -30,6 +31,7 @@
 @include anbox-p-navigation;
 @include anbox-p-strip;
 @include anbox-p-stream;
+@include canonical-p-footer;
 
 // import additional styles
 @import "intl-tel-input";
@@ -38,15 +40,18 @@
   bottom: auto;
 }
 
-// Adjust logo width to secondary navigation 
-.p-navigation .p-navigation__banner {
-  padding-left: 0;
-  padding-right: 0;
-}
-
 @media (min-width: 975px) {
   #contact-modal.p-modal .p-modal__dialog {
     max-width: 875px;
     min-width: 875px;
+  }
+}
+
+// TODO: to be removed when properly fixed on Vanilla side
+// https://github.com/canonical/vanilla-framework/issues/4898
+@media screen and (min-width: $breakpoint-navigation-threshold) {
+  // align navigation items with grid in docs layout
+  .l-docs__subgrid .p-navigation__row {
+    padding-left: .5rem;
   }
 }
