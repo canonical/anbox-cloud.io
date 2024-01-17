@@ -20,14 +20,14 @@
   },
   "dependencies": {
     "@canonical/cookie-policy": "3.5.0",
-    "@canonical/global-nav": "3.6.1",
+    "@canonical/global-nav": "3.6.2",
     "autoprefixer": "10.4.16",
     "esbuild": "0.19.11",
     "intl-tel-input": "17.0.21",
     "postcss": "8.4.32",
     "postcss-cli": "10.1.0",
     "sass": "1.69.6",
-    "vanilla-framework": "4.5.0"
+    "vanilla-framework": "4.6.0"
   },
   "devDependencies": {
     "concurrently": "7.6.0",
