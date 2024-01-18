@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Build image
         run: DOCKER_BUILDKIT=1 docker build --tag anbox-cloud-io .
@@ -23,13 +23,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Install Dotrun
         uses: canonical/install-dotrun@main
 
       - name: Install dependencies
-        run: dotrun install
+        run: |
+          sudo chmod -R 0777 ../anbox-cloud.io
+          dotrun install
 
       - name: Build assets
         run: dotrun build
@@ -41,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Install dependencies
         run: yarn install --immutable
@@ -53,7 +55,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Install node dependencies
         run: yarn install --immutable
@@ -70,27 +72,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Install requirements
-        run: |
-          sudo apt-get update && sudo apt-get install --yes python3-setuptools
-          sudo pip3 install -r requirements.txt
+      - uses: actions/checkout@v4
 
       - name: Install dotrun
         uses: canonical/install-dotrun@main
 
       - name: Install node dependencies
-        run: /snap/bin/dotrun install
+        run: |
+          sudo chmod -R 0777 ../anbox-cloud.io
+          dotrun install
 
       - name: Install dependencies
-        run: /snap/bin/dotrun exec pip3 install coverage
+        run: dotrun exec pip3 install coverage
 
       - name: Build resources
-        run: /snap/bin/dotrun build
+        run: dotrun build
 
       - name: Run tests with coverage
-        run: /snap/bin/dotrun exec coverage run --source=. -m unittest discover tests
+        run: dotrun exec coverage run --source=. --module unittest discover tests
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
@@ -102,7 +101,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: woke
         uses: canonical-web-and-design/inclusive-naming@main
