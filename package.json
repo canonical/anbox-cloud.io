@@ -21,16 +21,16 @@
   "dependencies": {
     "@canonical/cookie-policy": "3.5.0",
     "@canonical/global-nav": "3.6.2",
-    "autoprefixer": "10.4.16",
+    "autoprefixer": "10.4.17",
     "esbuild": "0.19.11",
     "intl-tel-input": "17.0.21",
-    "postcss": "8.4.32",
-    "postcss-cli": "10.1.0",
-    "sass": "1.69.6",
+    "postcss": "8.4.33",
+    "postcss-cli": "11.0.0",
+    "sass": "1.70.0",
     "vanilla-framework": "4.6.0"
   },
   "devDependencies": {
-    "concurrently": "7.6.0",
+    "concurrently": "8.2.2",
     "sass-lint": "1.13.1",
     "watch-cli": "0.2.3"
   }
