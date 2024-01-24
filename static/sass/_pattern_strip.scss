@@ -9,6 +9,7 @@
     @extend %vf-strip;
 
     background-blend-mode: multiply, multiply, normal, normal;
+    background-color: #fff;
     // sass-lint:disable-block no-color-literals
     background-image: linear-gradient(
       to bottom left,
