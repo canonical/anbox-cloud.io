@@ -1919,10 +1919,10 @@ vanilla-framework@4.0.0:
   resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.0.0.tgz#a2fee9bd9763ebd6932b764f9d66484dc177d4cc"
   integrity sha512-fiPnmaTUe15l5MRNJ6IsiJ8qiunfmgtLETOFltaYiE/bQKL7xTI+riBak2iygBKeF1y0Gi/GxUNt4hyb6xDPKA==
 
-vanilla-framework@4.6.0:
-  version "4.6.0"
-  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.6.0.tgz#61b93a2197eed0d869f85e1014dd9e67bacc355e"
-  integrity sha512-pRjJknqsL4CLA+ovLMlg7MhVh9nIcu7Ev81Z62gh3hAzUDIiZOUI2W9+B16XWv4QFmFxEOgQcfVi2cezLun9SQ==
+vanilla-framework@4.7.0:
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.7.0.tgz#93934d1df3b99b4d58f96d5dbc8f47c32ae660c2"
+  integrity sha512-jhckCsy/e+nZI1qh5ZVH2bj3YZqpYLxnhovo8W/JgzhjQ2LMDI1L1vaw8pjMLt9G4sZqHB/S7KybGQgbIp9phQ==
 
 verbalize@^0.1.2:
   version "0.1.2"
