@@ -27,7 +27,7 @@
     "postcss": "8.4.33",
     "postcss-cli": "11.0.0",
     "sass": "1.70.0",
-    "vanilla-framework": "4.6.0"
+    "vanilla-framework": "4.7.0"
   },
   "devDependencies": {
     "concurrently": "8.2.2",
