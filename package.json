@@ -19,15 +19,15 @@
     "test-python": "python3 -m unittest discover tests"
   },
   "dependencies": {
-    "@canonical/cookie-policy": "3.5.0",
-    "@canonical/global-nav": "3.6.2",
+    "@canonical/cookie-policy": "3.6.3",
+    "@canonical/global-nav": "3.6.4",
     "autoprefixer": "10.4.17",
     "esbuild": "0.19.11",
     "intl-tel-input": "17.0.21",
     "postcss": "8.4.33",
     "postcss-cli": "11.0.0",
     "sass": "1.70.0",
-    "vanilla-framework": "4.7.0"
+    "vanilla-framework": "4.12.0"
   },
   "devDependencies": {
     "concurrently": "8.2.2",
