@@ -21,12 +21,12 @@
   "dependencies": {
     "@canonical/cookie-policy": "3.6.4",
     "@canonical/global-nav": "3.6.4",
-    "autoprefixer": "10.4.17",
-    "esbuild": "0.19.11",
+    "autoprefixer": "10.4.19",
+    "esbuild": "0.21.5",
     "intl-tel-input": "17.0.21",
-    "postcss": "8.4.33",
+    "postcss": "8.4.38",
     "postcss-cli": "11.0.0",
-    "sass": "1.70.0",
+    "sass": "1.77.6",
     "vanilla-framework": "4.13.0"
   },
   "devDependencies": {
