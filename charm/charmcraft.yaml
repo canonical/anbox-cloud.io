@@ -1,0 +1,26 @@
+name: anbox-cloud-io
+
+type: charm
+
+bases:
+  - build-on:
+      - name: ubuntu
+        channel: "22.04"
+    run-on:
+      - name: ubuntu
+        channel: "22.04"
+
+summary: This is the charm for the anbox-cloud.io website.
+
+description: This is the charm for the anbox-cloud.io website.
+
+extensions:
+  - flask-framework
+
+config:
+  options:
+    google-search-api-key:
+      description: Google search API key
+      type: string
+      required: true
+      default: ""
