@@ -6,10 +6,15 @@ env:
   - name: SENTRY_DSN
     value: https://37706e022f2841448dbb094990420522@sentry.is.canonical.com//23
 
-  - name: SEARCH_API_KEY
+  - name: FLASK_GOOGLE_SEARCH_API_KEY
     secretKeyRef:
       key: google-custom-search-key
       name: google-api
+
+  - name: FLASK_SECRET_KEY
+    secretKeyRef:
+      key: anbox-cloud-io
+      name: secret-keys
 
 production:
   replicas: 5

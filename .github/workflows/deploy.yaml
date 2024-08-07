@@ -1,0 +1,93 @@
+name: Deploy site
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  CHARMCRAFT_ENABLE_EXPERIMENTAL_EXTENSIONS: true
+  ROCKCRAFT_ENABLE_EXPERIMENTAL_EXTENSIONS: true
+
+jobs:
+  pack-charm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup LXD
+        uses: canonical/setup-lxd@main
+
+      - name: Setup Charmcraft
+        run: sudo snap install charmcraft --classic --channel=latest/edge
+
+      - name: Fetch libs
+        run: |
+          cd ./charm 
+          charmcraft fetch-libs
+
+      - name: Pack charm
+        run: charmcraft pack -v --project-dir ./charm
+
+      - name: Upload charm
+        uses: actions/upload-artifact@v3
+        with:
+          name: anbox-cloud-io-charm
+          path: ./*.charm
+
+  pack-rock:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+
+      - name: Build Assets
+        run: |
+          yarn install
+          yarn run build
+
+      - name: Setup LXD
+        uses: canonical/setup-lxd@main
+
+      - name: Setup Rockcraft
+        run: sudo snap install rockcraft --classic --channel=latest/edge
+
+      - name: Pack Rock
+        run: rockcraft pack
+
+      - name: Upload Rock
+        uses: actions/upload-artifact@v3
+        with:
+          name: anbox-cloud-io-rock
+          path: ./*.rock
+
+  publish-image:
+    runs-on: ubuntu-latest
+    needs: pack-rock
+    outputs:
+      image_url: ${{ steps.set_image_url.outputs.image_url }}
+    steps:
+      - name: Get Rock
+        uses: actions/download-artifact@v3
+        with:
+          name: anbox-cloud-io-rock
+
+      - name: Set image URL
+        id: set_image_url
+        run: echo "image_url=ghcr.io/canonical/anbox-cloud.io:$(date +%s)-${GITHUB_SHA:0:7}" >> $GITHUB_OUTPUT
+
+      - name: Push to GHCR
+        run: skopeo --insecure-policy copy oci-archive:$(ls *.rock) docker://${{ steps.set_image_url.outputs.image_url }} --dest-creds "canonical:${{ secrets.GITHUB_TOKEN }}"
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [pack-charm, publish-image]
+    steps:
+      - name: Workflow run ID
+        run : echo ${{ github.run_id }}
+      - name: Image URL
+        run : echo ${{ needs.publish-image.outputs.image_url }}
