@@ -4,21 +4,14 @@ from datetime import datetime
 
 import flask
 import requests
-import talisker
 from flask import request
 
-from canonicalwebteam.discourse import (
-    DiscourseAPI,
-    Docs,
-    DocParser,
-)
 from canonicalwebteam.flask_base.app import FlaskBase
 from flask_openid import OpenID
 from pymacaroons import Macaroon
 from webapp.macaroons import MacaroonRequest, MacaroonResponse
 from posixpath import join as url_join
 from canonicalwebteam import image_template
-from canonicalwebteam.search import build_search_view
 
 from webapp.views import get_user_country_by_ip
 
@@ -42,31 +35,6 @@ open_id = OpenID(
     extension_responses=[MacaroonResponse],
 )
 
-# Discourse docs
-session = talisker.requests.get_session()
-
-discourse_docs = Docs(
-    parser=DocParser(
-        api=DiscourseAPI(
-            base_url="https://discourse.ubuntu.com/", session=session
-        ),
-        index_topic_id=17029,
-        url_prefix="/docs",
-    ),
-    document_template="docs/document.html",
-    url_prefix="/docs",
-)
-discourse_docs.init_app(app)
-
-app.add_url_rule(
-    "/docs/search",
-    "docs-search",
-    build_search_view(
-        session=session,
-        site="anbox-cloud.io/docs",
-        template_path="docs/search.html",
-    ),
-)
 
 app.add_url_rule("/user-country.json", view_func=get_user_country_by_ip)
 

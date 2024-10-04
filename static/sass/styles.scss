@@ -16,7 +16,6 @@
 
 // import site specific patterns and overrides
 @import "pattern_deployment-table";
-@import "pattern_docs";
 @import "pattern_heading-icon";
 @import "pattern_matrix";
 @import "pattern_navigation";
@@ -25,7 +24,6 @@
 @import "pattern_footer";
 
 @include anbox-p-deployment-table;
-@include anbox-p-docs;
 @include anbox-p-heading-icon;
 @include anbox-p-matrix;
 @include anbox-p-navigation;
