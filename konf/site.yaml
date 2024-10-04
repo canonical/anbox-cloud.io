@@ -11,10 +11,6 @@ env:
       key: google-custom-search-key
       name: google-api
 
-  - name: FLASK_SECRET_KEY
-    secretKeyRef:
-      key: anbox-cloud-io
-      name: secret-keys
 
 production:
   replicas: 5
