@@ -6,6 +6,8 @@ docs/?: https://canonical-anbox-cloud-documentation.readthedocs-hosted.com/en/la
 # Tutorials
 docs/tutorial/landing: https://canonical-anbox-cloud-documentation.readthedocs-hosted.com/en/latest/tutorial/landing/
 docs/tutorial/installing-appliance: https://canonical-anbox-cloud-documentation.readthedocs-hosted.com/en/latest/tutorial/installing-appliance/
+# Show by `pro enable anbox-cloud` and cannot be easily changed
+docs/tut/installing-appliance: https://canonical-anbox-cloud-documentation.readthedocs-hosted.com/en/latest/tutorial/installing-appliance/
 docs/tutorial/getting-started-dashboard: https://canonical-anbox-cloud-documentation.readthedocs-hosted.com/en/latest/tutorial/getting-started-dashboard/
 docs/tutorial/getting-started: https://canonical-anbox-cloud-documentation.readthedocs-hosted.com/en/latest/tutorial/getting-started/
 docs/tutorial/stream-client: https://canonical-anbox-cloud-documentation.readthedocs-hosted.com/en/latest/tutorial/set-up-stream-client/
