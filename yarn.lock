@@ -1856,10 +1856,10 @@ util@^0.10.3:
   dependencies:
     inherits "2.0.3"
 
-vanilla-framework@4.14.0:
-  version "4.14.0"
-  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.14.0.tgz#dca425c806462179467030ac30ef496997e2d8cb"
-  integrity sha512-YctHWwH1SbIltBMMVdeiVW1QtxVjaU15jLKiubgVjE9AByuK/EriyZnPQkXtb/+Rwf1mtF24rae+mmG8aFqUJw==
+vanilla-framework@4.18.3:
+  version "4.18.3"
+  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.18.3.tgz#8b7e3cc164eab90c540880fd7b87fa8dc91ff9e1"
+  integrity sha512-WsOgD/iI27de80cMS9IYFq1X4nbsEOFfqUmTT7V57k5C20WHwshUA0ocw4R21ThN+A7amh4+c7i0mtcr9a/+uQ==
 
 vanilla-framework@4.9.0:
   version "4.9.0"
