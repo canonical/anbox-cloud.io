@@ -26,8 +26,8 @@
     "intl-tel-input": "17.0.21",
     "postcss": "8.4.38",
     "postcss-cli": "11.0.0",
-    "sass": "1.77.6",
-    "vanilla-framework": "4.14.0"
+    "sass": "1.79.0",
+    "vanilla-framework": "4.18.5"
   },
   "devDependencies": {
     "concurrently": "8.2.2",

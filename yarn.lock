@@ -352,7 +352,7 @@ chalk@~0.4.0:
     has-color "~0.1.0"
     strip-ansi "~0.1.0"
 
-"chokidar@>=3.0.0 <4.0.0", chokidar@^3.3.0:
+chokidar@^3.3.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.6.0.tgz#197c6cc669ef2a8dc5e7b4d97ee4e092c3eb0d5b"
   integrity sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==
@@ -366,6 +366,13 @@ chalk@~0.4.0:
     readdirp "~3.6.0"
   optionalDependencies:
     fsevents "~2.3.2"
+
+chokidar@^4.0.0:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-4.0.2.tgz#97b9562c9f59de559177f069eadf5dcc67d24798"
+  integrity sha512-/b57FK+bblSU+dfewfFe0rT1YjVDfOmeLQwCAuC+vwvgLkXboATqqmy+Ipux6JrF6L5joe5CBnFOw+gLWH6yKg==
+  dependencies:
+    readdirp "^4.0.1"
 
 circular-json@^0.3.1:
   version "0.3.3"
@@ -1478,6 +1485,11 @@ readable-stream@^2.2.2:
     string_decoder "~1.1.1"
     util-deprecate "~1.0.1"
 
+readdirp@^4.0.1:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/readdirp/-/readdirp-4.0.2.tgz#388fccb8b75665da3abffe2d8f8ed59fe74c230a"
+  integrity sha512-yDMz9g+VaZkqBYS/ozoBJwaBhTbZo3UNYQHNRw1D3UFQB8oHB4uS/tAODO+ZLjGWmUbKnIlOWO+aaIiAxrUWHA==
+
 readdirp@~3.6.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/readdirp/-/readdirp-3.6.0.tgz#74a370bd857116e245b29cc97340cd431a02a6c7"
@@ -1588,12 +1600,12 @@ sass-lint@1.13.1:
     path-is-absolute "^1.0.0"
     util "^0.10.3"
 
-sass@1.77.6:
-  version "1.77.6"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.77.6.tgz#898845c1348078c2e6d1b64f9ee06b3f8bd489e4"
-  integrity sha512-ByXE1oLD79GVq9Ht1PeHWCPMPB8XHpBuz1r85oByKHjZY6qV6rWnQovQzXJXuQ/XyE1Oj3iPk3lo28uzaRA2/Q==
+sass@1.79.0:
+  version "1.79.0"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.79.0.tgz#4a58442b6c094ac57a0805519bff6133d70590c9"
+  integrity sha512-9Q1xXsm9XT54yYkmQAoH3vCMEIavwWWQGJ3cZ0WJAgecR4edDDTdtiPyEeFDNWO/hLCy3qZKvwjK4ulPR5Yzow==
   dependencies:
-    chokidar ">=3.0.0 <4.0.0"
+    chokidar "^4.0.0"
     immutable "^4.0.0"
     source-map-js ">=0.6.2 <2.0.0"
 
@@ -1856,10 +1868,10 @@ util@^0.10.3:
   dependencies:
     inherits "2.0.3"
 
-vanilla-framework@4.14.0:
-  version "4.14.0"
-  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.14.0.tgz#dca425c806462179467030ac30ef496997e2d8cb"
-  integrity sha512-YctHWwH1SbIltBMMVdeiVW1QtxVjaU15jLKiubgVjE9AByuK/EriyZnPQkXtb/+Rwf1mtF24rae+mmG8aFqUJw==
+vanilla-framework@4.18.5:
+  version "4.18.5"
+  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.18.5.tgz#038e3bbeaeca49ae6cf6a074e0ed83901818eae6"
+  integrity sha512-UuYI6se/IV/u9YfzYPIs2FNJapgi9ld7F3s9IbjeR0yCvfH1HCjfZdDPD23tkQDBHiT6wNT6wugXDqFnunVJfQ==
 
 vanilla-framework@4.9.0:
   version "4.9.0"
