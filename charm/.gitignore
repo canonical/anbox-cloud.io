@@ -7,4 +7,3 @@ __pycache__/
 *.py[cod]
 .idea
 .vscode/
-lib/

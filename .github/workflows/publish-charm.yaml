@@ -1,0 +1,39 @@
+name: Pack and Publish Charm
+
+on:
+  push:
+    branches:
+      - main
+      - charmed-deployment # TODO: to be removed before merging
+    paths:
+      - 'charm/**' # Only trigger when changes are made to the ./charm/ directory
+  pull_request:
+    paths:
+      - 'charm/**'
+
+jobs:
+  pack-charm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup LXD
+        uses: canonical/setup-lxd@main
+
+      - name: Setup charmcraft
+        run: sudo snap install charmcraft --classic --channel=latest/edge
+
+      - name: Fetch libs
+        run: |
+          cd ./charm 
+          charmcraft fetch-libs
+
+      - name: Pack charm
+        run: charmcraft pack -v --project-dir ./charm
+
+      - name: Upload charm (only runs on push to main)
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        env:
+          CHARMCRAFT_AUTH: ${{ secrets.CHARMHUB_TOKEN }}
+        run: charmcraft upload ./*.charm

@@ -1,0 +1,73 @@
+name: Pack Rock and Publish Image
+
+on:
+  push:
+    branches:
+      - main
+      - charmed-deployment # TODO: to be removed before merging
+
+jobs:
+  pack-rock:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+
+      - name: Build assets
+        run: |
+          yarn install
+          yarn run build
+
+      - name: Setup LXD
+        uses: canonical/setup-lxd@main
+
+      - name: Setup rockcraft
+        run: sudo snap install rockcraft --classic --channel=latest/edge
+
+      - name: Pack rock
+        run: rockcraft pack
+
+      - name: Upload rock
+        uses: actions/upload-artifact@v4
+        with:
+          name: anbox-cloud-io-rock
+          path: ./*.rock
+
+  publish-image:
+    runs-on: ubuntu-latest
+    needs: pack-rock
+    outputs:
+      image_url: ${{ steps.set_image_url.outputs.image_url }}
+    steps:
+      - name: Get Rock
+        uses: actions/download-artifact@v4
+        with:
+          name: anbox-cloud-io-rock
+
+      - name: Set image URL
+        id: set_image_url
+        run: echo "image_url=ghcr.io/canonical/anbox-cloud.io:$(date +%s)-${GITHUB_SHA:0:7}" >> $GITHUB_OUTPUT
+
+      - name: Push to GHCR
+        run: skopeo --insecure-policy copy oci-archive:$(ls *.rock) docker://${{ steps.set_image_url.outputs.image_url }} --dest-creds "canonical:${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Pull image into registry
+        run: docker pull ${{ steps.set_image_url.outputs.image_url }}
+
+      - name: Upload flask app OCI image
+        env:
+          CHARMCRAFT_AUTH: ${{ secrets.CHARMHUB_TOKEN }}
+        run: |
+            sudo snap install charmcraft --classic --channel=latest/edge
+            charmcraft upload-resource anbox-cloud-io flask-app-image --image=`docker images --format "{{.ID}}" | head -n 1` --verbosity=trace
+
+      - name: Attach resource to charm
+        env:
+          CHARMCRAFT_AUTH: ${{ secrets.CHARMHUB_TOKEN }}
+        run: |
+          revision_number=$(charmcraft revisions anbox-cloud-io | awk 'NR==2 {print $1}')
+          resource_revision_number=$(charmcraft resource-revisions anbox-cloud-io flask-app-image | awk 'NR==2 {print $1}')
+          charmcraft release anbox-cloud-io --channel=beta --revision $revision_number --resource flask-app-image:$resource_revision_number
