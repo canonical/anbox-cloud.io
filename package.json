@@ -22,7 +22,7 @@
     "@canonical/cookie-policy": "3.6.4",
     "@canonical/global-nav": "3.6.4",
     "autoprefixer": "10.4.19",
-    "esbuild": "0.21.5",
+    "esbuild": "0.25.0",
     "intl-tel-input": "17.0.21",
     "postcss": "8.4.38",
     "postcss-cli": "11.0.0",
