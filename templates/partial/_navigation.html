@@ -17,10 +17,10 @@
 <nav class="p-navigation__nav" aria-label="main-navigation">
   <ul class="p-navigation__items" {% if not is_docs %}style="margin-left: -.75rem;" {% endif %} role="menu">
     <li class="p-navigation__item" role="menuitem">
-      <a href="/docs/howto/install-appliance/landing" class="p-navigation__link">Install</a>
+      <a href="https://documentation.ubuntu.com/anbox-cloud/howto/install-appliance/landing/" class="p-navigation__link">Install</a>
     </li>
-    <li class="p-navigation__item {% if request.path == '/docs' %}is-selected{% endif %}" role="menuitem">
-      <a href="/docs" class="p-navigation__link">Docs</a>
+    <li class="p-navigation__item" role="menuitem">
+      <a href="https://documentation.ubuntu.com/anbox-cloud/" class="p-navigation__link">Docs</a>
     </li>
     <li class="p-navigation__item {% if request.path in ['/resources',] %}is-selected{% endif %}" role="menuitem">
       <a href="https://discourse.ubuntu.com/c/anbox-cloud/" class="p-navigation__link">Forum</a>
