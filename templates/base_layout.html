@@ -93,8 +93,8 @@
     {% include "partial/_footer.html" %}
     {% endblock %}
 
-    <script src="/static/js/modules/cookie-policy/cookie-policy.js"></script>
-    <script src="/static/js/modules/global-nav/global-nav.js"></script>
+    <script src="{{ versioned_static('js/modules/cookie-policy/cookie-policy.js') }}"></script>
+    <script src="{{ versioned_static('js/modules/global-nav/global-nav.js') }}"></script>
     <script>
       canonicalGlobalNav.createNav({
         breakpoint: 620 // same as $breakpoint-navigation-threshold in _settings.scss
