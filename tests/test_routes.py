@@ -68,7 +68,7 @@ class TestRoutes(unittest.TestCase):
     def test_docs(self):
         """
         When given the index URL,
-        we should return a 302 status code
+        we should return a 301 status code
         """
 
-        self.assertEqual(self.client.get("/docs").status_code, 302)
+        self.assertEqual(self.client.get("/docs").status_code, 301)
