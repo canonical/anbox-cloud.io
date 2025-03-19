@@ -9,10 +9,10 @@
   dependencies:
     regenerator-runtime "^0.14.0"
 
-"@canonical/cookie-policy@3.6.4":
-  version "3.6.4"
-  resolved "https://registry.yarnpkg.com/@canonical/cookie-policy/-/cookie-policy-3.6.4.tgz#895c3770f621b73d88b0d5843c43a32d99e4a462"
-  integrity sha512-kfwamTpAaBhtH5TzlMb8wE814a8lIbONUuSYnS7VPiHDfcdmw4NoBPNpldmNY1j3CAT5vMKOx5kulRTWpEXpag==
+"@canonical/cookie-policy@3.6.5":
+  version "3.6.5"
+  resolved "https://registry.yarnpkg.com/@canonical/cookie-policy/-/cookie-policy-3.6.5.tgz#50d82df6da2970b6b5d78d066dd94fcc1317e591"
+  integrity sha512-CQJKSkuLXhSumkIIw4YPSjR7k9561hZ3EEdMPQTkAVTxXURhm3WzJm/uyrvcAuU/a//jzWa8ScltCaHFBdACew==
 
 "@canonical/global-nav@3.6.4":
   version "3.6.4"
@@ -1905,10 +1905,10 @@ util@^0.10.3:
   dependencies:
     inherits "2.0.3"
 
-vanilla-framework@4.18.5:
-  version "4.18.5"
-  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.18.5.tgz#038e3bbeaeca49ae6cf6a074e0ed83901818eae6"
-  integrity sha512-UuYI6se/IV/u9YfzYPIs2FNJapgi9ld7F3s9IbjeR0yCvfH1HCjfZdDPD23tkQDBHiT6wNT6wugXDqFnunVJfQ==
+vanilla-framework@4.21.1:
+  version "4.21.1"
+  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.21.1.tgz#6a011d49cc028784d091d8745882a9343e9845ab"
+  integrity sha512-kf1l41iv9H4xhJrrpJC3TOF4SBiXJvtZsUFP20g8GVv6d4wgV4vAClD4zCF6sUEnGhxZ13kO/P9nK++DvWzdvQ==
 
 vanilla-framework@4.9.0:
   version "4.9.0"
