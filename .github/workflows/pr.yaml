@@ -4,6 +4,29 @@ env:
   SECRET_KEY: insecure_test_key
 
 jobs:
+  build-rock:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+
+    - name: Build Assets
+      run: |
+        yarn install
+        yarn run build
+
+    - name: Setup LXD
+      uses: canonical/setup-lxd@main
+
+    - name: Setup Rockcraft
+      run: sudo snap install rockcraft --classic --channel=latest/edge
+
+    - name: Pack Rock
+      run: rockcraft pack
+
   run-image:
     runs-on: ubuntu-latest
 
