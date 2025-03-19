@@ -21,4 +21,4 @@ parts:
       - flask/app/webapp
       - flask/app/templates
       - flask/app/static
-      - flask/app/redirects.yaml
+      - flask/app/permanent-redirects.yaml
