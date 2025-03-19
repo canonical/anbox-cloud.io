@@ -11,7 +11,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Use Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
 
     - name: Build Assets
       run: |
@@ -117,7 +117,7 @@ jobs:
         run: dotrun exec coverage run --source=. --module unittest discover tests
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v5
         with:
           flags: python
 
