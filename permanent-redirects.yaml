@@ -2,7 +2,11 @@ robots.txt?: "/static/files/robots.txt"
 
 # Documentation redirects
 # Home page
-/: "https://canonical.com/anbox-cloud"
+/: https://canonical.com/anbox-cloud
+/contact-us: https://canonical.com/anbox-cloud#get-in-touch
+/thank-you: https://canonical.com/anbox-cloud#contact-form-success
+/terms: https://ubuntu.com/legal/terms-and-policies
+/privacy: https://ubuntu.com/legal/data-privacy
 docs/?: https://canonical-anbox-cloud-documentation.readthedocs-hosted.com/en/latest/
 # Tutorials
 docs/tutorial/landing: https://canonical-anbox-cloud-documentation.readthedocs-hosted.com/en/latest/tutorial/landing/

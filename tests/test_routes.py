@@ -24,7 +24,7 @@ class TestRoutes(unittest.TestCase):
         we should return a 200 status code
         """
 
-        self.assertEqual(self.client.get("/thank-you").status_code, 200)
+        self.assertEqual(self.client.get("/thank-you").status_code, 301)
 
     def test_contact_us(self):
         """
@@ -32,7 +32,7 @@ class TestRoutes(unittest.TestCase):
         we should return a 200 status code
         """
 
-        self.assertEqual(self.client.get("/contact-us").status_code, 200)
+        self.assertEqual(self.client.get("/contact-us").status_code, 301)
 
     def test_not_found(self):
         """
@@ -55,7 +55,7 @@ class TestRoutes(unittest.TestCase):
         we should return a 200 status code
         """
 
-        self.assertEqual(self.client.get("/terms").status_code, 200)
+        self.assertEqual(self.client.get("/terms").status_code, 301)
 
     def test_privacy(self):
         """
@@ -63,7 +63,7 @@ class TestRoutes(unittest.TestCase):
         we should return a 200 status code
         """
 
-        self.assertEqual(self.client.get("/privacy").status_code, 200)
+        self.assertEqual(self.client.get("/privacy").status_code, 301)
 
     def test_docs(self):
         """
