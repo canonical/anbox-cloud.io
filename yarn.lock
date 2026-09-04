@@ -9,17 +9,17 @@
   dependencies:
     regenerator-runtime "^0.14.0"
 
-"@canonical/cookie-policy@3.6.5":
-  version "3.6.5"
-  resolved "https://registry.yarnpkg.com/@canonical/cookie-policy/-/cookie-policy-3.6.5.tgz#50d82df6da2970b6b5d78d066dd94fcc1317e591"
-  integrity sha512-CQJKSkuLXhSumkIIw4YPSjR7k9561hZ3EEdMPQTkAVTxXURhm3WzJm/uyrvcAuU/a//jzWa8ScltCaHFBdACew==
+"@canonical/cookie-policy@3.10.0":
+  version "3.10.0"
+  resolved "https://registry.yarnpkg.com/@canonical/cookie-policy/-/cookie-policy-3.10.0.tgz#bc17a6900b3014c2f262948d5a8b3a52acba9926"
+  integrity sha512-sAVw8fdD2RgwSI2YImvlOfn79FRFbbqd0TaD3UHYXfL58qVRAXFxqqymbp4qISN4agi8UuZ2+kqq9zOcW7ZbTA==
 
-"@canonical/global-nav@3.6.4":
-  version "3.6.4"
-  resolved "https://registry.yarnpkg.com/@canonical/global-nav/-/global-nav-3.6.4.tgz#347401d20a01c51a9d0024f7867ddebd3b407dcf"
-  integrity sha512-CEmFtHOdxAG8kFCOBcTR08u/SbwIVZQ1O0evNa/X+KyS7F9YrI6TXBHO3oLNO8Rv1WZUSMeh1BPhv7ChKfojgQ==
+"@canonical/global-nav@3.9.0":
+  version "3.9.0"
+  resolved "https://registry.yarnpkg.com/@canonical/global-nav/-/global-nav-3.9.0.tgz#00708ea529e85f25f217d2da3c2891328847813d"
+  integrity sha512-dFE9ioSSh5BZkG/s9o1HVNUB23HFbkfD4VWPFFxR+YRNNgHjtY5c3WdEMcsHnSL+OnYj0xv5ZqSl/rppI9hdCQ==
   dependencies:
-    vanilla-framework "4.9.0"
+    vanilla-framework "4.35.0"
 
 "@esbuild/aix-ppc64@0.25.1":
   version "0.25.1"
@@ -1905,15 +1905,15 @@ util@^0.10.3:
   dependencies:
     inherits "2.0.3"
 
-vanilla-framework@4.21.1:
-  version "4.21.1"
-  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.21.1.tgz#6a011d49cc028784d091d8745882a9343e9845ab"
-  integrity sha512-kf1l41iv9H4xhJrrpJC3TOF4SBiXJvtZsUFP20g8GVv6d4wgV4vAClD4zCF6sUEnGhxZ13kO/P9nK++DvWzdvQ==
+vanilla-framework@4.35.0:
+  version "4.35.0"
+  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.35.0.tgz#b01bbb525ad3211690c9f10580ca2e00a37a8ab1"
+  integrity sha512-vF8M9vsXiOpJEonFXiTVhY0rXOzNtoWpkhBcCVpyPb4+oHBx0/FaNcX5GAiQpfdT6Q/AAeRYyWwRUDObq6R8uw==
 
-vanilla-framework@4.9.0:
-  version "4.9.0"
-  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.9.0.tgz#7566b42a22c2394ea1d7ea843d24ec305446cb3e"
-  integrity sha512-iTmvqWlsX0ic69VZ1sR9NPQtYRR9+iM679HZCl7SDQhMQSsEeJEQ6Ejjen3JN5a7YxiYmeIhxaLlmC4rExRT1w==
+vanilla-framework@4.59.0:
+  version "4.59.0"
+  resolved "https://registry.yarnpkg.com/vanilla-framework/-/vanilla-framework-4.59.0.tgz#c31a136577bfc09eae69cd0dd010e82f1130ac5b"
+  integrity sha512-Bpl8fD3M+fkvziXvuZCFpXr6xkPsO1Ulkhcvpe5juIKmpJcKVqmPBs6m5R1nP64tI+dUgOe2u625Fvgm4C3kug==
 
 verbalize@^0.1.2:
   version "0.1.2"
